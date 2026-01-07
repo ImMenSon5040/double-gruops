@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage{polyglossia}
+\setmainlanguage{lithuanian}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage{indentfirst}
+\frenchspacing
+
+\usepackage{cite}
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{physics}
+\usepackage{upgreek}
+\usepackage{siunitx} % dydžių vienetams
+\sisetup{
+output-decimal-marker = {,},
+exponent-product = \cdot,
+inter-unit-product = \ensuremath{\cdot} }
+
+\usepackage[
+	pdfusetitle,
+	bookmarks=true,
+	bookmarksnumbered=true,
+	bookmarksopen=false,
+	breaklinks=false,
+	backref=false,
+	colorlinks=false
+]{hyperref}
+\hypersetup{
+	pdfstartview=FitH,
+	bookmarksopen=true,
+	hidelinks,  
+	pdfdisplaydoctitle=true,
+	pdfpagemode=UseNone
+}
+\hypersetup{hidelinks}
+\usepackage[a4paper]{geometry}
+\geometry{tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{booktabs}
+\usepackage{tocloft}
+\usepackage{graphicx}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\title{Darbo pavadinimas}
+
+\begin{document}
+\newcommand{\set}[1]{\mathbb{#1}}
+
+\global\long\def\imath{\mathrm{i}}%
+ 
+\global\long\def\emath{\mathrm{e}}%
+ 
+\rhead{}
+
+\lhead{}
+
+\cfoot{\thepage}
+
+\normalfont
+
+\thispagestyle{empty}
+\begin{center}
+Vilniaus universitetas\\
+Fizikos fakultetas\\
+Teorinės fizikos ir astrofizikos institutas
+\par\end{center}
+
+\vspace{3.5cm}
+
+\begin{center}
+	Martynas Lašas
+\par\end{center}
+
+\begin{center}
+\textbf{DARBO PAVADINIMAS}\vspace{0.8cm}
+\par\end{center}
+
+\begin{center}
+BAKALAURO STUDIJŲ BAIGIAMASIS DARBAS 
+\par\end{center}
+
+\begin{center}
+\vspace{0.8cm}
+Fizikos studijų programa
+\par\end{center}
+
+\begin{center}
+\vspace{3.5cm}
+\par\end{center}
+
+\begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}}ll}
+Studentas & Martynas Lašas
+\tabularnewline[0.5cm]
+	Leista ginti & 2023-05-20
+	\tabularnewline
+Darbo vadovas & dr. Vidas Regelskis
+\tabularnewline[0.5cm]
+	Instituto direktorius & Prof. Dr. Egidijus Anisimovas
+	\tabularnewline
+\end{tabular*}
+\begin{center}
+\vfill{}
+\par\end{center}
+
+\begin{center}
+Vilnius 2025
+\par\end{center}
+
+\newpage{}
+
+\normalfont\tableofcontents{}
+
+\newpage{}
+
+\section*{Įvadas\addcontentsline{toc}{section}{Įvadas}}
+
+%\input{sec/ivadas}
+%\clearpage{}
+
+\section{Skyriaus pavadinimas}
+
+\section*{Išvados\addcontentsline{toc}{section}{Išvados}}
+%\input{sec/isvados}
+\clearpage{}
+
+\addcontentsline{toc}{section}{Literatūra}
+\bibliographystyle{BibStyle}
+\bibliography{Bibliography}
+
+\clearpage{}
+\begin{center}
+	\textbf{ \large{GAUGE FEELD FORMULISIM IN PHYSICS}} \large\par
+\par\end{center}
+
+\begin{center}
+\textbf{Martynas Lašas}
+\par\end{center}
+
+\begin{center}
+\textbf{Summary}
+\par\end{center}
+
+Santrauką anglų kalba (,,Summary``)
+
+
+\end{document}
