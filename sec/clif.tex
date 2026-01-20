@@ -1,0 +1,63 @@
+
+Norint apibėžti grupes $\spin$ ir $\pinpm$, prima reikia pasakyti kas yra Clifordo algebros
+$\mathup{Cl}^+(3)$ ir $\mathup{Cl}^-(3)$. Šios algebros gaunamos iš vektorinės erdvės $\mathup V = \set{R}^3$.
+Tegul $\mathup{T(V)}$ būna erdės $\mathup V$ tenzorinė algebra. Jos elementai yra vektorių $v_i \in \mathup V$ tenzorinės
+sandaugos $v_1 \otimes v_2 \otimes \dots \otimes v_n$. $mathup{T(V)}$ algebros idealas $\mathup I^+$ yra generuojamas
+sąryšio
+\begin{equation}
+	\vb v \otimes \vb w
+	+
+	\vb w \otimes \vb v
+	=
+	2(\vb v , \vb w) \mathbb 1
+	\quad ,
+	\label{eq:cl+}
+\end{equation}
+čia $(\cdot,\cdot)$ yra įprasta $\set R ^3$ skaliarinė sandauga ir $\mathbb 1$ yra algebros $\mathup{T(V)}$
+vienetinis elementas, kurį neformaliai galimą suprasti kaip "nulio vektorių tezorinę sandaugą".
+Jei pažymime $S \subset \mathup{T(V)}$
+\begin{equation}
+	S = \qty{
+		\vb v \otimes \vb w
+		+
+		\vb w \otimes \vb v
+		-
+		2(\vb v , \vb w) \mathbb 1
+		\mid
+		\vb v, \vb w \in \mathup{T(V)}
+	}
+\end{equation}
+\begin{equation}
+	I^+ = \qty{
+		\sum_{\substack{
+			s \in S \\ 
+			a,b \in \mathup{T(V)} 
+		}}
+		a \otimes s \otimes b
+	}
+	\quad .
+\end{equation}
+Tada Clifordo algebra $\mathup{Cl^+(V)}$ apibėžiame kaip faktorimę algebrą $\mathup{T(V)/I^+}$.
+Jos elementai yra šoninės klasės $a + \mathup I^+ = {a + i \mid i \in \mathup I^+}$, čia $a$
+yra šoninę klasę atstovaujantis elementas iš $\mathup{T(V)}$. Clifordo algebra $\mathup{Cl^-(V)}$
+apibrėžiama analogiškai, tik $\mathup I^+$ pakeičiamas idealą $\mathup I^-$, generuojamą iš sąryšio
+\begin{equation}
+	\vb v \otimes \vb w
+	+
+	\vb w \otimes \vb v
+	=
+	- 2(\vb v , \vb w) \mathbb 1
+	\quad .
+	\label{eq:cl-}
+\end{equation}
+
+
+Kaip galima suprasti tokią konstrukciją? Algebra $\mathup{Cl^\pm(V)}$ yra tenzorinė algebra $\mathup{T(V)}$
+kuri "užmiršo" kaip atskirti $\vb v \vb w + \vb w \vb v$ ir $\pm2(\vb v, \vb w) \mathbb 1$,
+čia ir toliau nebenaudojame tenzorinės sandaugos simbolio $\otimes$, kad atskirti sandaugą Clifordo algebroje
+nuo bendros tenzorinės sandaugos.
+Šis užmiršimas leidžia savybes (\ref{eq:cl+}) ir (\ref{eq:cl-}) naudoti supaprastinant išraiškas kaip
+$\vb v \vb v = \frac{1}{2}(\vb v \vb v + \vb v \vb v) = \pm(\vb v,\vb v) \mathbb 1$ ir
+$\vb v \vb w \vb v = \qty( \pm2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v = \pm2\vb{(v,w)} \vb v - \vb{wvv} =  \pm2\vb{(v,w)} \vb v \mp \vb{(v,v)}\vb w $
+
+
