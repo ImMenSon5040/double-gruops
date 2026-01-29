@@ -2,7 +2,7 @@
 Norint apibėžti grupes $\spin$ ir $\pinpm$, prima reikia pasakyti kas yra Clifordo algebros
 $\mathup{Cl}^+(3)$ ir $\mathup{Cl}^-(3)$. Šios algebros gaunamos iš vektorinės erdvės $\mathup V = \set{R}^3$.
 Tegul $\mathup{T(V)}$ būna erdės $\mathup V$ tenzorinė algebra. Jos elementai yra vektorių $v_i \in \mathup V$ tenzorinės
-sandaugos $v_1 \otimes v_2 \otimes \dots \otimes v_n$. $mathup{T(V)}$ algebros idealas $\mathup I^+$ yra generuojamas
+sandaugos $v_1 \otimes v_2 \otimes \dots \otimes v_n$. $\mathup{T(V)}$ algebros idealas $\mathup I^+$ yra generuojamas
 sąryšio
 \begin{equation}
 	\vb v \otimes \vb w
@@ -57,7 +57,39 @@ kuri "užmiršo" kaip atskirti $\vb v \vb w + \vb w \vb v$ ir $\pm2(\vb v, \vb w
 čia ir toliau nebenaudojame tenzorinės sandaugos simbolio $\otimes$, kad atskirti sandaugą Clifordo algebroje
 nuo bendros tenzorinės sandaugos.
 Šis užmiršimas leidžia savybes (\ref{eq:cl+}) ir (\ref{eq:cl-}) naudoti supaprastinant išraiškas kaip
-$\vb v \vb v = \frac{1}{2}(\vb v \vb v + \vb v \vb v) = \pm(\vb v,\vb v) \mathbb 1$ ir
-$\vb v \vb w \vb v = \qty( \pm2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v = \pm2\vb{(v,w)} \vb v - \vb{wvv} =  \pm2\vb{(v,w)} \vb v \mp \vb{(v,v)}\vb w $
+\begin{equation}
+\vb v \vb v 
+= \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
+= \pm(\vb v,\vb v) \mathbb 1
+\end{equation}
+ir
+\begin{equation}
+\vb v \vb w \vb v 
+= \qty( \pm2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
+= \pm2\vb{(v,w)} \vb v - \vb{wvv} 
+=  \pm2\vb{(v,w)} \vb v \mp \vb{(v,v)}\vb w 
+\quad .
+\end{equation}
 
+Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė. Bazinius vektorius galime perketi
+į algebra $\mathup{Cl^\pm(V)}$, kur jie turi tenkinti
+\begin{equation}
+	\begin{split}
+		\vb e_i \vb e_j &= - \vb e_j \vb e_i \ , \ i \neq j \\
+		\vb e_i \vb e_i &= \pm \mathbb 1
+		\quad .
+	\end{split}
+\end{equation}
+Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti, kaip
+tiesinę kombinaciją aštuonių elementų:
+\begin{equation}
+		\mathbb 1 ,\,
+		\vb e_1 ,\, \vb e_2 ,\, \vb e_3 ,\, 
+		\vb e_2 \vb e_3 ,\, \vb e_1 \vb e_3 ,\, \vb e_1 \vb e_2 ,\,
+		\vb e_1 \vb e_2 \vb e_3 ,
+\end{equation}
+nes su pirma taisykle betkurį tenzorinės algebros bazės elementą galima išrikiuoti taip kad
+ortų indeksai būtų surašyti didėjimo tvarka ir su antra taisykle pasikartojantys ortai panaikinami.
+Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros. 
+Bendresniu atvėju $\mathup{dim}\qty[\mathup{Cl}^\pm\qty(\set R^n)] = 2^n$.
 
