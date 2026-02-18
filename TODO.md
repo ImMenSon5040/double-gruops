@@ -1,0 +1,10 @@
+
+ - [ ] big groups
+     - [x] Clifford algebra Cl+(3) and Cl-(3)
+     - [ ] Pin+(3) and Pin-(3) groups
+     - [ ] Spin(3) group
+     - [ ] Spin(3) as double cover of SO(3)
+     - [ ] Pin±(3) as double cover of O(3)
+ - [ ] Point groups of O(3)
+ - [ ] Double groups as preimage of O(3) point groups
+ - [ ] Projetive representations
