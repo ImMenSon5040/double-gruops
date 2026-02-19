@@ -20,6 +20,17 @@ output-decimal-marker = {,},
 exponent-product = \cdot,
 inter-unit-product = \ensuremath{\cdot} }
 
+\theoremstyle{definition}
+\newtheorem{definition}{Apibrėžimas}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Teiginys}[theorem]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Pavyzdys}
+
+
+
 \usepackage[
 	pdfusetitle,
 	bookmarks=true,
@@ -125,13 +136,13 @@ Vilnius 2025
 
 \section*{Įvadas\addcontentsline{toc}{section}{Įvadas}}
 
-%\input{sec/ivadas}
+%\input{sec/intro}
 %\clearpage{}
 
-\input{sec/rotGrp/intro}
+\input{sec/rotGrp/main}
 
 \section*{Išvados\addcontentsline{toc}{section}{Išvados}}
-%\input{sec/isvados}
+%\input{sec/conclusion}
 \clearpage{}
 
 \addcontentsline{toc}{section}{Literatūra}
@@ -154,7 +165,7 @@ Vilnius 2025
 \textbf{Summary}
 \par\end{center}
 
-Santrauką anglų kalba (,,Summary``)
+\input{sec/summary}
 
 
 \end{document}
