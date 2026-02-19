@@ -7,9 +7,11 @@
 \usepackage{indentfirst}
 \frenchspacing
 
-\usepackage{cite}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{Bibliography.bib}
 
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{unicode-math}
 \usepackage{physics}
@@ -23,8 +25,8 @@ inter-unit-product = \ensuremath{\cdot} }
 \theoremstyle{definition}
 \newtheorem{definition}{Apibrėžimas}[section]
 
-\theoremstyle{theorem}
-\newtheorem{theorem}{Teiginys}[theorem]
+\theoremstyle{plain}
+\newtheorem{preposition}{Teiginys}[section]
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Pavyzdys}
@@ -146,8 +148,7 @@ Vilnius 2025
 \clearpage{}
 
 \addcontentsline{toc}{section}{Literatūra}
-\bibliographystyle{BibStyle}
-\bibliography{Bibliography}
+\printbibliography
 
 \clearpage{}
 \begin{center}
