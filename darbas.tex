@@ -29,7 +29,7 @@ inter-unit-product = \ensuremath{\cdot} }
 \newtheorem{preposition}{Teiginys}[section]
 
 \theoremstyle{remark}
-\newtheorem*{remark}{Pavyzdys}
+\newtheorem*{example}{Pavyzdys}
 
 
 
@@ -65,10 +65,27 @@ inter-unit-product = \ensuremath{\cdot} }
 
 \begin{document}
 \newcommand{\set}[1]{ \mathbb{#1} }
-\newcommand{\spin}{ \mathup{Spin}(3) }
-\newcommand{\pinp}{ \mathup{Pin}^{+}(3) }
-\newcommand{\pinm}{ \mathup{Pin}^{-}(3) }
-\newcommand{\pinpm}{ \mathup{Pin}^\pm(3) }
+\newcommand{\vecSpace}[2]{
+	\texorpdfstring{ \mathbb{#1}^{#2} }{#1#2}
+}
+\newcommand{\spin}{
+	\texorpdfstring{ \mathup{Spin}(3) }{Spin(3)}
+}
+\newcommand{\pinp}{
+	\texorpdfstring{ \mathup{Pin}^{+}(3) }{Pin+(3)}
+}
+\newcommand{\pinm}{
+	\texorpdfstring{ \mathup{Pin}^{-}(3) }{Pin-(3)}
+}
+\newcommand{\pinpm}{
+	\texorpdfstring{ \mathup{Pin}^\pm(3) }{Pin+-(3)}
+}
+\newcommand{\Orth}[1]{
+	\texorpdfstring{ \mathup{O}(#1) }{O(#1)}
+}
+\newcommand{\SO}[1]{
+	\texorpdfstring{ \mathup{SO}(#1) }{SO(#1)}
+}
 
 \global\long\def\imath{\mathrm{i}}%
  
