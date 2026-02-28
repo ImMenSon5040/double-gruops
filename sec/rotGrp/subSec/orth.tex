@@ -2,15 +2,18 @@
 \subsection{Ortogonalių matricų grupė $\Orth3$}
 
 \begin{definition}
-	$\Orth3$ yra grupė sudaryta iš $3\times3$ matricų $R$ virš realiųjų skaičių, tokių kad,
-	lygybė $ (R \vb v, R \vb w) = (\vb v, \vb w) $
-	yra tenkinama su visais vektorias $\vb v$ ir $\vb w$.
+	Ortogonalių matricų grupė $\Orth3$ yra sudaryta iš $3\times3$ matricų
+	$R$ virš realiųjų skaičių, tokių kad, lygybė 
+	\begin{equation}
+		(R \vb v, R \vb w) = (\vb v, \vb w)
+	\end{equation}
+	yra tenkinama su visais vektoriais $\vb v$ ir $\vb w$.
 \end{definition}
 
-Ortogonaliomis matricomis jos yra vadinamos, nes bet kokie ortogonalūs vektoriai $\vb v$ ir $\vb w$
-yra atvaizduojami į ortogonalius vektoriai atvaizduojami į ortogonalius vektorius $R\vb v$ ir $R\vb w$.
-Šios matricos taip pat pasižymi tuo ,kad matricą $R$ sudauginus su savo transponuotą $R^t$ rezultatas
-yra vienetinę matricą $I$, tai
+Ortogonaliomis matricomis jos yra vadinamos, nes bet kokie ortogonalūs
+vektoriai $\vb v$ ir $\vb w$ yra atvaizduojami į ortogonalius vektorius 
+$R\vb v$ ir $R\vb w$. Šios matricos taip pat pasižymi tuo, kad matricą $R$ sudauginus
+su savo transponuotą $R^t$ rezultatas yra vienetinę matricą $I$, tai
 \begin{equation}
 	\begin{split}
 		\det(RR^t) = \det(I)
@@ -20,10 +23,10 @@ yra vienetinę matricą $I$, tai
 		\det(R) = \pm 1
 	\end{split}
 \end{equation}
-Determinanto funkcija gerbia matricų daugybą todėl tai yra 
-grupės homomorfizmas iš $\Orth3$ į $\qty{1,-1}$. To pasekoje $\Orth3$
-Yra padalijama į dvi dalis: teisingus sukimus (\textit{ang.} proper rotations), kuriems $\det(R) = 1$,
-ir neteisingus sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
+Determinantas gerbia matricų daugybą todėl tai yra grupės homomorfizmas
+iš $\Orth3$ į $\qty{1,-1}$. To pasekoje $\Orth3$ Yra padalijama į dvi dalis:
+teisingus sukimus (\textit{ang.} proper rotations), kuriems $\det(R) = 1$, ir
+neteisingus sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
 \begin{example}
 	\leavevmode
 	\begin{itemize}
@@ -47,19 +50,21 @@ ir neteisingus sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1
 			-1 &    &   \\
 			   & -1 &   \\
 			   &    & -1
-			)$ yra neteisingo sukimo matrica, kuri vadinama inversijos transformacija
-			ir ji vektorių siunčia į savo minusą.
+			)$ yra neteisingo sukimo matrica, kuri vadinama
+			inversijos transformacija ir ji vektorių siunčia į savo
+			minusą.
 	\end{itemize}
 \end{example}
-Teisingus sukimus galime realizuoti keip tolydų objekto pasukima. Neteisingi pasukimai visata turės
-savyje atspinďžio arba inversijos veiksmą, todėl jų neimanoma pasiekti tolydžiu pasukimu.
-Pasukimai be atspindžio ar inversijos sudaro $\Orth3$ pogrupį vadinamą $\SO3$.
+Teisingus sukimus galime realizuoti kaip tolydų objekto pasukimą. Neteisingi
+pasukimai visata turės savyje atspindžio arba inversijos veiksmą, todėl jų
+neįmanoma pasiekti tolydžiu pasukimu. Pasukimai be atspindžio ar inversijos
+sudaro $\Orth3$ pogrupį vadinamą $\SO3$.
 \begin{definition}
-	Specialioji ortogonalių maricų grupė žymima $\SO3$ 
-	ir yra sudaryta iš $3\times3$ matricų $R$ virš realiųjų skaičių, tokių kad,
+	Specialioji ortogonalių matricų grupė žymima $\SO3$ ir yra sudaryta iš
+	$3\times3$ matricų $R$ virš realiųjų skaičių, tokių kad,
 	\begin{itemize}
 		\item lygybė $(R \vb v, R \vb w) = (\vb v, \vb w)$ yra
-			tenkinama su visais vektorias $\vb v$ ir $\vb w$
+			tenkinama su visais vektoriais $\vb v$ ir $\vb w$
 		\item ir $\det(R) = 1$.
 	\end{itemize}
 \end{definition}
@@ -73,10 +78,12 @@ Pasukimai be atspindžio ar inversijos sudaro $\Orth3$ pogrupį vadinamą $\SO3$
 			-1 &    &   \\
 			   & -1 &   \\
 			   &    & -1
-	)$ ir $PR' \in \SO3$, nes $\det(PR')=\det(P)\det(R')=(-1)(-1)=1$.
-	Kiekvieną $\Orth3$ elementą, kuris neprikauso $\SO3$ galima išskaidyti į $PR$,
-	kur $R \in \SO3$.
-	Tada izomorphismas yra duodamas funkcijos
+	)$ ir $PR' \in \SO3$, nes 
+	\begin{equation}
+		\det(PR')=\det(P)\det(R')=(-1)(-1)=1 \,.
+	\end{equation}
+	Kiekvieną $\Orth3$ elementą, kuris nepriklauso $\SO3$ galima išskaidyti
+	į $PR$, kur $R \in \SO3$. Tada izomorfizmas yra duodamas funkcijos
 	\begin{equation}
 		\begin{split}
 			f: \SO3 \times \qty{1,-1} &\to \Orth3\,,\\
@@ -84,12 +91,16 @@ Pasukimai be atspindžio ar inversijos sudaro $\Orth3$ pogrupį vadinamą $\SO3$
 			(R,-1) &\mapsto PR \,.
 		\end{split}
 	\end{equation}
+	Unikalus išskaidymas garantuoja, kad $f^{-1}$ egzistuoja. Kad įrodyti
+	kad $f$ tikrai yra izomorfizmas užtenka parodyti, kad $f$ išlaiko grupės
+	struktūrą dauginant teisingus sukimus, teisingą sukimą su neteisingu ir
+	dauginant du neteisingus sukimus.
 	\begin{equation}
 		\begin{split}
 			f((R_1,1))f((R_2,1))
 			&= R_1 R_2 \\
 			&= f((R_1 R_2,1)) \\
-			&= f((R_1,1)(R_2,1))
+			&= f((R_1,1)(R_2,1)) \,,
 		\end{split}
 	\end{equation}
 	\begin{equation}
@@ -98,20 +109,22 @@ Pasukimai be atspindžio ar inversijos sudaro $\Orth3$ pogrupį vadinamą $\SO3$
 			&= R_1 P R_2 \\
 			&= P R_1 R_2 \\
 			&= f((R_1 R_2,-1)) \\
-			&= f((R_1,1)(R_2,-1)) \\
+			&= f((R_1,1)(R_2,-1)) \,,
 		\end{split}
 	\end{equation}
 	\begin{equation}
 		\begin{split}
-			f((R_1,-1))f((R_2,-1)) \\
+			f((R_1,-1))f((R_2,-1))
 			&= P R_1 P R_2 \\
 			&= P^2 R_1 R_2 \\
 			&= R_1 R_2 \\
 			&= f((R_1 R_2,1)) \\
-			&= f((R_1,-1)(R_2,-1)) \\
+			&= f((R_1,-1)(R_2,-1)) \,.
 		\end{split}
 	\end{equation}
-	$P$ komutuoja su visomis matricomis $R$, tad 
+	Čia pasinaudojome faktu kad $PR=RP$ su visais $R \in \SO3$ ir $P^2=I$. 
+	Egzistuoja izomorfizmas $f$, tad $\Orth3$ ir $\SO3 \times \qty{1,-1}$
+	yra izomorfiškos grupės.
 \end{proof}
 
 
