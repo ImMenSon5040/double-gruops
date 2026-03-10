@@ -2,11 +2,76 @@
 \subsection{Clifordo algebros}
 
 
-Norint apibėžti grupes $\spin$ ir $\pinpm$, prima reikia pasakyti kas yra Clifordo algebros
-$\mathup{Cl}^+(3)$ ir $\mathup{Cl}^-(3)$. Šios algebros gaunamos iš vektorinės erdvės $\mathup V = \set{R}^3$.
-Tegul $\mathup{T(V)}$ būna erdės $\mathup V$ vienetinė tenzorinė algebra. Jos elementai yra vektorių $v_i \in \mathup V$ tenzorinės
-sandaugos $v_1 \otimes v_2 \otimes \dots \otimes v_n$. $\mathup{T(V)}$ algebros idealas $\mathup I^+$ yra generuojamas
-sąryšio
+Toliau nagrinėsime nagrinėsime dvi Clifordo algebras $\mathup{Cl}^+(3)$ ir
+$\mathup{Cl}^-(3)$. Tai yra vectorinės erdvės su papildoma bitiesine daugybos
+operacija, kuri leidžia sudauginti du algebros vektorius ir gauti naują
+vektorių algebroje. Šias algebras apibrėšime pirma paimdami daug bendresnę
+tenzorinę algebrą ir tada jai sutekdami norimą struktūrą.
+
+\begin{definition}
+	Vienetinė tenzorinė algebra $T(\set R^3)$ yra tiesioginė suma
+	\begin{equation}
+		T(\mathbb{R}^3) 
+		=
+		\bigoplus_{k=0}^{\infty} T^k
+		=
+		\mathbb{R} 
+		\oplus \set R^3 
+		\oplus (\set R^3 \otimes \set R^3) 
+		\oplus (\set R^3 \otimes \set R^3 \otimes \set R^3) 
+		\oplus \dots
+		\,,
+	\end{equation}
+	$T^k$ čia yra vektorinės erdvės $T^0 = \set R$\: ,\: $T^1=\set R^3$\: ,\: $T^2=\set R^3 \otimes \set R^3$\: ,\:
+	$T^3=\set R^3 \otimes \set R^3 \otimes \set R^3$
+	ir taip toliau. Algebros daugyba yra duodama vektorių tenzorinės sandaugos.
+	Vienetinis tenzorinės algebros elementas yra žymimas $\mathbb 1$\:.
+\end{definition}
+Kitaip paskius tai yra algebra, kurios vektoriai yra ivairių ilgiu tenzorinių
+sandaugos $\vb v_1 \otimes \vb v_2 \otimes \dots \otimes \vb v_n$\:,\: $\vb v_i \in \set R^3$
+ir tokių sandaugų sumos.
+\begin{example}
+	Vektorius $3\cdot\mathbb 1 + \vb v$ priklauso $T(\set R^3)$ ir yra suma vektorių iš $T^0$ ir $T^1$.
+	Vektorius $2\vb w + \vb v \otimes \vb w$ yra suma vektorių iš $T^1$ ir $T^2$.
+	Jų sandauga tenzorinėje algebroje yra
+	\begin{equation}
+		\begin{split}
+			\qty(3\cdot\mathbb 1 + \vb v)
+			\otimes
+			\qty(2\vb w + \vb v \otimes \vb w)
+			=&
+			3\cdot\mathbb 1 \otimes 2\vb w
+			+ 3\cdot\mathbb 1 \otimes \vb v \otimes \vb w
+			+ \vb v \otimes 2\vb w
+			+ \vb v \otimes \vb v \otimes \vb w
+			\\=&
+			3\cdot2\qty(\mathbb 1 \otimes \vb w)
+			+ 3\qty(\mathbb 1 \otimes \vb v \otimes \vb w)
+			+ 2(\vb v \otimes \vb w)
+			+ \qty(\vb v \otimes \vb v \otimes \vb w)
+			\\=&
+			6 \vb w
+			+ 3\qty(\vb v \otimes \vb w)
+			+ 2(\vb v \otimes \vb w)
+			+ \qty(\vb v \otimes \vb v \otimes \vb w)
+			\\=&
+			6 \vb w
+			+ 5\qty(\vb v \otimes \vb w)
+			+ \qty(\vb v \otimes \vb v \otimes \vb w)
+			\,,
+		\end{split}
+	\end{equation}
+	čia pirmoje eilutėje pasinaudojome tuo kad tenzorinės sandauga
+	distributyvi; antroje eilutėje naudojames tuo kad tenzorinė sandauga
+	tiesiška kiekvieno dauginamo vektoriaus atžvilgiu, kad iškeltųme 
+	skaliarinius daugiklius; trečioje eilutėje sudedame tiesiškai
+	priklausomus vektorius.
+	Gautas vektorius yra suma vektorių iš $T^1$, $T^2$ ir $T^3$.
+\end{example}
+
+
+Dabar $T(\set R^3)$ suteiksime papildomą strutūrą, kad algebroje
+$\mathup{Cl}^+(3)$ būtų tenkinamas sąryšis
 \begin{equation}
 	\vb v \otimes \vb w
 	+
@@ -14,36 +79,9 @@ sąryšio
 	=
 	2(\vb v , \vb w) \mathbb 1
 	\quad ,
-	\label{eq:cl-plus}
+	\label{eq:cl+}
 \end{equation}
-čia $(\cdot,\cdot)$ yra įprasta $\set R ^3$ skaliarinė sandauga ir $\mathbb 1$ yra algebros $\mathup{T(V)}$
-vienetinis elementas, kurį neformaliai galimą suprasti kaip "nulio vektorių tezorinę sandaugą".
-Jei pažymime $S \subset \mathup{T(V)}$
-\begin{equation}
-	S = \qty{
-		\vb v \otimes \vb w
-		+
-		\vb w \otimes \vb v
-		-
-		2(\vb v , \vb w) \mathbb 1
-		\mid
-		\vb v, \vb w \in \mathup{T(V)}
-	}
-\end{equation}
-\begin{equation}
-	I^+ = \qty{
-		\sum_{\substack{
-			s \in S \\ 
-			a,b \in \mathup{T(V)} 
-		}}
-		a \otimes s \otimes b
-	}
-	\quad .
-\end{equation}
-Tada Clifordo algebra $\mathup{Cl^+(V)}$ apibėžiame kaip faktorimę algebrą $\mathup{T(V)/I^+}$.
-Jos elementai yra šoninės klasės $a + \mathup I^+ = {a + i \mid i \in \mathup I^+}$, čia $a$
-yra šoninę klasę atstovaujantis elementas iš $\mathup{T(V)}$. Clifordo algebra $\mathup{Cl^-(V)}$
-apibrėžiama analogiškai, tik $\mathup I^+$ pakeičiamas idealą $\mathup I^-$, generuojamą iš sąryšio
+o algebroje $\mathup{Cl}^+(3)$ tenkinamas sąryšis
 \begin{equation}
 	\vb v \otimes \vb w
 	+
@@ -51,15 +89,145 @@ apibrėžiama analogiškai, tik $\mathup I^+$ pakeičiamas idealą $\mathup I^-$
 	=
 	- 2(\vb v , \vb w) \mathbb 1
 	\quad .
-	\label{eq:cl-minus}
+	\label{eq:cl-}
+\end{equation}
+Šiuos sąryšius ,,užkoduojame'' į aibes $S^\pm \subset T(\set R^3)$
+\begin{equation}
+	\begin{split}
+		S^+ = \qty{
+			\vb v \otimes \vb w
+			+
+			\vb w \otimes \vb v
+			-
+			2(\vb v , \vb w) \mathbb 1
+			\mid
+			\vb v, \vb w \in \set R^3
+		}
+		\\
+		S^- = \qty{
+			\vb v \otimes \vb w
+			+
+			\vb w \otimes \vb v
+			+
+			2(\vb v , \vb w) \mathbb 1
+			\mid
+			\vb v, \vb w \in \set R^3
+		}\,.
+	\end{split}
+\end{equation}
+Užrašome tenzorinės algebros poalgebrius $I^\pm \subset T(\set R^3)$,
+gauamus iš visų vektorių, kurie turi bent vieną daugiklį iš $S^\pm$
+\begin{equation}
+	I^+ = \qty{
+		\sum_{\substack{
+			s \in S^\pm \\ 
+			a,b \in \mathup{T(V)} 
+		}}
+		a \otimes s \otimes b
+	}
+	\quad .
+\end{equation}
+Šie poalbebriai papildomai tenkina savybę, kad betkokiem $a \in T(\set R^3)$
+ir $d \in I^\pm$, $a\otimes d, d \otimes a \in I^\pm$. Poalgebris
+tenkinantis šia savybę yra vadinamas algebros idealu.
+Literatūroje šią konstrukciją yra įprasta pateikti sakiniu:
+,,$I^\pm$ yra algebros $T(\set R^3)$ idealas genaruojams 
+sąryšio (\ref{eq:cl+}) ar atitinkamai (\ref{eq:cl-})''.
+
+\begin{definition}
+	Algebra $\mathup{Cl}^+(3)$ yra faktorinė algebra $T(\set R^3)/I^+$
+	ir algebra $\mathup{Cl}^-(3)$ yra faktorinė algebra $T(\set R^3)/I^-$.
+\end{definition}
+Faktorinės algebros elementai yra šoninės klasės sudarytos iš elementų,
+kuriuos galime gauti vieną iš kito pridedant vektorių iš idealo.
+\begin{example}
+	$2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w + I^+$ yra šoninė klasė,
+	kuri yra vektorius algebroje $\mathup{Cl}^+(3)$. 
+	$2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w$ 
+	yra šoninės klasės atstovas, o ,,$+ I^+$'' žymi
+	kad šiai klasei taip pat prikauso visi vectoriai gaunami prie
+	klasės atstovo pridėjus vektorių iš $I^+$.
+	Tai mums leidžia atlikti skaičiavimus kaip
+	\begin{equation}
+		\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w + I^+
+		= 
+		\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w 
+		+ \qty(
+			\vb v \otimes \vb w + \vb w \otimes \vb v 
+			- 2\vb{(v,w)}\mathbb 1
+		) 
+		+ I^+
+		=
+		\vb w \otimes \vb v + I^+
+		\,,
+	\end{equation}
+	čia pasinaudojome tuo kad 
+	$\qty( \vb v \otimes \vb w + \vb w \otimes \vb v - 2\vb{(v,w)}\mathbb 1) \in I^+$.
+	Pavyko parodyti, kad $2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w$ 
+	ir $\vb w \otimes \vb v$ atstovaują tą pačią klasę.
+\end{example}
+
+\begin{example}
+	Tegul $a,b \in T(\set R^3)$ ir
+	\begin{equation}
+		a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+	\end{equation}
+	yra šoninė klasė, kuri yra vektorius iš $\mathup{Cl}^-(3)$.
+	Šią išraišką supapranstiname atlidami veiksmus
+	\begin{equation}
+		\begin{split}
+			a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+			=&
+			a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b 
+			- a \otimes \qty(\vb{v \otimes w + v \otimes w}+2\vb{(v,w)} \mathbb 1)  \otimes b 
+			+ I^-
+			\\=&
+			a \otimes \qty(
+				\vb{(v \otimes w + v \otimes w)}
+				-\qty(\vb{v \otimes w + v \otimes w}
+				-2\vb{(v,w)} \mathbb 1) 
+			)\otimes b 
+			+ I^-
+			\\=&
+			a \otimes \qty(
+				-2\vb{(v,w)} \mathbb 1 
+			)\otimes b 
+			+ I^-
+			\\=&
+			-2\vb{(v,w)} \qty(a \otimes \mathbb 1 \otimes b)
+			+ I^-
+			\\=&
+			-2\vb{(v,w)} \qty(a \otimes b)
+			+ I^-
+			\,.
+		\end{split}
+	\end{equation}
+	Parodėme, kad sudarius faktorinę algebrą $\mathbb{Cl}^-(3)$,
+	galime jos viduje taikyti sąryšį (\ref{eq:cl-})
+	manipuliuojant šoninės klasės atstovus.
+\end{example}
+Toliau primame sutrumpintą žymėjimą, nes išreikštai
+su šoninėmis klasėmis nebedirbsime. Užrašysime tik
+kalsės atstovą, o kad išraiška skirtūsi nuo 
+vektorių tenzorinės sandaugos vietoje ženklo ,,$\otimes$''
+tiesiog rašysime vektorius vieną šalia kito.
+Vietoje
+\begin{equation}
+	a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+	=
+	-2\vb{(v,w)} \qty(a \otimes b) + I^-
+\end{equation}
+rašysime
+\begin{equation}
+	a \vb{(v w + v w)} b
+	=
+	-2\vb{(v,w)} a b
+	\,.
 \end{equation}
 
+\begin{preposition}
 
-Kaip galima suprasti tokią konstrukciją? Algebra $\mathup{Cl^\pm(V)}$ yra tenzorinė algebra $\mathup{T(V)}$
-kuri "užmiršo" kaip atskirti $\vb v \vb w + \vb w \vb v$ ir $\pm2(\vb v, \vb w) \mathbb 1$,
-čia ir toliau nebenaudojame tenzorinės sandaugos simbolio $\otimes$, kad atskirti sandaugą Clifordo algebroje
-nuo bendros tenzorinės sandaugos.
-Šis užmiršimas leidžia savybes (\ref{eq:cl-plus}) ir (\ref{eq:cl-minus}) naudoti supaprastinant išraiškas kaip
+\end{preposition}
 \begin{equation}
 \vb v \vb v 
 = \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
