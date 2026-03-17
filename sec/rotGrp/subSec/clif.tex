@@ -134,114 +134,109 @@ Literatūroje šią konstrukciją yra įprasta pateikti sakiniu:
 sąryšio (\ref{eq:cl+}) ar atitinkamai (\ref{eq:cl-})''.
 
 Duotam vektoriui $a \in T(\set R^3)$ aibė
-$\qty{a+d \mid d \in I^\pm}$
+$\qty{a+d \mid d \in I^\pm}$ (dar žymima $a+I^\pm$)
 vadinama šonine klase, o vektorius $a$ vadinamas klasės atstovu.
+Dviejų šoninių klasių $a+I^\pm$ ir $b + I^\pm$ sandauga yra šoninė
+klasė, kuriai priklauso atstovų sandauga algebroje $a \otimes b$.
+Ši sandauga nepriklauso nuo pasirinktų klasės atstovų, nes
+\begin{equation}
+	(a+I^\pm)\otimes(b+I^\pm)
+	=
+	a \otimes b
+	+ a \otimes I^\pm
+	+ I^\pm \otimes b
+	+ I^\pm \otimes I^\pm
+	=
+	a \otimes b + I^\pm
+	\,.
+\end{equation}
+Sumos nariai $
+a \otimes I^\pm
+= I^\pm \otimes b
+= I^\pm \otimes I^\pm
+= I^\pm
+$, nes $I^\pm$ yra algebros $T(\set R^3)$ idealas.
+Tai tikrai
+\begin{equation}
+	(a+I^\pm)\otimes(b+I^\pm)
+	=
+	a \otimes b + I^\pm
+	\,.
+\end{equation}
+
 
 
 \begin{definition}
-	Algebra $\mathup{Cl}^+(3)$ yra faktorinė algebra $T(\set R^3)/I^+$
-	ir algebra $\mathup{Cl}^-(3)$ yra faktorinė algebra $T(\set R^3)/I^-$.
+	Algebra $\mathup{Cl}^\pm(3)$ yra faktorinė algebra $T(\set R^3)/I^\pm$,
+	kurios elementai yra šoninės klasės $a+I^\pm$, $a \in T(\set R^3)$
+	ir jų sandauga yra $(a+I^\pm)\otimes(b+I^\pm)=a\otimes b + I^\pm.$
 \end{definition}
-Faktorinės algebros elementai yra šoninės klasės sudarytos iš elementų,
-kuriuos galime gauti vieną iš kito pridedant vektorių iš idealo.
+
 \begin{example}
-	$2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w + I^+$ yra šoninė klasė,
+	$\vb w \otimes \vb v +\vb v \otimes \vb w + I^+$ 
+	yra šoninė klasė,
 	kuri yra vektorius algebroje $\mathup{Cl}^+(3)$. 
-	$2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w$ 
-	yra šoninės klasės atstovas, o ,,$+ I^+$'' žymi
-	kad šiai klasei taip pat prikauso visi vectoriai gaunami prie
-	klasės atstovo pridėjus vektorių iš $I^+$.
-	Tai mums leidžia atlikti skaičiavimus kaip
+	Suparastiname išraišką
 	\begin{equation}
-		\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w + I^+
+		\vb w \otimes \vb v +\vb v \otimes \vb w + I^+
 		= 
-		\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w 
-		+ \qty(
+		\vb w \otimes \vb v +\vb v \otimes \vb w 
+		- \qty(
 			\vb v \otimes \vb w + \vb w \otimes \vb v 
 			- 2\vb{(v,w)}\mathbb 1
 		) 
 		+ I^+
 		=
-		\vb w \otimes \vb v + I^+
+		2\vb{(v,w)}\mathbb 1 + I^+
 		\,,
 	\end{equation}
 	čia pasinaudojome tuo kad 
 	$\qty( \vb v \otimes \vb w + \vb w \otimes \vb v - 2\vb{(v,w)}\mathbb 1) \in I^+$.
-	Pavyko parodyti, kad $2\vb{(v,w)} \mathbb 1 - \vb v \otimes \vb w$ 
-	ir $\vb w \otimes \vb v$ atstovaują tą pačią klasę.
+	Pavyko parodyti, kad $\vb w \otimes \vb v + \vb v \otimes \vb w$ 
+	ir $2\vb{(v,w)} \mathbb 1$ atstovauja tą pačią klasę.
 \end{example}
 
 \begin{example}
 	Tegul $a,b \in T(\set R^3)$ ir
 	$
-		a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+		a \otimes \vb{(v \otimes w + 2\vb{(v,w)}\mathbb 1)} \otimes b + I^-
 	$
 	yra šoninė klasė, kuri yra vektorius iš $\mathup{Cl}^-(3)$.
 	Šią išraišką supapranstiname atlidami veiksmus
 	\begin{equation}
 		\begin{split}
-			a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+			a \otimes (\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1) \otimes b + I^-
 			=&
-			a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b 
-			- a \otimes \qty(\vb{v \otimes w + v \otimes w}+2\vb{(v,w)} \mathbb 1)  \otimes b 
+			a \otimes (\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1) \otimes b 
+			- a \otimes \qty(\vb{v \otimes w + w \otimes v}+2\vb{(v,w)} \mathbb 1)  \otimes b 
 			+ I^-
 			\\=&
 			a \otimes \qty(
-				\vb{(v \otimes w + v \otimes w)}
-				-\qty(\vb{v \otimes w + v \otimes w}
+				\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1
+				- \vb v \otimes \vb w - \vb w \otimes \vb v
 				-2\vb{(v,w)} \mathbb 1) 
 			)\otimes b 
 			+ I^-
 			\\=&
 			a \otimes \qty(
-				-2\vb{(v,w)} \mathbb 1 
+				- \vb w \otimes \vb v 
 			)\otimes b 
 			+ I^-
 			\\=&
-			-2\vb{(v,w)} \qty(a \otimes \mathbb 1 \otimes b)
-			+ I^-
-			\\=&
-			-2\vb{(v,w)} \qty(a \otimes b)
+			- a \otimes 
+				\vb w \otimes \vb v 
+			\otimes b 
 			+ I^-
 			\,.
 		\end{split}
 	\end{equation}
-	Parodėme, kad sudarius faktorinę algebrą $\mathbb{Cl}^-(3)$,
+	Parodėme, kad sudarius faktorinę algebrą $\mathup{Cl}^-(3)$,
 	galime jos viduje taikyti sąryšį (\ref{eq:cl-})
 	manipuliuojant šoninės klasės atstovus.
 \end{example}
-\begin{example}
-	Tegul $a$ ir $b$ yra šoninių klasių atstovai iš
-	$\mathup{Cl}^\pm(3)$.
-	Jų sandauga algebroje yra
-	\begin{equation}
-		(a+I^\pm)\otimes(b+I^\pm)
-		=
-		a \otimes b
-		+ a \otimes I^\pm
-		+ I^\pm \otimes b
-		+ I^\pm \otimes I^\pm
-		=
-		a \otimes b + I^\pm
-		\,.
-	\end{equation}
-	Sumos nariai $
-		a \otimes I^\pm
-		= I^\pm \otimes b
-		= I^\pm \otimes I^\pm
-		= I^\pm
-	$, nes $I^\pm$ yra algebros $T(\set R^3)$ idealas.
-	Tai
-	\begin{equation}
-		(a+I^\pm)\otimes(b+I^\pm)
-		=
-		a \otimes b + I^\pm
-		\,.
-	\end{equation}
-\end{example}
 Toliau priimame sutrumpintą žymėjimą, nes išreikštai
 su šoninėmis klasėmis nebedirbsime. Užrašysime tik
-kalsės atstovą, o kad išraiška skirtūsi nuo 
+klasės atstovą, o kad išraiška skirtūsi nuo 
 vektorių tenzorinės sandaugos vietoje ženklo ,,$\otimes$''
 tiesiog rašysime vektorius vieną šalia kito.
 Vietoje
@@ -260,6 +255,7 @@ rašysime
 
 Štai kelios svarbios tapatybės
 \begin{preposition}
+	Algebrose $\mathup{Cl}^\pm(3)$ 
 	\begin{equation}
 		\vb v \vb v 
 		= \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
@@ -285,15 +281,15 @@ rašysime
 		\vb v \vb w \vb v 
 		= \qty( - 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
 		= -2\vb{(v,w)} \vb v - \vb{wvv} 
-		=  -2\vb{(v,w)} \vb v + \vb{(v,v)}\vb w 
+		= -2\vb{(v,w)} \vb v + \vb{(v,v)}\vb w 
 		\,.
 	\end{equation}
 \end{preposition}
 
-Atkreipiame dėmesį, kad kai $(v,v)=1$,
+Atkreipiame dėmesį, kad kai $\vb{(v,v)}=1$,
 $\vb{(v,w)v}$ yra vektoriaus $\vb w$ projekcija į $\vb v$
-ir $-2\v{(v,w)v} + \vb w$ yra vektoriaus atspindys
-per plokštumą statmeną vektoriui $\vb v$.
+ir $-2\vb{(v,w)v} + \vb w$ yra vektoriaus atspindys
+per plokštumą statmeną vektoriui $\vb v$. 
 
 Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė. Bazinius vektorius galime perketi
 į algebra $\mathup{Cl^\pm(V)}$, kur jie turi tenkinti
@@ -303,6 +299,7 @@ Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė. Bazinius
 		\vb e_i \vb e_i &= \pm \mathbb 1
 		\quad .
 	\end{split}
+	\label{eq:base-relations}
 \end{equation}
 Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti, kaip
 tiesinę kombinaciją aštuonių elementų:
@@ -314,14 +311,9 @@ tiesinę kombinaciją aštuonių elementų:
 \end{equation}
 nes su pirma taisykle betkurį tenzorinės algebros bazės elementą galima išrikiuoti taip kad
 ortų indeksai būtų surašyti didėjimo tvarka ir su antra taisykle pasikartojantys ortai panaikinami.
-Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros. Algebros elemento norma $\abs{v}$ yra
-abibrėžiama, taip pat kaip vektoriaus ilgis
-\begin{equation}
-	\abs{v} = \sqrt{ \sum_{I \subset {1,2,3}} {v_I}^2 }
-	\quad ,
-\end{equation}
-čia summa eina per visus indeksų poaibius, kurie atitinka bazinius algebgros elementus.
-Bendresniu atvėju $\mathup{dim}\qty[\mathup{Cl}^\pm\qty(\set R^n)] = 2^n$.
+Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
+
+
 
 Apibrėžiame "transponuotą elementą" apibėždami kaip transponavimas veikia ant algebros bazės
 \begin{equation}
