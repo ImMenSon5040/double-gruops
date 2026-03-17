@@ -1,5 +1,6 @@
 
  - [ ] big groups
+    - [x] O(3) ir SO(3) deffinitios
     - [x] Clifford algebra Cl+(3) and Cl-(3)
     - [ ] Pin+(3) and Pin-(3) groups
     - [ ] Spin(3) group
