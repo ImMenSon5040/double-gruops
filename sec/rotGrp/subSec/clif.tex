@@ -291,8 +291,9 @@ $\vb{(v,w)v}$ yra vektoriaus $\vb w$ projekcija į $\vb v$
 ir $-2\vb{(v,w)v} + \vb w$ yra vektoriaus atspindys
 per plokštumą statmeną vektoriui $\vb v$. 
 
-Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė. Bazinius vektorius galime perketi
-į algebra $\mathup{Cl^\pm(V)}$, kur jie turi tenkinti
+Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė.
+Bazinius vektorius galime perketi į algebra $\mathup{Cl^\pm(V)}$,
+kur jie turi tenkinti
 \begin{equation}
 	\begin{split}
 		\vb e_i \vb e_j &= - \vb e_j \vb e_i \ , \ i \neq j \\
@@ -301,12 +302,12 @@ Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė. Bazinius
 	\end{split}
 	\label{eq:base-relations}
 \end{equation}
-Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti, kaip
-tiesinę kombinaciją aštuonių elementų:
+Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti,
+kaip tiesinę kombinaciją aštuonių elementų:
 \begin{equation}
 		\mathbb 1 ,\,
 		\vb e_1 ,\, \vb e_2 ,\, \vb e_3 ,\, 
-		\vb e_2 \vb e_3 ,\, \vb e_1 \vb e_3 ,\, \vb e_1 \vb e_2 ,\,
+		\vb e_2 \vb e_3 ,\, \vb e_3 \vb e_1 ,\, \vb e_1 \vb e_2 ,\,
 		\vb e_1 \vb e_2 \vb e_3 ,
 \end{equation}
 nes su pirma taisykle betkurį tenzorinės algebros bazės elementą galima išrikiuoti taip kad
@@ -314,32 +315,134 @@ ortų indeksai būtų surašyti didėjimo tvarka ir su antra taisykle pasikartoj
 Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 
 
+\begin{definition}
+	Transponuota $\mathup{Cl}^\pm(3)$ bazė yra 
+	\begin{equation}
+		\qty(\vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )^t
+		:=
+		\vb e_{i_k} \vb e_{i_{k-1}} \dots \vb e_{i_1}
+		=
+		(-1)^{k-1} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
+	\end{equation}
+	ir trasponavimo operacija yra tiesiškai praplečiama
+	bet kuriam algebros $\mathup{Cl}^\pm(3)$ vektoriui, veikimu ant bazės.
+	Transponavimas yra algebros anti-homomorfizmas,
+	tai reiškia, kad betkuriems algebros elementams $a$ ir $b$ galioja
+	\begin{equation}
+		(a b)^t = b^t a^t
+		\,.
+	\end{equation}
+\end{definition}
 
-Apibrėžiame "transponuotą elementą" apibėždami kaip transponavimas veikia ant algebros bazės
-\begin{equation}
-	\qty(\vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )^t
-	=
-	\vb e_{i_k} \vb e_{i_{k-1}} \dots \vb e_{i_1}
-	=
-	(-1)^{k-1} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
-	\quad .
-\end{equation}
-Transpozicija yra algebros anti-homomorfizmas, tai reiškia, kad betkuriems algebros elementams $v$ ir $w$ galioja
-\begin{equation}
-	(v w)^t = w^t v^t
-	\quad .
-\end{equation}
 
+\begin{definition}
+	Apibrėžiame algebros homomorfizmo $\alpha$ veikimą ant bazės
+	\begin{equation}
+		\alpha( \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )
+		:=
+		(-1)^{k} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
+		\,.
+	\end{equation}
+	Tiesiškai $\alpha$ veikimą išplėčiame ant visos algebros $\mathup{Cl}^\pm(3)$,
+	homomorfizmo veikimu ant bazės.
+\end{definition}
 
-Taip pat veikimu ant bazės apibrėžiame algebros homomorfizmą
+ Pažymime algebros poerdvius
 \begin{equation}
-	\alpha( \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )
-	= 
-	(-1)^{k} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
-	\quad ,
+	\begin{split}
+		A_0 &:= \qty{
+			v \in \mathup{Cl}^\pm(3) \mid \alpha(v)=v
+		}
+		\,,
+		\\
+		A_1 &:= \qty{
+			v \in \mathup{Cl}^\pm(3) \mid \alpha(v)=-v
+		}
+		\,.
+	\end{split}
 \end{equation}
-jis algebros elemento komponentes prie lyginio ortų skaičiau siunčia į savo minusą, o
-komponentčių prie nelyginio skaičiaus nepakeičia.
+Susiejant su erdvės baze šiuos poerdvius galima užrašyti kaip
+tiesinį apvalką pasirinkų bazės elementų
+\begin{equation}
+	\begin{split}
+		A_0 &= \mathup{span}\qty(
+			\mathbb 1,\,
+			\vb{e_2 e_3},\,
+			\vb{e_3 e_1},\,
+			\vb{e_1 e_2}
+		)
+		\,,
+		\\
+		A_0 &= \mathup{span}\qty(
+			\vb e_1 ,\,
+			\vb e_2 ,\,
+			\vb e_3 ,\,
+			\vb{e_1 e_2 e_3}
+		)
+		\,.
+	\end{split}
+\end{equation}
+\begin{example}
+	Tegul $v_0, v'_0 \in A_0$ ir $v_1, v'_1 \in A_1$. Turime
+	\begin{equation}
+		\begin{split}
+			\alpha(v_0 v'_0)
+			= \alpha(v_0)\alpha(v'_0)
+			= v_0 v'_0
+			\implies &
+			v_0 v'_0 \in A_0
+			\,,
+			\\
+			\alpha(v_0 v_1)
+			= \alpha(v_0)\alpha(v_1)
+			= v_0 (-v_1)
+			= - v_0 v_1
+			\implies &
+			v_0 v_1 \in A_1
+			\,,
+			\\
+			\alpha(v_1 v_0)
+			= \alpha(v_1)\alpha(v_0)
+			= (- v_1)v_0
+			= - v_1 v_0
+			\implies &
+			v_1 v_0 \in A_1
+			\,,
+			\\
+			\alpha(v_1 v'_1)
+			= \alpha(v_1)\alpha(v'_1)
+			= (- v_1)(- v'_1)
+			= v_1 v'_1
+			\implies &
+			v_1 v'_1 \in A_0
+			\,.
+		\end{split}
+	\end{equation}
+	Taip yra tokia pati struktūra kaip $\set Z_2$ su sudetimi
+	\begin{equation}
+		\begin{split}
+			\mathbf{lyginis} + \mathbf{lyginis} &= \mathbf{lyginis}
+			\,,
+			\\
+			\mathbf{lyginis} + \mathbf{nelyginis} &= \mathbf{nelyginis}
+			\,,
+			\\
+			\mathbf{nelyginis} + \mathbf{lyginis} &= \mathbf{nelyginis}
+			\,,
+			\\
+			\mathbf{nelyginis} + \mathbf{nelyginis} &= \mathbf{lyginis}
+			\,.
+		\end{split}
+	\end{equation}
+\end{example}
+Dėl tokios daugybos struktūros vektoriai edvėje $A_0$ yra vadinami \emph lyginiais,
+o vektoriai erdvėje $A_1$ yra vadinami \emph nelyginiais.
+Pamatome, kad homomorfizmas $\alpha$ 
+leidžia algebrą $\mathup{Cl}^\pm(3)$ suskaidyti 
+į lyginio ir nelyginio poerdvių tiesioginę sumą $A_0 \oplus A_1$.
+Sakome, kad algebrai $\mathup{Cl}^\pm(3)$ homomorfizmas $\alpha$ suteikia 
+$\set Z_2$ gradavimą.
+
 
 
 
