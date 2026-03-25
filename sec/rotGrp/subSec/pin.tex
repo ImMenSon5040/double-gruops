@@ -1,42 +1,46 @@
 
 \subsection{Grupės $\pinp$ ir $\pinm$}
 
-Algebros $\mathup{Cl^\pm(V)}$ poaibis sudarytas iš elemtų $\vb v_1 \vb v_2
-\dots \vb v_N$, kur visi $\vb v_i$ tenkina $(\vb v_i,\vb v_i) = 1$, kartu su
-algebros daugyba sudaro atitinkamą grupę $\pinpm$. Grupės uždarumo sąvybė akivaizdžiai tenkinama, 
-vienetinis elementas yra tas pats kaip ir algebros vienetinis elementas $\mathbb 1$,
-o kaip gaunamas atvikštinis elementas siriasi grupeių $\pinp$ ir $\pinm$.
+\begin{definition}
+	$\mathup{Cl}^+(3)$ poaibis,
+	kurio elementai $v$ tenkina
+	$v^tv=\mathbb 1$,
+	kartu su įprasta algebros daugyba
+	sudaro grupę vadinamą
+	$\pinp$.
+\end{definition}
 
-Grupėje $\pinp$ elemento $v$ atvirkštinis elementas yra tranponuotas $v^t$
-\begin{multline}
-	\vb v_1 \vb v_2 \dots \vb v_N (\vb v_1 \vb v_2 \dots \vb v_N )^t
-	=
-	\vb v_1 \vb v_2 \dots \vb v_N \vb v_N \vb v_{N-1} \dots \vb v_1
-	=
-	(\vb v_N,\vb v_N)
-	(\vb v_{N-1},\vb v_{N-1})
-	\dots
-	(\vb v_1,\vb v_1)
-	\mathbb 1
-	=
-	\mathbb 1
-\end{multline}
-Grupėje $\pinm$ atvirkštinis elementas yra $\alpha(v^t)$
-\begin{multline}
-	\vb v_1 \vb v_2 \dots \vb v_N \alpha\qty(\vb v_1 \vb v_2 \dots \vb v_N )^t
-	=
-	\vb v_1 \vb v_2 \dots \vb v_N \alpha(\vb v_N) \alpha(\vb v_{N-1}) \dots \alpha(\vb v_1)
-	\\=
-	\vb v_1 \vb v_2 \dots \vb v_N (-\vb v_N) (-\vb v_{N-1}) \dots (-\vb v_1)
-	=
-	(\vb v_N,\vb v_N)
-	(\vb v_{N-1},\vb v_{N-1})
-	\dots
-	(\vb v_1,\vb v_1)
-	\mathbb 1
-	=
-	\mathbb 1
-\end{multline}
+\begin{definition}
+	$\mathup{Cl}^-(3)$ poaibis,
+	kurio elementai $v$ tenkina
+	$\alpha(v^t)v=\mathbb 1$,
+	kartu su įprasta algebros daugyba
+	sudaro grupę vadinamą
+	$\pinm$.
+\end{definition}
+
+\begin{example}
+	Patikrinkime, kad $\pinm$ tikrai tenkina grupės axiomas.
+	\begin{itemize}
+		\item Asociatyvumas yra paveldimas iš algebros
+			$\mathup{Cl}^-(3)$,
+			kuri yra asociatyvi;
+		\item tapatybės elementas yra $\mathbb 1$;
+		\item atvikštinis elementas yra $v^{-1}= \alpha(v^t)$;
+		\item sandaugos uždarumą patikriname skaičiavimu
+	\end{itemize}
+	\begin{align*}
+		&\alpha((vw)^t) vw = \alpha(w^t v^t) vw && \text{antihomomorfizmo savybė}
+		\\
+		& \quad = \alpha(w^t) \alpha(v^t) vw && \text{homomorfizmo savybė}
+		\\
+		& \quad = \alpha(w^t) \mathbb 1 w && \text{iš $\pinm$ apibrėžimo}
+		\\
+		& \quad = \mathbb 1
+		\,.
+	\end{align*}
+\end{example}
+
 
 Grupė $\spin$ galima gauti dviem būdais: kaip $\pinp$ pogrupį sudarytą
 iš lyginių vektorių sandaugų arba kaip $\pinm$ pogrupį gautą taip pat.
