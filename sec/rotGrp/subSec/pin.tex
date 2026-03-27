@@ -49,13 +49,13 @@ kaip vienetinių vectorių sandaugą algebroje
 $\mathrm{Cl}^\pm(3)$. $\set Z_2$ gradavimas išlika
 ir ant $\pinpm$.
 Elementai $\vb v$ ir $\vb{vwu}$ yra nelyginiai,
-o elementai $\marhbb 1$ ir $\vb{vw}$ yra lyginiai.
+o elementai $\mathbb 1$ ir $\vb{vw}$ yra lyginiai.
 Dauginant tarpusavyje lyginius elementus,
 gausime tik lyginius elementus,
 todėl jie sudaro $\pinpm$ pogrupį.
 
 \begin{definition}
-	Grupė $\sipn$ yra pogrupis $\pinp$,
+	Grupė $\spin$ yra pogrupis $\pinp$,
 	sudarytas iš visų lyginių $\pinp$ elementų.
 \end{definition}
 
@@ -63,7 +63,34 @@ todėl jie sudaro $\pinpm$ pogrupį.
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
 	yra izomorphiški, kaip grupės.
 \end{preposition}
-
+\begin{proof}
+	$\pinpm$ lyginiai porgupiai kaip aibės prikauso 
+	atitinkamiems $\mathup{Cl}^\pm(3)$ lyginiams poalgiabriams $A_0^\pm$.
+	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prep:even_iso}),
+	tegul $\psi: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
+	Jei $\mathup{Cl}^+(3)$ lyginis elementams $v$ priklauso $\pinp$,
+	tai $\psi(v)$ priklauso $\pinm$
+	\begin{equation}
+		\begin{aligned}
+			v^t *_+ v &= \mathbb 1_+
+			\\
+			\psi(v^t *_+ v ) &= \psi\qty(\mathbb 1_+)
+			\\
+			\psi( v^t) *_- \psi(v) &= \mathbb 1_-
+			&& \text{izomorfizmo savybė}\\
+			{\psi(v)}^t *_- \psi(v) &= \mathbb 1_-
+			&& \text{transponavimas gerbia isomorfizmą}\\
+			\alpha\qty({\psi(v)}^t) *_- \psi(v) &= \mathbb 1_-
+			&& \psi \text{ kodomenas yra lyginiai elementai}
+			\,.
+		\end{aligned}
+	\end{equation}
+	Atitinkamai gauname rezultatą kad jei $v$ prikauso $\pinp$,
+	tai $\psi^{-1}(v)$ priklauso $\pinm$.
+	Apribojus domeną ir kodomeną funksija $\psi:\pinp \to \pinm$ yra
+	grupių izomorfizmas, nes grupės sandauga
+	sutampa su algebros sandauga.
+\end{proof}
 
 Grupė $\spin$ galima gauti dviem būdais: kaip $\pinp$ pogrupį sudarytą
 iš lyginių vektorių sandaugų arba kaip $\pinm$ pogrupį gautą taip pat.

@@ -183,38 +183,38 @@ Tai tikrai
 		\vb w \otimes \vb v +\vb v \otimes \vb w 
 		- \qty(
 			\vb v \otimes \vb w + \vb w \otimes \vb v 
-			- 2\vb{(v,w)}\mathbb 1
+			- 2(\vb v,\vb w)\mathbb 1
 		) 
 		+ I^+
 		=
-		2\vb{(v,w)}\mathbb 1 + I^+
+		2(\vb v,\vb w)\mathbb 1 + I^+
 		\,,
 	\end{equation}
 	čia pasinaudojome tuo kad 
-	$\qty( \vb v \otimes \vb w + \vb w \otimes \vb v - 2\vb{(v,w)}\mathbb 1) \in I^+$.
+	$\qty( \vb v \otimes \vb w + \vb w \otimes \vb v - 2(\vb v,\vb w)\mathbb 1) \in I^+$.
 	Pavyko parodyti, kad $\vb w \otimes \vb v + \vb v \otimes \vb w$ 
-	ir $2\vb{(v,w)} \mathbb 1$ atstovauja tą pačią klasę.
+	ir $2(\vb v,\vb w) \mathbb 1$ atstovauja tą pačią klasę.
 \end{example}
 
 \begin{example}
 	Tegul $a,b \in T(\set R^3)$ ir
 	$
-		a \otimes \vb{(v \otimes w + 2\vb{(v,w)}\mathbb 1)} \otimes b + I^-
+		a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b + I^-
 	$
 	yra šoninė klasė, kuri yra vektorius iš $\mathup{Cl}^-(3)$.
 	Šią išraišką supapranstiname atlidami veiksmus
 	\begin{equation}
 		\begin{split}
-			a \otimes (\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1) \otimes b + I^-
+			a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b + I^-
 			=&
-			a \otimes (\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1) \otimes b 
-			- a \otimes \qty(\vb{v \otimes w + w \otimes v}+2\vb{(v,w)} \mathbb 1)  \otimes b 
+			a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b 
+			- a \otimes \qty(\vb v \otimes \vb w + \vb w \otimes \vb v +2(\vb v,\vb w) \mathbb 1)  \otimes b 
 			+ I^-
 			\\=&
 			a \otimes \qty(
-				\vb v \otimes \vb w + 2\vb{(v,w)}\mathbb 1
+				\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1
 				- \vb v \otimes \vb w - \vb w \otimes \vb v
-				-2\vb{(v,w)} \mathbb 1) 
+				-2(\vb v,\vb w) \mathbb 1) 
 			)\otimes b 
 			+ I^-
 			\\=&
@@ -241,15 +241,15 @@ vektorių tenzorinės sandaugos vietoje ženklo ,,$\otimes$''
 tiesiog rašysime vektorius vieną šalia kito.
 Vietoje
 \begin{equation}
-	a \otimes \vb{(v \otimes w + v \otimes w)} \otimes b + I^-
+	a \otimes (\vb v \otimes \vb w + \vb v \otimes \vb w) \otimes b + I^-
 	=
-	-2\vb{(v,w)} \qty(a \otimes b) + I^-
+	-2(\vb v,\vb w) \qty(a \otimes b) + I^-
 \end{equation}
 rašysime
 \begin{equation}
-	a \vb{(v w + v w)} b
+	a (\vb v \vb w + \vb v \vb w) b
 	=
-	-2\vb{(v,w)} a b
+	-2(\vb v,\vb w) a b
 	\,.
 \end{equation}
 
@@ -269,8 +269,8 @@ rašysime
 	\begin{equation}
 		-\vb v \vb w \vb v 
 		= -\qty( 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
-		= -2\vb{(v,w)} \vb v + \vb{wvv} 
-		= -2\vb{(v,w)} \vb v + \vb{(v,v)}\vb w 
+		= -2(\vb v,\vb w) \vb v + \vb{wvv} 
+		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
 		\,.
 	\end{equation}
 \end{preposition}
@@ -280,15 +280,15 @@ rašysime
 	\begin{equation}
 		\vb v \vb w \vb v 
 		= \qty( - 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
-		= -2\vb{(v,w)} \vb v - \vb{wvv} 
-		= -2\vb{(v,w)} \vb v + \vb{(v,v)}\vb w 
+		= -2(\vb v,\vb w) \vb v - \vb{wvv} 
+		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
 		\,.
 	\end{equation}
 \end{preposition}
 
-Atkreipiame dėmesį, kad kai $\vb{(v,v)}=1$,
-$\vb{(v,w)v}$ yra vektoriaus $\vb w$ projekcija į $\vb v$
-ir $-2\vb{(v,w)v} + \vb w$ yra vektoriaus atspindys
+Atkreipiame dėmesį, kad kai $(\vb v,\vb v)=1$,
+$(\vb v,\vb w)\vb v$ yra vektoriaus $\vb w$ projekcija į $\vb v$
+ir $-2(\vb v,\vb w)\vb v + \vb w$ yra vektoriaus atspindys
 per plokštumą statmeną vektoriui $\vb v$. 
 
 Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė.
@@ -324,7 +324,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 		=
 		(-1)^{k-1} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
 	\end{equation}
-	ir trasponavimo operacija yra tiesiškai praplečiama
+	ir transponavimo operacija yra tiesiškai praplečiama
 	bet kuriam algebros $\mathup{Cl}^\pm(3)$ vektoriui, veikimu ant bazės.
 	Transponavimas yra algebros anti-homomorfizmas,
 	tai reiškia, kad betkuriems algebros elementams $a$ ir $b$ galioja
@@ -367,9 +367,9 @@ tiesinį apvalką pasirinkų bazės elementų
 	\begin{split}
 		A_0 &= \mathup{span}\qty(
 			\mathbb 1,\,
-			\vb{e_2 e_3},\,
-			\vb{e_3 e_1},\,
-			\vb{e_1 e_2}
+			\vb e_2 \vb e_3,\,
+			\vb e_3 \vb e_1,\,
+			\vb e_1 \vb e_2
 		)
 		\,,
 		\\
@@ -377,7 +377,7 @@ tiesinį apvalką pasirinkų bazės elementų
 			\vb e_1 ,\,
 			\vb e_2 ,\,
 			\vb e_3 ,\,
-			\vb{e_1 e_2 e_3}
+			\vb e_1 \vb e_2 \vb e_3
 		)
 		\,.
 	\end{split}
@@ -441,16 +441,92 @@ Pamatome, kad homomorfizmas $\alpha$
 leidžia algebrą $\mathup{Cl}^\pm(3)$ suskaidyti 
 į lyginio ir nelyginio poerdvių tiesioginę sumą $A_0 \oplus A_1$.
 Sakome, kad algebrai $\mathup{Cl}^\pm(3)$ homomorfizmas $\alpha$ suteikia 
-$\set Z_2$ gradavimą.
+$\set Z_2$ gradavimą. Ir lyginis poerdvis yra uždaras su algebros daugyba,
+todė tai yra poalgebris.
 
-
-
-
-
-
-
-
-
-
-
-
+\begin{preposition}
+	\label{prep:even_iso}
+	Algebrų $\mathup{Cl}^+(3)$ ir $\mathup{Cl}^-(3)$
+	Lyginiai poalgiabriai $A^+_0$ ir $A^-_0$ yra izomorfiškos algebros.
+\end{preposition}
+\begin{proof}
+	Algebros $A_0^+$ ir $A_0^-$ turi bazę
+	$\qty{
+		\mathbb 1,\, 
+		\vb e_{23},\,
+		\vb e_{31},\,
+		\vb e_{12}
+	}$. Pastebime kad algebroje $A_0^+$
+	\begin{equation}
+		\vb e_{23} \vb e_{31} 
+		= \vb e_2 \vb e_3 \vb e_3 \vb e_1
+		= \vb e_2 \vb e_1
+		= - \vb e_{12}
+		\,,
+	\end{equation}
+	\begin{equation}
+		\vb e_{31} \vb e_{23} 
+		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
+		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
+		= \vb e_1 \vb e_2
+		= \vb e_{12}
+		\,,
+	\end{equation}
+	\begin{equation}
+		{\vb e_{31}}^2 
+		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
+		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
+		= - \mathbb 1
+		\,,
+	\end{equation}
+	\begin{equation}
+		{\vb e_{23}}^2 
+		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
+		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
+		= - \mathbb 1
+		\,,
+	\end{equation}
+	o algebroje $A_0^-$
+	\begin{equation}
+		\vb e_{23} \vb e_{31} 
+		= \vb e_2 \vb e_3 \vb e_3 \vb e_1 
+		= - \vb e_2 \vb e_1 
+		= \vb e_1 \vb e_2 
+		= \vb e_{12}
+		\,,
+	\end{equation}
+	\begin{equation}
+		\vb e_{31} \vb e_{23} 
+		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
+		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
+		= - \vb e_1 \vb e_2
+		= - \vb e_{12}
+		\,,
+	\end{equation}
+	\begin{equation}
+		{\vb e_{31}}^2 
+		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
+		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
+		= - \mathbb 1
+		\,,
+	\end{equation}
+	\begin{equation}
+		{\vb e_{23}}^2 
+		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
+		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
+		= - \mathbb 1
+		\,.
+	\end{equation}
+	Abiems algebroms $\vb e_{31}$ ir $\vb e_{23}$ yra algebros generatoriai.
+	Jie tenkina saryšius
+	\begin{equation}
+		\begin{aligned}
+			\vb e_{31} \vb e_{23} &= - \vb e_{23} \vb e_{31} \\
+			{\vb e_{31}}^2 &= - \mathbb 1 \\
+			{\vb e_{23}}^2 &= - \mathbb 1
+			\,.
+		\end{aligned}
+	\end{equation}
+	Tai yra sąryšiai apibrėžentys Clifford'o algebrą $\mathup{Cl}^-(2)$,
+	tad $\mathup{Cl}^-(2) \cong A_0^+ \cong A_0^-$.
+\end{proof}
