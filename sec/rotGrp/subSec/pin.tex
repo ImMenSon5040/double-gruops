@@ -67,36 +67,128 @@ todėl jie sudaro $\pinpm$ pogrupį.
 	$\pinpm$ lyginiai porgupiai kaip aibės prikauso 
 	atitinkamiems $\mathup{Cl}^\pm(3)$ lyginiams poalgiabriams $A_0^\pm$.
 	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prep:even_iso}),
-	tegul $\psi: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
+	tegul $f: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
 	Jei $\mathup{Cl}^+(3)$ lyginis elementams $v$ priklauso $\pinp$,
-	tai $\psi(v)$ priklauso $\pinm$
+	tai $f(v)$ priklauso $\pinm$
 	\begin{equation}
 		\begin{aligned}
 			v^t *_+ v &= \mathbb 1_+
 			\\
-			\psi(v^t *_+ v ) &= \psi\qty(\mathbb 1_+)
+			f(v^t *_+ v ) &= f\qty(\mathbb 1_+)
 			\\
-			\psi( v^t) *_- \psi(v) &= \mathbb 1_-
+			f( v^t) *_- f(v) &= \mathbb 1_-
 			&& \text{izomorfizmo savybė}\\
-			{\psi(v)}^t *_- \psi(v) &= \mathbb 1_-
+			{f(v)}^t *_- f(v) &= \mathbb 1_-
 			&& \text{transponavimas gerbia isomorfizmą}\\
-			\alpha\qty({\psi(v)}^t) *_- \psi(v) &= \mathbb 1_-
-			&& \psi \text{ kodomenas yra lyginiai elementai}
-			\,.
+			\alpha\qty({f(v)}^t) *_- f(v) &= \mathbb 1_-
+			&& f \text{ kodomenas yra lyginiai elementai}
+			\,,
 		\end{aligned}
 	\end{equation}
+	čia $*_+$ ir $*_-$ yra algebros daugybos atitinkamose algebrose,
+	o $\mathbb 1_+$ ir $\mathbb 1_-$ yra 
+	atitinkamų algebrų vienetiniai elementai
 	Atitinkamai gauname rezultatą kad jei $v$ prikauso $\pinp$,
-	tai $\psi^{-1}(v)$ priklauso $\pinm$.
-	Apribojus domeną ir kodomeną funksija $\psi:\pinp \to \pinm$ yra
+	tai $f^{-1}(v)$ priklauso $\pinm$.
+	Apribojus domeną ir kodomeną funksija $f:\pinp \to \pinm$ yra
 	grupių izomorfizmas, nes grupės sandauga
 	sutampa su algebros sandauga.
 \end{proof}
 
-Grupė $\spin$ galima gauti dviem būdais: kaip $\pinp$ pogrupį sudarytą
-iš lyginių vektorių sandaugų arba kaip $\pinm$ pogrupį gautą taip pat.
-Abi konstrukcijos yra viena kitai izomofiškos, nes minusas iš sandaugos
-$\pinm$ pasirodys lyginį kartą sakičių ir rezultatas bus toks pat kaip
-$\pinp$ pogrupyje.
+Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
+nes jie yra izomofiški.
+
+\subsection{$\spin$ ir $\pinpm$ matriciniai įvaizdžiai}
+
+Grupių matricinius įvaizdžius užrašysime su Pauli matricų pagalba
+\begin{equation}
+	\sigma_1 = \mqty(\pmat{1}) 
+	\,,\qquad
+	\sigma_2 = \mqty(\pmat{2}) 
+	\,,\qquad
+	\sigma_3 = \mqty(\pmat{3}) 
+	\,.
+\end{equation}
+Šios matricos tenkina
+\begin{equation}
+	\sigma_i \sigma_i = I, \quad i\in{1,2,3}
+	\,,
+\end{equation}
+\begin{equation}
+	\sigma_i \sigma_j = - \sigma_j \sigma_i
+\end{equation}
+ir 
+\begin{equation}
+	\sigma_1 \sigma_2 = i \sigma_3
+	\,,
+\end{equation}
+bei formules gautas cikliškai perstačius indeksus.
+
+\begin{preposition}
+	Veikimu ant $\mathup{Cl}^+(3)$ bazės apibrėžtas atvaizdavimas
+	\begin{align*}
+		\mathbb 1	&\mapsto	I		&\quad	\vb e_{23}	&\mapsto	i\sigma_1	\\
+		\vb e_1 	&\mapsto	\sigma_1	&\quad	\vb e_{31}	&\mapsto	i\sigma_2	\\
+		\vb e_2 	&\mapsto	\sigma_2	&\quad	\vb e_{12}	&\mapsto	i\sigma_3	\\
+		\vb e_3 	&\mapsto	\sigma_3	&\quad	\vb e_{123}	&\mapsto	iI		\\
+	\end{align*}
+	yra algebros $\mathup{Cl}^+(3)$ ištikimas matricinis įvazdis.
+\end{preposition}
+\begin{proof}
+	Užtenka pamatyti,
+	kad algebros generatoriai $\vb e_i$ tenkina
+	tokius pat daugybos santykius kaip $\sigma_i$
+	ir visi baziniai elementai atvaizduojami į
+	tiesiškai neprikausomas matricas.
+	Svarbu pabrėžti,
+	kad $\mathup{Cl}^+(3)$ yra realia algebra,
+	nors ir naudojame matricas su kompleksiniais elementais.
+	(Pavyzdžiui $\sigma_1$ ir $i\sigma_1$ yra tiesiškai nepriklausomi,
+	nes neegzistuoja $a\in \set R$, toks kad $a\sigma_1=i\sigma_1$).
+\end{proof}
+
+
+\begin{preposition}
+	Veikimu ant $\mathup{Cl}^-(3)$ bazės apibrėžtas atvaizdavimas
+	\begin{align*}
+		\mathbb 1	&\mapsto	\mqty(\dmat{I,I})			&\quad	\vb e_{23}	&\mapsto	\mqty(\dmat{-i\sigma_1,-i\sigma_1})	\\
+		\vb e_1 	&\mapsto	\mqty(\admat{i\sigma_1,i\sigma_1})	&\quad	\vb e_{31}	&\mapsto	\mqty(\dmat{-i\sigma_2,-i\sigma_2})	\\
+		\vb e_2 	&\mapsto	\mqty(\admat{i\sigma_2,i\sigma_2})	&\quad	\vb e_{12}	&\mapsto	\mqty(\dmat{-i\sigma_3,-i\sigma_3})	\\
+		\vb e_3 	&\mapsto	\mqty(\admat{i\sigma_3,i\sigma_3})	&\quad	\vb e_{123}	&\mapsto	\mqty(\admat{I,I})			\\
+	\end{align*}
+	yra algebros $\mathup{Cl}^-(3)$ ištikimas matricinis įvazdis.
+\end{preposition}
+\begin{proof}
+	patikriname kad matricos tenkina generatorių sąryšius
+	\begin{equation}
+		\mqty(\admat{i\sigma_i,i\sigma_i})
+		\mqty(\admat{i\sigma_i,i\sigma_i})
+		=
+		\mqty(\dmat{i^2\sigma_i^2,i^2\sigma_i^2})
+		=
+		\mqty(\dmat{-I,-I})
+		=
+		-\mqty(\dmat{I,I})
+		\,,
+	\end{equation}
+	\begin{equation}
+		\mqty(\admat{i\sigma_i,i\sigma_i})
+		\mqty(\admat{i\sigma_j,i\sigma_j})
+		=
+		\mqty(\dmat{i^2\sigma_i\sigma_j,i^2\sigma_i\sigma_j})
+		=
+		-\mqty(\dmat{i^2\sigma_j\sigma_i,i^2\sigma_j\sigma_i})
+		=
+		-\mqty(\admat{i\sigma_j,i\sigma_j})
+		\mqty(\admat{i\sigma_i,i\sigma_i})
+		\.
+	\end{equation}
+	Kitos matricos yra gaunamos dauginant generatoių matricas.
+	Tai kad visos maricos yra tiesiškai neprikausomos,
+	seka iš fakto kad matricos $\sigm_i$ teisikai neprikausomos
+	ir to kaip išsidėste diagonalūs ir anti-diagonalūs maticų blokai.
+	To pakanka įrodyti kad tai yra įvaizdis ir jis yra ištikimas.
+\end{proof}
 
 \subsection{$\spin$ ir $\pinpm$ veikimas ant $\vecSpace R 3$}
 
