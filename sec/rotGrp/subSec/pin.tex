@@ -2,22 +2,23 @@
 \subsection{Grupės $\pinp$ ir $\pinm$}
 
 \begin{definition}
-	$\Clp$ poaibis,
-	kurio elementai $v$ tenkina
-	$v^tv=\mathbb 1$,
-	kartu su įprasta algebros daugyba
-	sudaro grupę vadinamą
-	$\pinp$.
+	$\pinpm$ yra grupės genruojamos vienetiniu vektorių $\vb v \in R^3$,
+	$(\vb v,\vb v) = 1$, juos dauginat algebroje $\Clpm$.
+	Gupės elemnetai yra vienanariai $\vb v_1 \vb v_2 \dots \vb v_n$
+	ir gupės daugyba sutampa su algebros daugyba.
 \end{definition}
 
 \begin{definition}
-	$\Clm$ poaibis,
-	kurio elementai $v$ tenkina
-	$\alpha(v^t)v=\mathbb 1$,
-	kartu su įprasta algebros daugyba
-	sudaro grupę vadinamą
-	$\pinm$.
+	Grupė $\spin$ yra pogrupis $\pinp$,
+	sudarytas iš visų lyginių $\pinp$ elementų.
 \end{definition}
+
+\begin{preporsition}
+	Jie ir tik jei $v$ priklauso $\Pinp$,
+	$vv^t=\mathbb1$.
+	Jei ir tik jei $v$ priklauso $\Pinm$,
+	$v\alpha(v^t)=\mathbb1$.
+\end{preporsition}
 
 \begin{example}
 	Patikrinkime, kad $\pinm$ tikrai tenkina grupės aksiomas.
@@ -54,10 +55,6 @@ Dauginant tarpusavyje lyginius elementus,
 gausime tik lyginius elementus,
 todėl jie sudaro $\pinpm$ pogrupį.
 
-\begin{definition}
-	Grupė $\spin$ yra pogrupis $\pinp$,
-	sudarytas iš visų lyginių $\pinp$ elementų.
-\end{definition}
 
 \begin{preposition}
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
@@ -88,15 +85,70 @@ todėl jie sudaro $\pinpm$ pogrupį.
 	čia $*_+$ ir $*_-$ yra algebros daugybos atitinkamose algebrose,
 	o $\mathbb 1_+$ ir $\mathbb 1_-$ yra 
 	atitinkamų algebrų vienetiniai elementai.
-	Atitinkamai gauname rezultatą kad jei $v$ prikauso $\pinp$,
+	Atitinkamai gauname rezultatą, kad jei $v$ prikauso $\pinp$,
 	tai $f^{-1}(v)$ priklauso $\pinm$.
-	Apribojus domeną ir kodomeną funksija $f:\pinp \to \pinm$ yra
+	Apribojus domeną ir kodomeną funksija $f$ yra
 	grupių izomorfizmas, nes grupės sandauga
 	sutampa su algebros sandauga.
 \end{proof}
 
 Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
 nes jie yra izomofiški.
+
+\begin{prepositio}
+	Visi $\spin$ elementai yra formos
+	\begin{equation}
+		a_0 \mathbb1 
+		+ a_1 \vb e_{23}
+		+ a_2 \vb e_{31}
+		+ a_3 \vb e_{12}
+	\end{equation}
+	kur $a_i \in \set R$ ir
+	\begin{equation}
+		{a_0}^2
+		+{a_1}^2
+		+{a_2}^2
+		+{a_3}^2
+		= 1
+	\end{equation}
+\end{prepositio}
+\begin{proof}
+	Bendra lyginio $\Clp$ vektoriaus forma yra
+	\begin{equation}
+		v = 
+		  a_0 \mathbb1 
+		+ a_1 \vb e_{23}
+		+ a_2 \vb e_{31}
+		+ a_3 \vb e_{12}
+	\end{equation}
+	Kad elementas $v$ priklausytų $\sipn$, jis turi tenkinti
+	$vv^t = \mathbb1$.
+	Įsisteatę $v$ bendra formą gauname
+	\begin{equation}
+		\begin{aligned}
+			(a_0 \mathbb1 
+			+ a_1 \vb e_{23}
+			+ a_2 \vb e_{31}
+			+ a_3 \vb e_{12})
+			(a_0 \mathbb1 
+			- a_1 \vb e_{23}
+			- a_2 \vb e_{31}
+			- a_3 \vb e_{12})
+			&= \mathbb1
+			\\
+			({a_0}^2
+			+{a_1}^2
+			+{a_2}^2
+			+{a_3}^2)
+			\mathbb1
+			&= \mathbb1
+		\end{aligned}
+	\end{equation}
+	Rezultatas seka iš fakto kad ${\vb e_{ij}}^2 = -\mathbb1$ 
+	ir $\vb e_{ij} \vb e_{kl} = - \vb e_{kl} \vb e_{ij}$.
+\end{proof}
+
+
 
 \subsection{$\spin$ ir $\pinpm$ veikimas ant $\vecSpace R 3$}
 
@@ -116,7 +168,8 @@ veikia ant $\vb w \in \set R^3$,
 kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
 
 \begin{preposition}
-	Homomorfizmas $\rho: \pinpm \to O(3)$ atvaizduoja lyginius elemetus $v$
+	Homomorfizmas $\rho: \pinpm \to O(3)$
+	atvaizduoja lyginius elemetus $v$
 	į teisingus sukimus,
 	o nelyginius elementus
 	į neteisingus sukimus.
