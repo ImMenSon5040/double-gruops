@@ -2,7 +2,7 @@
 \subsection{Grupės $\pinp$ ir $\pinm$}
 
 \begin{definition}
-	$\mathup{Cl}^+(3)$ poaibis,
+	$\Clp$ poaibis,
 	kurio elementai $v$ tenkina
 	$v^tv=\mathbb 1$,
 	kartu su įprasta algebros daugyba
@@ -11,7 +11,7 @@
 \end{definition}
 
 \begin{definition}
-	$\mathup{Cl}^-(3)$ poaibis,
+	$\Clm$ poaibis,
 	kurio elementai $v$ tenkina
 	$\alpha(v^t)v=\mathbb 1$,
 	kartu su įprasta algebros daugyba
@@ -23,7 +23,7 @@
 	Patikrinkime, kad $\pinm$ tikrai tenkina grupės aksiomas.
 	\begin{itemize}
 		\item Asociatyvumas yra paveldimas iš algebros
-			$\mathup{Cl}^-(3)$,
+			$\Clm$,
 			kuri yra asociatyvi;
 		\item tapatybės elementas yra $\mathbb 1$;
 		\item atvikštinis elementas yra $v^{-1}= \alpha(v^t)$;
@@ -65,10 +65,10 @@ todėl jie sudaro $\pinpm$ pogrupį.
 \end{preposition}
 \begin{proof}
 	$\pinpm$ lyginiai porgupiai kaip aibės prikauso 
-	atitinkamiems $\mathup{Cl}^\pm(3)$ lyginiams poalgiabriams $A_0^\pm$.
+	atitinkamiems $\Clpm$ lyginiams poalgiabriams $A_0^\pm$.
 	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prep:even_iso}),
 	tegul $f: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
-	Jei $\mathup{Cl}^+(3)$ lyginis elementams $v$ priklauso $\pinp$,
+	Jei $\Clp$ lyginis elementams $v$ priklauso $\pinp$,
 	tai $f(v)$ priklauso $\pinm$
 	\begin{equation}
 		\begin{aligned}
@@ -111,16 +111,16 @@ $\mathup{Cl^\pm(V)}$ ir tada veikiant su algebros sandauga
 \end{equation}
 
 Teiginiai \ref{prep:R_action+} ir \ref{prep:R_action-} parodo kad
-vienetiniai vektoriai $\vb n \in \set R^3$ patalpinti į $\mathup{Cl}^\pm(3)$,
+vienetiniai vektoriai $\vb n \in \set R^3$ patalpinti į $\Clpm$,
 veikia ant $\vb w \in \set R^3$,
 kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
 
-\begin{perposition}
+\begin{preposition}
 	Homomorfizmas $\rho: \pinpm \to O(3)$ atvaizduoja lyginius elemetus $v$
 	į teisingus sukimus,
 	o nelyginius elementus
 	į neteisingus sukimus.
-\end{perposition}
+\end{preposition}
 
 
 
@@ -177,14 +177,14 @@ ir vienetinės $2\times2$ matricos pagalba
 
 \begin{preposition}
 	\label{prep:pauli_rep+}
-	Veikimu ant $\mathup{Cl}^+(3)$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clp$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	i\sigma_1	\qquad
 		\vb e_{31}	\mapsto	i\sigma_2	\qquad
 		\vb e_{12}	\mapsto	i\sigma_3	
 	\end{align*}
-	yra algebros $\mathup{Cl}^+(3)$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
+	yra algebros $\Clp$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
 	Užtenka pratikrinti kad pasirinkti algebros generatoriai $\vb e_{23}$ ir $\vb e_{31}$
@@ -208,33 +208,33 @@ ir vienetinės $2\times2$ matricos pagalba
 
 \begin{preposition}
 	\label{prep:pauli_rep-}
-	Veikimu ant $\mathup{Cl}^-(3)$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clm$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	-i\sigma_1	\qquad
 		\vb e_{31}	\mapsto	-i\sigma_2	\qquad
 		\vb e_{12}	\mapsto	-i\sigma_3	
 	\end{align*}
-	yra algebros $\mathup{Cl}^-(3)$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
+	yra algebros $\Clm$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
 	Analogiškai kaip teiginyje \ref{prep:pauli_rep+}
 \end{proof}
 
 \begin{preposition}
-	Veikimu ant $\mathup{Cl}^-(3)$ bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clm$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	&\mapsto	\mqty(\dmat{I,I})			&\quad	\vb e_{123}	&\mapsto	\mqty(\admat{-iI,iI})			\\
 		\vb e_{23}	&\mapsto	\mqty(\dmat{-i\sigma_1,-i\sigma_1})	&\quad	\vb e_1 	&\mapsto	\mqty(\admat{\sigma_1,-\sigma_1})	\\
 		\vb e_{31}	&\mapsto	\mqty(\dmat{-i\sigma_2,-i\sigma_2})	&\quad	\vb e_2 	&\mapsto	\mqty(\admat{\sigma_2,-\sigma_2})	\\
 		\vb e_{12}	&\mapsto	\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	&\mapsto	\mqty(\admat{\sigma_3,-\sigma_3})	\\
 	\end{align*}
-	yra algebros $\mathup{Cl}^-(3)$ ištikimas matricinis įvazdis.
+	yra algebros $\Clm$ ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
 	Pasirnkame algebros generatorius $\vb e_{23}$, $\vb e_{31}$ ir $\vb e_{123}$,
 	kuriems patikrinsime daugybos sąryšius.
-	$\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\mathup{Cl}^-(3)$ poalgebrį ir akivaizdu,
+	$\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\Clm$ poalgebrį ir akivaizdu,
 	kad jų įvazdis yra dvi kopijos įvaizdžio iš teiginio \ref{prep:pauli_rep-},
 	tad lieka patikrinti sąryšius
 	\begin{align}
@@ -260,19 +260,19 @@ ir vienetinės $2\times2$ matricos pagalba
 \end{proof}
 
 \begin{preposition}
-	Veikimu ant $\mathup{Cl}^+(3)$ bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clp$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	&\mapsto	\mqty(\dmat{I,I})			&\quad	\vb e_{123}	&\mapsto	\mqty(\admat{-I,I})			\\
 		\vb e_{23}	&\mapsto	\mqty(\dmat{i\sigma_1,i\sigma_1})	&\quad	\vb e_1 	&\mapsto	\mqty(\admat{i\sigma_1,-i\sigma_1})	\\
 		\vb e_{31}	&\mapsto	\mqty(\dmat{i\sigma_2,i\sigma_2})	&\quad	\vb e_2 	&\mapsto	\mqty(\admat{i\sigma_2,-i\sigma_2})	\\
 		\vb e_{12}	&\mapsto	\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	&\mapsto	\mqty(\admat{i\sigma_3,-i\sigma_3})	\\
 	\end{align*}
-	yra algebros $\mathup{Cl}^+(3)$ ištikimas matricinis įvazdis.
+	yra algebros $\Clp$ ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
 	Pasirnkame algebros generatorius $\vb e_{23}$, $\vb e_{31}$ ir $\vb e_{123}$,
 	kuriems patikrinsime daugybos sąryšius.
-	Šį kartą $\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\mathup{Cl}^+(3)$ poalgebrį ir
+	Šį kartą $\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\Clp$ poalgebrį ir
 	jų įvazdis yra dvi kopijos įvaizdžio iš teiginio \ref{prep:pauli_rep+},
 	lieka patikrinti sąryšius
 	\begin{align}

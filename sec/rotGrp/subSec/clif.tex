@@ -1,8 +1,8 @@
 \subsection{Clifordo algebros}
 
 
-Toliau nagrinėsime nagrinėsime dvi Clifordo algebras $\mathup{Cl}^+(3)$ ir
-$\mathup{Cl}^-(3)$. Tai yra vectorinės erdvės su papildoma bitiesine daugybos
+Toliau nagrinėsime nagrinėsime dvi Clifordo algebras $\Clp$ ir
+$\Clm$. Tai yra vectorinės erdvės su papildoma bitiesine daugybos
 operacija, kuri leidžia sudauginti du algebros vektorius ir gauti naują
 vektorių algebroje. Šias algebras apibrėšime pirma paimdami daug bendresnę
 tenzorinę algebrą ir tada jai sutekdami norimą struktūrą.
@@ -70,7 +70,7 @@ ir tokių sandaugų sumos.
 
 
 Dabar $T(\set R^3)$ suteiksime papildomą strutūrą, kad algebroje
-$\mathup{Cl}^+(3)$ būtų tenkinamas sąryšis
+$\Clp$ būtų tenkinamas sąryšis
 \begin{equation}
 	\vb v \otimes \vb w
 	+
@@ -80,7 +80,7 @@ $\mathup{Cl}^+(3)$ būtų tenkinamas sąryšis
 	\quad ,
 	\label{eq:cl+}
 \end{equation}
-o algebroje $\mathup{Cl}^-(3)$ tenkinamas sąryšis
+o algebroje $\Clm$ tenkinamas sąryšis
 \begin{equation}
 	\vb v \otimes \vb w
 	+
@@ -167,7 +167,7 @@ Tai tikrai
 
 
 \begin{definition}
-	Algebra $\mathup{Cl}^\pm(3)$ yra faktorinė algebra $T(\set R^3)/I^\pm$,
+	Algebra $\Clpm$ yra faktorinė algebra $T(\set R^3)/I^\pm$,
 	kurios elementai yra šoninės klasės $a+I^\pm$, $a \in T(\set R^3)$
 	ir jų sandauga yra $(a+I^\pm)\otimes(b+I^\pm)=a\otimes b + I^\pm.$
 \end{definition}
@@ -175,7 +175,7 @@ Tai tikrai
 \begin{example}
 	$\vb w \otimes \vb v +\vb v \otimes \vb w + I^+$ 
 	yra šoninė klasė,
-	kuri yra vektorius algebroje $\mathup{Cl}^+(3)$. 
+	kuri yra vektorius algebroje $\Clp$. 
 	Suparastiname išraišką
 	\begin{equation}
 		\vb w \otimes \vb v +\vb v \otimes \vb w + I^+
@@ -201,7 +201,7 @@ Tai tikrai
 	$
 		a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b + I^-
 	$
-	yra šoninė klasė, kuri yra vektorius iš $\mathup{Cl}^-(3)$.
+	yra šoninė klasė, kuri yra vektorius iš $\Clm$.
 	Šią išraišką supapranstiname atlidami veiksmus
 	\begin{equation}
 		\begin{split}
@@ -230,7 +230,7 @@ Tai tikrai
 			\,.
 		\end{split}
 	\end{equation}
-	Parodėme, kad sudarius faktorinę algebrą $\mathup{Cl}^-(3)$,
+	Parodėme, kad sudarius faktorinę algebrą $\Clm$,
 	galime jos viduje taikyti sąryšį (\ref{eq:cl-})
 	manipuliuojant šoninės klasės atstovus.
 \end{example}
@@ -255,7 +255,7 @@ rašysime
 
 Štai kelios svarbios tapatybės
 \begin{preposition}
-	Algebrose $\mathup{Cl}^\pm(3)$ 
+	Algebrose $\Clpm$ 
 	\begin{equation}
 		\vb v \vb v 
 		= \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
@@ -266,7 +266,7 @@ rašysime
 
 \begin{preposition}
 	\label{prep:R_action-}
-	Algebroje $\mathup{Cl}^+(3)$ 
+	Algebroje $\Clp$ 
 	\begin{equation}
 		-\vb v \vb w \vb v 
 		= -\qty( 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
@@ -278,7 +278,7 @@ rašysime
 
 \begin{preposition}
 	\label{prep:R_action+}
-	Algebroje $\mathup{Cl}^-(3)$ 
+	Algebroje $\Clm$ 
 	\begin{equation}
 		\vb v \vb w \vb v 
 		= \qty( - 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
@@ -318,7 +318,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 
 
 \begin{definition}
-	Transponuota $\mathup{Cl}^\pm(3)$ bazė yra 
+	Transponuota $\Clpm$ bazė yra 
 	\begin{equation}
 		\qty(\vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )^t
 		:=
@@ -327,7 +327,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 		(-1)^{k-1} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
 	\end{equation}
 	ir transponavimo operacija yra tiesiškai praplečiama
-	bet kuriam algebros $\mathup{Cl}^\pm(3)$ vektoriui, veikimu ant bazės.
+	bet kuriam algebros $\Clpm$ vektoriui, veikimu ant bazės.
 	Transponavimas yra algebros anti-homomorfizmas,
 	tai reiškia, kad betkuriems algebros elementams $a$ ir $b$ galioja
 	\begin{equation}
@@ -345,7 +345,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 		(-1)^{k} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
 		\,.
 	\end{equation}
-	Tiesiškai $\alpha$ veikimą išplėčiame ant visos algebros $\mathup{Cl}^\pm(3)$,
+	Tiesiškai $\alpha$ veikimą išplėčiame ant visos algebros $\Clpm$,
 	homomorfizmo veikimu ant bazės.
 \end{definition}
 
@@ -353,12 +353,12 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 \begin{equation}
 	\begin{split}
 		A_0 &:= \qty{
-			v \in \mathup{Cl}^\pm(3) \mid \alpha(v)=v
+			v \in \Clpm \mid \alpha(v)=v
 		}
 		\,,
 		\\
 		A_1 &:= \qty{
-			v \in \mathup{Cl}^\pm(3) \mid \alpha(v)=-v
+			v \in \Clpm \mid \alpha(v)=-v
 		}
 		\,.
 	\end{split}
@@ -440,15 +440,15 @@ tiesinį apvalką pasirinkų bazės elementų
 Dėl tokios daugybos struktūros vektoriai edvėje $A_0$ yra vadinami \emph{lyginiais},
 o vektoriai erdvėje $A_1$ yra vadinami \emph{nelyginiais}.
 Pamatome, kad homomorfizmas $\alpha$ 
-leidžia algebrą $\mathup{Cl}^\pm(3)$ suskaidyti 
+leidžia algebrą $\Clpm$ suskaidyti 
 į lyginio ir nelyginio poerdvių tiesioginę sumą $A_0 \oplus A_1$.
-Sakome, kad algebrai $\mathup{Cl}^\pm(3)$ homomorfizmas $\alpha$ suteikia 
+Sakome, kad algebrai $\Clpm$ homomorfizmas $\alpha$ suteikia 
 $\set Z_2$ gradavimą. Ir lyginis poerdvis yra uždaras su algebros daugyba,
 todė tai yra poalgebris.
 
 \begin{preposition}
 	\label{prep:even_iso}
-	Algebrų $\mathup{Cl}^+(3)$ ir $\mathup{Cl}^-(3)$
+	Algebrų $\Clp$ ir $\Clm$
 	Lyginiai poalgiabriai $A^+_0$ ir $A^-_0$ yra izomorfiškos algebros.
 \end{preposition}
 \begin{proof}
