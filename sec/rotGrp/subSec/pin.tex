@@ -20,7 +20,7 @@
 \end{definition}
 
 \begin{example}
-	Patikrinkime, kad $\pinm$ tikrai tenkina grupės axiomas.
+	Patikrinkime, kad $\pinm$ tikrai tenkina grupės aksiomas.
 	\begin{itemize}
 		\item Asociatyvumas yra paveldimas iš algebros
 			$\mathup{Cl}^-(3)$,
@@ -97,6 +97,56 @@ todėl jie sudaro $\pinpm$ pogrupį.
 
 Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
 nes jie yra izomofiški.
+
+\subsection{$\spin$ ir $\pinpm$ veikimas ant $\vecSpace R 3$}
+
+Visos aptartos grupės veikia vektorius iš $\set R^3$, juos pirma patalpinant į
+$\mathup{Cl^\pm(V)}$ ir tada veikiant su algebros sandauga
+\begin{equation}
+	\rho(v).\vb w := \alpha(v) \vb w v^{-1} 
+	= \begin{cases}
+		\alpha(v) \vb w v^t		& v \in \pinp \\
+		v \vb w v^t	& v \in \pinm 
+	\end{cases}
+\end{equation}
+
+Teiginiai \ref{prep:R_action+} ir \ref{prep:R_action-} parodo kad
+vienetiniai vektoriai $\vb n \in \set R^3$ patalpinti į $\mathup{Cl}^\pm(3)$,
+veikia ant $\vb w \in \set R^3$,
+kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
+
+\begin{perposition}
+	Homomorfizmas $\rho: \pinpm \to O(3)$ atvaizduoja lyginius elemetus $v$
+	į teisingus sukimus,
+	o nelyginius elementus
+	į neteisingus sukimus.
+\end{perposition}
+
+
+
+\begin{theorem}[{\cite[Theorem~2.9]{lawson1989spin}}, atvėjis kai $V=\set R^3$ ir $q(v)=\pm(v,v)$]
+	Egzistuoja truposios tiksliosios sekos (ang. \emph{short exact sequence})
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &\{1,-1\} \arrow[r]	&\pinp \arrow[r, "\rho"] &\Orth3 \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &\{1,-1\} \arrow[r]	&\pinm \arrow[r, "\rho"] &\Orth3 \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &\{1,-1\} \arrow[r]	&\spin \arrow[r, "\rho"] &\SO3 \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+	Čia kiekviena rodyklė yra grupių homorfizmas ir kiekvieno homomorfizmo vaizdas
+	yra branduolys homomorfizmo einančio po jo sekoje.
+\end{theorem}
+
+
+
 
 \subsection{$\spin$ ir $\pinpm$ matriciniai įvaizdžiai}
 
@@ -250,17 +300,6 @@ ir vienetinės $2\times2$ matricos pagalba
 
 
 
-
-\subsection{$\spin$ ir $\pinpm$ veikimas ant $\vecSpace R 3$}
-
-Visos aptartos grupės veikia vektorius iš $\set R^3$, juos pirma patalpinant į
-$\mathup{Cl^\pm(V)}$ ir tada su algebros sandauga
-\begin{equation}
-	\rho(v).x = \begin{cases}
-		vxv^t		& v \in \pinp \\
-		\alpha(v)xv^t	& v \in \pinm 
-	\end{cases}
-\end{equation}
 
 
 
