@@ -13,12 +13,12 @@
 	sudarytas iš visų lyginių $\pinp$ elementų.
 \end{definition}
 
-\begin{preporsition}
-	Jie ir tik jei $v$ priklauso $\Pinp$,
+\begin{preposition}
+	Jie ir tik jei $v$ priklauso $\pinp$,
 	$vv^t=\mathbb1$.
-	Jei ir tik jei $v$ priklauso $\Pinm$,
+	Jei ir tik jei $v$ priklauso $\pinm$,
 	$v\alpha(v^t)=\mathbb1$.
-\end{preporsition}
+\end{preposition}
 
 \begin{example}
 	Patikrinkime, kad $\pinm$ tikrai tenkina grupės aksiomas.
@@ -95,7 +95,7 @@ todėl jie sudaro $\pinpm$ pogrupį.
 Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
 nes jie yra izomofiški.
 
-\begin{prepositio}
+\begin{preposition}
 	Visi $\spin$ elementai yra formos
 	\begin{equation}
 		a_0 \mathbb1 
@@ -111,7 +111,7 @@ nes jie yra izomofiški.
 		+{a_3}^2
 		= 1
 	\end{equation}
-\end{prepositio}
+\end{preposition}
 \begin{proof}
 	Bendra lyginio $\Clp$ vektoriaus forma yra
 	\begin{equation}
@@ -121,7 +121,7 @@ nes jie yra izomofiški.
 		+ a_2 \vb e_{31}
 		+ a_3 \vb e_{12}
 	\end{equation}
-	Kad elementas $v$ priklausytų $\sipn$, jis turi tenkinti
+	Kad elementas $v$ priklausytų $\spin$, jis turi tenkinti
 	$vv^t = \mathbb1$.
 	Įsisteatę $v$ bendra formą gauname
 	\begin{equation}
@@ -162,18 +162,20 @@ $\mathup{Cl^\pm(V)}$ ir tada veikiant su algebros sandauga
 	\end{cases}
 \end{equation}
 
+Iškart galima pamatyti kad $\pinpm$ elementai $\vb v$ ir $-\vb v$ veikia vienodai,
+nes daugiklis $-1$ du kart iškeliamas prieš algebros sandaugą.
 Teiginiai \ref{prep:R_action+} ir \ref{prep:R_action-} parodo kad
-vienetiniai vektoriai $\vb n \in \set R^3$ patalpinti į $\Clpm$,
+vienetinis vektorius $\vb n \in \set R^3$ patalpinti į $\pinpm$,
 veikia ant $\vb w \in \set R^3$,
 kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
+Tada lyginiai elementai $\vb v \vb w$ ant $\set R^3$ veikia,
+kaip atspindys per vieną plokštumą tada atspindys per kitą
+plokštumą. Tai yra teisingas pasukimas.
+Kitas elementas kurio veikimą svarbu patikrinti yra
+$\vb e_{123}$, gauname $\rho(\vb e_123).\vb e_i = - e_i$,
+tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 
-\begin{preposition}
-	Homomorfizmas $\rho: \pinpm \to O(3)$
-	atvaizduoja lyginius elemetus $v$
-	į teisingus sukimus,
-	o nelyginius elementus
-	į neteisingus sukimus.
-\end{preposition}
+
 
 
 
@@ -203,7 +205,9 @@ kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
 
 \subsection{$\spin$ ir $\pinpm$ matriciniai įvaizdžiai}
 
-Grupių matricinius įvaizdžius užrašysime su Pauli matricų 
+Dėl patogumo dirbant su grupėmis ir algebromis apibrėšime
+nagrinėjamų grupių ir algebrų ištikimus matricinius įvaizdžius.
+Šiuos matricinius įvaizdžius užrašysime su Pauli matricų 
 ir vienetinės $2\times2$ matricos pagalba
 \begin{equation}
 	I := \mqty(\imat{2})
@@ -230,7 +234,7 @@ ir vienetinės $2\times2$ matricos pagalba
 
 \begin{preposition}
 	\label{prep:pauli_rep+}
-	Veikimu ant $\Clp$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clp$ \emph{lyginio} poalgebrio $A_0^+$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	i\sigma_1	\qquad
@@ -261,7 +265,7 @@ ir vienetinės $2\times2$ matricos pagalba
 
 \begin{preposition}
 	\label{prep:pauli_rep-}
-	Veikimu ant $\Clm$ \emph{lyginio} poalgebrio bazės apibrėžtas atvaizdavimas
+	Veikimu ant $\Clm$ \emph{lyginio} poalgebrio $A_0^-$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	-i\sigma_1	\qquad
@@ -274,82 +278,182 @@ ir vienetinės $2\times2$ matricos pagalba
 	Analogiškai kaip teiginyje \ref{prep:pauli_rep+}
 \end{proof}
 
+\begin{preposition} 
+	Atvizdis iš teiginio \ref{prep:pauli_rep+} siunčia $\spin$ į matricinė grupė $\mathup{SU}(2)$.
+	Tai yra $\spin$ ir $\mathup{SU}(2)$ yra izomorfiškos grupės.
+\end{preposition}
+\begin{proof}
+	Bendros formos $\spin$ elementas
+	$ a_0 \mathbb1 + a_1 \vb e_{23} + a_2 \vb e_{31} + a_3 \vb e_{12}$,
+	$ {a_0}^2 +{a_1}^2 +{a_2}^2 +{a_3}^2 = 1 $,
+	yra atvaizduojamas į maricą
+	\begin{equation}
+		a_0 I + a_1 i\sigma_1 + a_2 i\sigma_2 + a_3 i\sigma_3
+		=
+		\mqty(
+			  a_0 + ia_3	&& a_2 + ia_1 \\
+			- a_2 + ia_1	&& a_0 - ia_3 
+		)
+		=
+		\mqty(
+			z_1	&& -z_2^* \\
+			z_2	&& z_1^* 
+		)
+		\,,
+	\end{equation}
+	čia pasižymėjome kompleksinius skaičius 
+	$z_1 = a_0 + i a_3$ ir $z_2 = - a_2 + ia_1$. 
+	Sąlyga $ {a_0}^2 +{a_1}^2 +{a_2}^2 +{a_3}^2 = 1 $
+	tada tampa $ \abs{z_1}^2 + \abs{z_2}^2 = 1$.
+	Kas reiškia kad $
+		\smqty(
+			z_1	&& -z_2^* \\
+			z_2	&& z_1^* 
+		)
+	$ yra benda forma matricos, kuri priklauso $\mathup{SU}(2)$.
+\end{proof}
+
+Gerai žinoma jog $\mathup{SU}(2)$ elmentas atitinkantis pasukimą
+kampu $\theta$ aplink vienetinį vektoriu $\vb n$ yra
+\begin{equation}
+	e^{\frac{i\theta}{2} (\vb n,\symbf\sigma)}
+	\,,
+\end{equation}
+čia $(\vb n,\symbf\sigma) = n_1 \sigma_1 + n_2 \sigma_2 + n_3 \sigma_3 $
+ir kvadratinės matricos eksponetė yra apibrėžta kaip 
+\begin{equation}
+	e^X := \sum_{n=0}^\infty \frac{X^n}{n!}
+	\,.
+\end{equation}
+
+Algebrų $\Clpm$ įvaizdžiams užrašyti pasinaudosime gama maricomis,
+kurios chiralėje bazėja yra apibrežiamos kaip
+\begin{equation}
+	\gamma^0 := \mqty(\dmat{I,I}) 			\,,\quad
+	\gamma^1 := \mqty(\admat{\sigma_1,-\sigma_1})	\,,\quad
+	\gamma^2 := \mqty(\admat{\sigma_2,-\sigma_2})	\,,\quad
+	\gamma^3 := \mqty(\admat{\sigma_3,-\sigma_3})	\,.
+\end{equation}
+Apsiribosime tiktai maricomis $\gamma^1$, $\gamma^2$ ir $\gamma^3$.
+Jos tenkina sąryšius
+\begin{equation}
+		{\gamma^i}^2 = -\mqty(\dmat{I,I})
+		\,,\quad
+		\gamma^i \gamma^j = - \gamma^j \gamma^i
+		\,.
+\end{equation}
+
+
 \begin{preposition}
 	Veikimu ant $\Clm$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
-		\mathbb 1	&\mapsto	\mqty(\dmat{I,I})			&\quad	\vb e_{123}	&\mapsto	\mqty(\admat{-iI,iI})			\\
-		\vb e_{23}	&\mapsto	\mqty(\dmat{-i\sigma_1,-i\sigma_1})	&\quad	\vb e_1 	&\mapsto	\mqty(\admat{\sigma_1,-\sigma_1})	\\
-		\vb e_{31}	&\mapsto	\mqty(\dmat{-i\sigma_2,-i\sigma_2})	&\quad	\vb e_2 	&\mapsto	\mqty(\admat{\sigma_2,-\sigma_2})	\\
-		\vb e_{12}	&\mapsto	\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	&\mapsto	\mqty(\admat{\sigma_3,-\sigma_3})	\\
+		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{-iI,iI})			\\
+		\vb e_{23}	\mapsto	\gamma^2 \gamma^3 =	&\mqty(\dmat{-i\sigma_1,-i\sigma_1})	&\quad	\vb e_1 	\mapsto	\gamma^1 =			&\mqty(\admat{\sigma_1,-\sigma_1})	\\
+		\vb e_{31}	\mapsto	\gamma^3 \gamma^1 =	&\mqty(\dmat{-i\sigma_2,-i\sigma_2})	&\quad	\vb e_2 	\mapsto	\gamma^2 =			&\mqty(\admat{\sigma_2,-\sigma_2})	\\
+		\vb e_{12}	\mapsto	\gamma^1 \gamma^2 =	&\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	\mapsto	\gamma^3 =			&\mqty(\admat{\sigma_3,-\sigma_3})	\\
 	\end{align*}
 	yra algebros $\Clm$ ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
-	Pasirnkame algebros generatorius $\vb e_{23}$, $\vb e_{31}$ ir $\vb e_{123}$,
-	kuriems patikrinsime daugybos sąryšius.
-	$\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\Clm$ poalgebrį ir akivaizdu,
-	kad jų įvazdis yra dvi kopijos įvaizdžio iš teiginio \ref{prep:pauli_rep-},
-	tad lieka patikrinti sąryšius
+	Gama matricos tenkina tokius pat daugybos sąryšius,
+	kaip algebros $\Clm$ generatoriai $\vb e_1$, $\vb e_2$ ir $\vb e_3$.
 	\begin{align}
-		{\vb e_{123}}^2 &= \mathbb1
-		\\
-		\vb e_{23} \vb e_{123} = \vb e_{123} \vb e_{23} &= -\vb e_1
-		\\
-		\vb e_{31} \vb e_{123} = \vb e_{123} \vb e_{31} &= -\vb e_2
+		{\vb e_i}^2 &= -\mathbb1		&\quad	{\gamma^i}^2 &= - \mqty(\dmat{I,I})\\
+		\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	\gamma^i\gamma^j &= - \gamma^j\gamma^i
 	\end{align}
-	\begin{align}
-		\mqty(\admat{-iI,iI})^2 &= \mqty(\dmat{I,I})
-		\\
-		\mqty(\dmat{-i\sigma_1,-i\sigma_1}) \mqty(\admat{-iI,iI}) 
-		= \mqty(\admat{-iI,iI}) \mqty(\dmat{-i\sigma_1,-i\sigma_1})
-		= \mqty(\admat{-\sigma_1,\sigma_1})
-		&=-\mqty(\admat{\sigma_1,-\sigma_1})
-		\\
-		\mqty(\dmat{-i\sigma_2,-i\sigma_2}) \mqty(\admat{-iI,iI}) 
-		= \mqty(\admat{-iI,iI}) \mqty(\dmat{-i\sigma_2,-i\sigma_2})
-		= \mqty(\admat{-\sigma_2,\sigma_2})
-		&=-\mqty(\admat{\sigma_2,-\sigma_2})
-	\end{align}
+	Nesunku pamatyti, kad bazinių algebros vectorių atvaizdžiai
+	yra tiesiškai neprikausomos matricos.
+	Iš to seką kad $\gamma^1$, $\gamma^2$, $\gamma^3$
+	ir $\vb e_1$, $\vb e_2$, $\vb e_3$
+	generuoja izomorfiškas algebras,
+	tai yra turime ištikimą matricinį įvaizdį.
 \end{proof}
+
+Verta pabrėžti, kad lyginiai bazės elementai atvaizduojami į blok-diagonalias matricas,
+kur kiekvienas blokas yra kopija įvaizdžio iš teiginio \ref{prep:pauli_rep-}.
+Tai lyginį $\pinm$ elementą, kuris atinitnka sukimą apie $\vb n$ kampu $\theta$,
+gauname kaip
+\begin{equation}
+		\mqty(\dmat{
+			e^{-\frac{i\theta}{2}(\vb n,\symbf\sigma)},
+			e^{-\frac{i\theta}{2}(\vb n,\symbf\sigma)}
+		})
+		=
+		\exp(\frac{\theta}{2}(
+			 n_1\gamma^2\gamma^3
+			+n_2\gamma^3\gamma^1
+			+n_3\gamma^1\gamma^2
+		))
+		\,.
+\end{equation}
+Visi nelyginiai elementai gali būti gauti,
+kaip lyginis elementas padaugintas iš $\gamma^1\gamma^2\gamma^3 = \smqty(&-iI\\iI&)$,
+tai nelyginio elemeto bendra forma yra
+\begin{equation}
+		\mqty(\admat{
+			-ie^{-\frac{i\theta}{2}(\vb n, \symbf\sigma)},
+			 ie^{-\frac{i\theta}{2}(\vb n, \symbf\sigma)}
+		})
+		=
+		\gamma^1\gamma^2\gamma^3 \exp(\frac{\theta}{2}(
+			 n_1\gamma^2\gamma^3
+			+n_2\gamma^3\gamma^1
+			+n_3\gamma^1\gamma^2
+		))
+		\,.
+\end{equation}
+
 
 \begin{preposition}
 	Veikimu ant $\Clp$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
-		\mathbb 1	&\mapsto	\mqty(\dmat{I,I})			&\quad	\vb e_{123}	&\mapsto	\mqty(\admat{-I,I})			\\
-		\vb e_{23}	&\mapsto	\mqty(\dmat{i\sigma_1,i\sigma_1})	&\quad	\vb e_1 	&\mapsto	\mqty(\admat{i\sigma_1,-i\sigma_1})	\\
-		\vb e_{31}	&\mapsto	\mqty(\dmat{i\sigma_2,i\sigma_2})	&\quad	\vb e_2 	&\mapsto	\mqty(\admat{i\sigma_2,-i\sigma_2})	\\
-		\vb e_{12}	&\mapsto	\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	&\mapsto	\mqty(\admat{i\sigma_3,-i\sigma_3})	\\
+		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	-i\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{I,-I})			\\
+		\vb e_{23}	\mapsto	-\gamma^2 \gamma^3 =	&\mqty(\dmat{i\sigma_1,i\sigma_1})	&\quad	\vb e_1 	\mapsto	i\gamma^1 =			&\mqty(\admat{i\sigma_1,-i\sigma_1})	\\
+		\vb e_{31}	\mapsto	-\gamma^3 \gamma^1 =	&\mqty(\dmat{i\sigma_2,i\sigma_2})	&\quad	\vb e_2 	\mapsto	i\gamma^2 =			&\mqty(\admat{i\sigma_2,-i\sigma_2})	\\
+		\vb e_{12}	\mapsto	-\gamma^1 \gamma^2 =	&\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	\mapsto	i\gamma^3 =			&\mqty(\admat{i\sigma_3,-i\sigma_3})	\\
 	\end{align*}
 	yra algebros $\Clp$ ištikimas matricinis įvazdis.
 \end{preposition}
 \begin{proof}
-	Pasirnkame algebros generatorius $\vb e_{23}$, $\vb e_{31}$ ir $\vb e_{123}$,
-	kuriems patikrinsime daugybos sąryšius.
-	Šį kartą $\vb e_{23}$ ir $\vb e_{31}$ generuoja lyginį $\Clp$ poalgebrį ir
-	jų įvazdis yra dvi kopijos įvaizdžio iš teiginio \ref{prep:pauli_rep+},
-	lieka patikrinti sąryšius
+	Patikriname ar įvaizdis gerbia generatorių $\vb e_1$, $\vb e_2$ ir $\vb e_3$ 
+	daugybos sąryšius.
 	\begin{align}
-		{\vb e_{123}}^2 &= -\mathbb1
-		\\
-		\vb e_{23} \vb e_{123} = \vb e_{123} \vb e_{23} &= -\vb e_1
-		\\
-		\vb e_{31} \vb e_{123} = \vb e_{123} \vb e_{31} &= -\vb e_2
-	\end{align}
-	\begin{align}
-		\mqty(\admat{-I,I})^2 = \mqty(\dmat{-I,-I}) &= - \mqty(\dmat{I,I})
-		\\
-		\mqty(\dmat{i\sigma_1,i\sigma_1}) \mqty(\admat{-I,I}) 
-		= \mqty(\admat{-I,I}) \mqty(\dmat{i\sigma_1,i\sigma_1})
-		= \mqty(\admat{-i\sigma_1,i\sigma_1})
-		&=-\mqty(\admat{i\sigma_1,-i\sigma_1})
-		\\
-		\mqty(\dmat{i\sigma_2,i\sigma_2}) \mqty(\admat{-I,I}) 
-		= \mqty(\admat{-I,I}) \mqty(\dmat{i\sigma_2,i\sigma_2})
-		= \mqty(\admat{-i\sigma_2,i\sigma_2})
-		&=-\mqty(\admat{i\sigma_2,-i\sigma_2})
-	\end{align}
+		{\vb e_i}^2 &= \mathbb1			&\quad	{\gamma^i}^2 &= \mqty(\dmat{I,I})\\
+		\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	(i\gamma^i)(i\gamma^j) &= - (i\gamma^j)(i\gamma^i)
+	\end{align}.
+	Matome, kad bazė atvaizduojama į tieškai neprikausomas matricas,
+	tai turime ištikimą matricinį algebros $\Clp$ įvaizdį.
 \end{proof}
 
+Šį kartą lyginiai bazės elementai yra atviazduojami į blok-diagonamias matricas,
+kurios yra dvi kopijos įvaiždžio iš teiginio \ref{prep:pauli_rep+} ir lyginio elemento bendra forma yra
+\begin{equation}
+		\mqty(\dmat{
+			e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)},
+			e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)}
+		})
+		=
+		\exp(-\frac{\theta}{2}(
+			 n_1\gamma^2\gamma^3
+			+n_2\gamma^3\gamma^1
+			+n_3\gamma^1\gamma^2
+		))
+		\,.
+\end{equation}
+Nelyginio elemeto bendra forma yra
+\begin{equation}
+		\mqty(\admat{
+			 e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)},
+			-e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)}
+		})
+		=
+		-\gamma^1\gamma^2\gamma^3 \exp(-\frac{\theta}{2}(
+			 n_1\gamma^2\gamma^3
+			+n_2\gamma^3\gamma^1
+			+n_3\gamma^1\gamma^2
+		))
+		\,.
+\end{equation}
 
 
 
