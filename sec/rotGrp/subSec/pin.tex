@@ -1,6 +1,149 @@
 
 \subsection{Grupės $\pinp$ ir $\pinm$}
 
+Pažymine $Cl^{\pm\cross}(3)$ grupę invertuojamų $\Clpm$ elementų,
+grupės daugyba sutmapa su algebros daugyba. 
+\begin{equation}
+	Cl^{\pm\cross}(3)
+	= \qty{
+		v \in \Clpm
+		\mid
+		\exists v^{-1}
+		\text{ toks kad }
+		v^{-1}v = vv^{-1} = \mathbb1
+	} 
+\end{equation}
+
+\begin{definition}
+	$\rho$ yra grupės $Cl^{\pm\cross}(3)$ suktasis jungtinis įvazdis (ang.\emph{twisted adjoint representation}).
+	\begin{equation}
+		\begin{aligned}
+			\rho : Cl^{\pm\cross}(3) &\to \mathup{Aut}\qty(Cl^{\pm}(3)) \\
+			v &\mapsto \qty({
+				w \mapsto \alpha(v)wv^{-1}
+			})
+			\,
+		\end{aligned}
+	\end{equation}
+	čia $\mathup{Aut}\qty(Cl^{\pm\cross}(3))$ yra grupės $Cl^{\pm\cross}(3)$ automorfizmų gupė.
+\end{definition}
+
+\begin{example}
+	Teiginio \ref{prep:R_action} tapatybės $(ii)$ ir $(iii)$ 
+	yra atskiras atvėjis veikimo
+	su įvaizdžiu $\rho$
+	\begin{align}
+		\Clp:& \rho(\vb v)\vb w 
+		= \alpha(\vb v) \vb w {\vb v}^{-1}
+		= -\vb v \vb w \vb v
+		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w
+		\\
+		\Clm:& \rho(\vb v)\vb w 
+		= \alpha(\vb v) \vb w {\vb v}^{-1}
+		= -\vb v \vb w (-\vb v)
+		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w
+	\end{align}
+\end{example}
+
+\begin{definition}
+	Clifford'o–Lipschitz'o grupė $\Gamma^\pm(3)$ yra grupės $\mathup{Cl}^{\pm\cross}(3)$ pogrupis,
+	kuris $\rho(v)$ veikimiu fiksuoja vektorinį poerdvį $\set R^3 \subset \Clpm$.
+	\begin{equation}
+		\Gamma^\pm(3) = \qty{
+			v \in \mathup{Cl}^{\pm\cross}(3)
+			\mid
+			\forall \vb w \in \set R^3 : \rho(v)\vb w \in \set R^3  
+		}
+	\end{equation}
+\end{definition}
+
+Siaurindami apibrėžimo sritį gauname grupės $\Gamma^\pm(3)$ 
+susuktąjį jungtinį įvazdį $\rho: \Gamma^\pm(3) \to \mathup{Aut}\qty(R^3)$.
+Iš $\Clpm$ algebros sandaugos tiesiškumo seka, kad visiems $v$ priklausnatiems $\Gamma^\pm(3)$
+galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
+
+\begin{preposition}
+	Įvaizdžio $\rho: \Gamma^\pm(3) \to \mathup{Aut}\qty(R^3)$ branduolys yra
+	$\qty{c\mathbb1 \mid c \in \set R \setminus \qty{0}}$.
+\end{preposition}
+\begin{proof}
+	Tarkime kad $v \in \mathup{ker}(\rho)$.
+	Vadinasi, su visais $\vb w \in \set R^3$ galioja
+	$\alpha(v)\vb w = \vb w v$.
+	Išskaidome $v = v^0 + v^1$ į lyginę dali $v^0 \in A^\pm_0$
+	ir nelyginę dalį $v^1 \in A^\pm_1$.
+	Tada turime
+	\begin{align}
+		\label{eq:action_condition0}
+		v^0\vb w &= \vb w v^0
+		\\
+		\label{eq:action_condition1}
+		- v^1\vb w &= \vb w v^1
+		\,.
+	\end{align}
+	Nemažindami bendrumo pasirenkame kad $v^0 = a^0 + \vb e_1 b^1$,
+	čia $a^0$ ir $b^1$ yra daugenario išraiškos pagal $\vb e_2$ ir $\vb e_3$
+	ir $a^0$ yra lyginis, o $b^1$ yra nelyginis.
+	Tai kad $a^0$ ir $b^1$ neturi narių su daugikliu $\vb e_1$ mums duoda kad
+	\begin{align}
+		a^0\vb e_1 &= \vb e_1 a^0
+		\\
+		b^1\vb e_1 &= -\vb e_1 b^1
+		\,.
+	\end{align}
+	Į lygtį (\ref{eq:action_condition0}) įsistatome $\vb w = \vb e_1$
+	\begin{equation}
+		\begin{aligned}
+			\qty(a^0 + \vb e_1 b^1)\vb e_1 
+			&= \vb e_1 \qty(a^0 + \vb e_1 b^1)
+			\\
+			a^0\vb e_1 + \vb e_1 b^1 \vb e_1
+			&= \vb e_1 a^0 + {\vb e_1}^2 b^1
+			\\
+			\vb e_1 a^0 - {\vb e_1}^2 b^1 
+			&= \vb e_1 a^0 + {\vb e_1}^2 b^1
+			\\
+			\implies b^1 &= 0
+			\,.
+		\end{aligned}
+	\end{equation}
+	Tai reiškia, kad $v^0$ yra išreiškiamas kaip daugenaris
+	be narių su daugikliu $\vb e_1$.
+	Šį argumentą pakartojame su $\vb e_2$ ir $\vb e_3$
+	ir gauname kad $v^0 = c \mathbb1 $, $c \in \set R$.
+
+	Nemažindami bendrumo pasirenkame kad $v^1 = a^1 + \vb e_1 b^0$,
+	čia $a^1$ ir $b^0$ neturi narių su daugikliu $\vb e_1$,
+	$a^1$ - nelyginis, $b^0$ - lyginis.
+	Į lygti (\ref{eq:action_condition1}) įsistatome $\vb w = \vb e_1$
+	\begin{equation}
+		\begin{aligned}
+			-\qty(a^1 + \vb e_1 b^0)\vb e_1 
+			&= \vb e_1 \qty(a^1 + \vb e_1 b^0)
+			\\
+			-a^1\vb e_1 - \vb e_1 b^0 \vb e_1
+			&= \vb e_1 a^1 + {\vb e_1}^2 b^0
+			\\
+			\vb e_1 a^1 - {\vb e_1}^2 b^0 
+			&= \vb e_1 a^0 + {\vb e_1}^2 b^1
+			\\
+			\implies b^0 &= 0
+			\,.
+		\end{aligned}
+	\end{equation}
+	Tai reiškia, kad $v^1$ yra išreiškiamas kaip daugenaris
+	be narių su daugikliu $\vb e_1$.
+	Šį argumentą pakartojame su $\vb e_2$ ir $\vb e_3$
+	ir gauname kad $v^1 = 0 $.
+
+	Turime kad $v = c \mathbb1$.
+	Taip pat $v^{-1} = \frac{1}{c} \mathbb1$ privalo egzistuoti,
+	tad $c \neq 0$.
+\end{proof}
+
+
+
+
 \begin{definition}
 	$\pinpm$ yra grupės genruojamos vienetiniu vektorių $\vb v \in R^3$,
 	$(\vb v,\vb v) = 1$, juos dauginat algebroje $\Clpm$.
@@ -15,7 +158,29 @@
 
 \begin{preposition}
 	Jie ir tik jei $v$ priklauso $\pinp$,
-	$vv^t=\mathbb1$.
+	$vv^t=\mathbb1$ ir $\rho(v).\vb w$ yra vektorius visiems $\vb \in \set R^3$.
+\end{preposition}
+\begin{proof}
+	($\Rightarrow$) Tarkime, kad $v \in \pinp$.
+	Tada
+	\begin{equation}
+		\begin{aligned}
+			vv^t 
+			&= \vb v_1 \vb v_2 \dots \vb v_n (\vb v_1 \vb v_2 \dots \vb v_n)^t
+			\\&= \vb v_1 \vb v_2 \dots \vb v_n \vb v_n \vb v_{n-1} \dots \vb v_1
+			\\&= (\vb v_n,\vb v_n) \vb v_1 \vb v_2 \dots \vb v_{n-1} \vb v_{n-1} \vb v_{n-2} \dots \vb v_1
+			\\&\vdots
+			\\&= (\vb v_n,\vb v_n)(\vb v_{n-1},\vb v_{n-1})\dots(\vb v_1,\vb v_1) \mathbb1
+			\\vv^t &= \mathbb1
+		\end{aligned}
+	\end{equation}
+
+	($\Leftarrow$) Assume $B$. Then \ldots hence $A$.
+\end{proof}
+
+
+
+\begin{preposition}
 	Jei ir tik jei $v$ priklauso $\pinm$,
 	$v\alpha(v^t)=\mathbb1$.
 \end{preposition}
@@ -200,6 +365,14 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 	yra branduolys homomorfizmo einančio po jo sekoje.
 \end{theorem}
 
+
+\begin{preposition}
+	Grupė $\pinp$ yra izomorfiška grupų tiesioginei sandaugai $\spin \times C_2$.
+\end{preposition}
+
+\begin{preposition}
+	Grpė $\pinm$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
+\end{preposition}
 
 
 
