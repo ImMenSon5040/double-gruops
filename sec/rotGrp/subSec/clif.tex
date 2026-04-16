@@ -253,40 +253,43 @@ rašysime
 	\,.
 \end{equation}
 
-Štai kelios svarbios tapatybės
 \begin{preposition}
-	Algebrose $\Clpm$ 
-	\begin{equation}
-		\vb v \vb v 
-		= \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
-		= \pm(\vb v,\vb v) \mathbb 1
-		\,.
-	\end{equation}
+	\label{prep:R_action}
+	Galioja tapatybės:
+	\begin{enumerate}
+		\item[$(i)$] algebrose $\Clpm$ turime $ \vb v \vb v = \pm(\vb v,\vb v) \mathbb 1$
+		\item[$(ii)$] algebroje $\Clp$ turime $ -\vb v \vb w \vb v = -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w $
+		\item[$(iii)$] algebroje $\Clm$ turime $ \vb v \vb w \vb v = -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w $
+	\end{enumerate}
 \end{preposition}
+\begin{proof} Taikydami sąryšį $\vb v \vb w + \vb w \vb v = \pm2(\vb v ,\vb w)$ gauname
+	\begin{enumerate}
+		\item[$(i)$] 
+			$
+			\vb v \vb v 
+			= \frac{1}{2}(\vb v \vb v + \vb v \vb v) 
+			= \pm(\vb v,\vb v) \mathbb 1
+			\,,
+			$
+		\item[$(ii)$] 	
+			$
+			-\vb v \vb w \vb v 
+			= -\qty( 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
+			= -2(\vb v,\vb w) \vb v + \vb{wvv} 
+			= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
+			\,,
+			$
+		\item[$(iii)$]
+			$
+			\vb v \vb w \vb v 
+			= \qty( - 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
+			= -2(\vb v,\vb w) \vb v - \vb{wvv} 
+			= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
+			\,.
+			$
+	\end{enumerate}
+\end{proof}
 
-\begin{preposition}
-	\label{prep:R_action-}
-	Algebroje $\Clp$ 
-	\begin{equation}
-		-\vb v \vb w \vb v 
-		= -\qty( 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
-		= -2(\vb v,\vb w) \vb v + \vb{wvv} 
-		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
-		\,.
-	\end{equation}
-\end{preposition}
-
-\begin{preposition}
-	\label{prep:R_action+}
-	Algebroje $\Clm$ 
-	\begin{equation}
-		\vb v \vb w \vb v 
-		= \qty( - 2(\vb v,\vb w)\mathbb 1 - \vb{wv} )\vb v 
-		= -2(\vb v,\vb w) \vb v - \vb{wvv} 
-		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
-		\,.
-	\end{equation}
-\end{preposition}
 
 Atkreipiame dėmesį, kad kai $(\vb v,\vb v)=1$,
 $(\vb v,\vb w)\vb v$ yra vektoriaus $\vb w$ projekcija į $\vb v$
@@ -324,7 +327,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 		:=
 		\vb e_{i_k} \vb e_{i_{k-1}} \dots \vb e_{i_1}
 		=
-		(-1)^{k-1} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
+		(-1)^\frac{k(k-1)}{2} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
 	\end{equation}
 	ir transponavimo operacija yra tiesiškai praplečiama
 	bet kuriam algebros $\Clpm$ vektoriui, veikimu ant bazės.
@@ -349,7 +352,7 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 	homomorfizmo veikimu ant bazės.
 \end{definition}
 
- Pažymime algebros poerdvius
+Pažymime algebros poerdvius
 \begin{equation}
 	\begin{split}
 		A_0 &:= \qty{
