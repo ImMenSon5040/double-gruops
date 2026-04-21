@@ -29,7 +29,7 @@ grupės daugyba sutmapa su algebros daugyba.
 \end{definition}
 
 \begin{example}
-	Teiginio \ref{prep:R_action} tapatybės $(ii)$ ir $(iii)$ 
+	Teiginio \ref{prop:R_action} tapatybės $(ii)$ ir $(iii)$ 
 	yra atskiras atvėjis veikimo
 	su įvaizdžiu $\rho$
 	\begin{align}
@@ -62,10 +62,12 @@ susuktąjį jungtinį įvazdį $\rho: \Gamma^\pm(3) \to \mathup{Aut}\qty(R^3)$.
 Iš $\Clpm$ algebros sandaugos tiesiškumo seka, kad visiems $v$ priklausnatiems $\Gamma^\pm(3)$
 galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 
-\begin{preposition}
+\begin{proposition}
+	\label{prop:rho_kern}
 	Įvaizdžio $\rho: \Gamma^\pm(3) \to \mathup{Aut}\qty(R^3)$ branduolys yra
-	$\qty{c\mathbb1 \mid c \in \set R \setminus \qty{0}}$.
-\end{preposition}
+	$\set R^{\cross} \mathbb1 $,
+	tai yra algebros vienetinis elementas padaugintas iš realiųjų skaičių be nulio.
+\end{proposition}
 \begin{proof}
 	Tarkime kad $v \in \mathup{ker}(\rho)$.
 	Vadinasi, su visais $\vb w \in \set R^3$ galioja
@@ -141,49 +143,167 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	tad $c \neq 0$.
 \end{proof}
 
-
-
-
 \begin{definition}
-	$\pinpm$ yra grupės genruojamos vienetiniu vektorių $\vb v \in R^3$,
-	$(\vb v,\vb v) = 1$, juos dauginat algebroje $\Clpm$.
-	Gupės elemnetai yra vienanariai $\vb v_1 \vb v_2 \dots \vb v_n$
-	ir gupės daugyba sutampa su algebros daugyba.
+	Tegul $N^+: \Clp \to \Clp$ yra funcija, kuri $v \mapsto vv^t$.
 \end{definition}
 
 \begin{definition}
-	Grupė $\spin$ yra pogrupis $\pinp$,
-	sudarytas iš visų lyginių $\pinp$ elementų.
+	Tegul $N^-: \Clm \to \Clm$ yra funcija, kuri $v \mapsto v\alpha(v^t)$.
 \end{definition}
 
-\begin{preposition}
-	Jie ir tik jei $v$ priklauso $\pinp$,
-	$vv^t=\mathbb1$ ir $\rho(v).\vb w$ yra vektorius visiems $\vb \in \set R^3$.
-\end{preposition}
+\begin{proposition}
+	Jeigu $v \in \Gamma^+(3)$, tai $N^+(v) \in {\set R}^{\cross} \mathbb1 $.
+	Atitinkamai 
+	jeigu $v \in \Gamma^-(3)$, tai $N^-(v) \in \set R^{\cross} \mathbb1 $.
+\end{proposition}
 \begin{proof}
-	($\Rightarrow$) Tarkime, kad $v \in \pinp$.
-	Tada
+	Parodysime kad $N^+(v)$ priklauso įvaizdžio $\rho$ branduoliui.
+	Turime $v \in \Gamma^+(3)$, $\vb w, \vb w' \in \set R^3$,
+	$v$ ir $\vb w$ laisvai pasirenkami $\vb w'$ gaunamas $\rho(v)$ veikimu.
+	\begin{align}
+		\alpha(v)\vb w v^{-1} &= \vb w'
+		&&\text{iš $\Gamma^+(3)$ apibėžimo}
+		\\
+		\alpha(v^t)^{-1}  (-\vb w)  v^t &= -\vb w'
+		&&\text{abiem lygybės pusėms pritaikome $x \mapsto \alpha(x^t)$}
+		\\
+		\alpha(v^t)^{-1}  \vb w  v^t &= \alpha(v)\vb w v^{-1}
+		&&\text{sulyginame dvi $\vb w'$ išraiškas}
+		\\
+		\vb w  v^t v&= \alpha(v^t)\alpha(v)\vb w 
+		&&\text{perkeliame ayvikštinius elementus}
+		\\
+		\vb w  v^t v&= \alpha(v^t v)\vb w 
+		&&\text{pritaikome homomorfizmo savybę}
+	\end{align}
+	Iš to seka kad $v^t v \in \mathup{ker}(\rho)$, nes
 	\begin{equation}
 		\begin{aligned}
-			vv^t 
-			&= \vb v_1 \vb v_2 \dots \vb v_n (\vb v_1 \vb v_2 \dots \vb v_n)^t
-			\\&= \vb v_1 \vb v_2 \dots \vb v_n \vb v_n \vb v_{n-1} \dots \vb v_1
-			\\&= (\vb v_n,\vb v_n) \vb v_1 \vb v_2 \dots \vb v_{n-1} \vb v_{n-1} \vb v_{n-2} \dots \vb v_1
-			\\&\vdots
-			\\&= (\vb v_n,\vb v_n)(\vb v_{n-1},\vb v_{n-1})\dots(\vb v_1,\vb v_1) \mathbb1
-			\\vv^t &= \mathbb1
+			\rho(v^t v)\vb w 
+			&= \alpha(v^t v)\vb w (v^t v)^{-1}
+			\\&= \vb w  v^t v (v^t v)^{-1}
+			\\&= \vb w 
+			\,.
 		\end{aligned}
 	\end{equation}
+	Transpozicija yra algebros anti-automorfizmas,
+	tad $v v^t$ irgi prikauso $\mathup{ker}(\rho)$.
+	Iš teiginio \ref{prop:rho_ker} seka,
+	kad $x \in \Gamma^+(3) \implies N^+(x) \in \set R^{\cross} \mathbb1 $ 
 
-	($\Leftarrow$) Assume $B$. Then \ldots hence $A$.
+	Antrą teiginio dalį įrodysime panašiu būdu.
+	Turime $v \in \Gamma^-(3)$, $\vb w, \vb w' \in \set R^3$,
+	$v$ ir $\vb w$ laisvai pasirenkami $\vb w'$ gaunamas $\rho(v)$ veikimu.
+	\begin{align}
+		\alpha(v)\vb w v^{-1} &= \vb w'
+		&&\text{iš $\Gamma^-(3)$ apibėžimo}
+		\\
+		(v^t)^{-1}  \vb w  \alpha(v^t) &= \vb w'
+		&&\text{transponuojame abi lygybės puses}
+		\\
+		(v^t)^{-1}  \vb w  \alpha(v^t) &= \alpha(v)\vb w v^{-1}
+		&&\text{sulyginame dvi $\vb w'$ išraiškas}
+		\\
+		\vb w  \alpha(v^t) v &= v^t \alpha(v)\vb w 
+		&&\text{perkeliame ayvikštinius elementus}
+	\end{align}
+	Iškarto turime, kad $\alpha(v^t) v \in \mathup{ker}(\rho)$, nes
+	\begin{equation}
+		\begin{aligned}
+			\rho(\alpha(v^t) v)\vb w 
+			&= \alpha(\alpha(v^t) v)\vb w (\alpha(v^t) v)^{-1}
+			\\&= v^t \alpha(v) \vb w (\alpha(v^t) v)^{-1}
+			\\&= \vb w  \alpha(v^t) v (\alpha(v^t) v)^{-1}
+			\\&= \vb w 
+			\,.
+		\end{aligned}
+	\end{equation}
+	Transpozicija yra algebros anti-automorfizmas
+	ir $\alpha$ yra algebros automorfizmas,
+	tad $v \alpha(v^t)$ irgi prikauso $\mathup{ker}(\rho)$.
+	Iš teiginio \ref{prop:rho_ker} seka,
+	kad $x \in \Gamma^-(3) \implies N^-(x) \in \set R^{\cross} \mathbb1$.
 \end{proof}
 
+\begin{proposition}
+	Funkcijos $N^\pm: \Gamma^\pm(3) \to \set R^{\cross}$
+	yra grupių homomorfizmai.
+	Papildomai $N^\pm(\alpha(v)) = N^\pm(v)$
+\end{proposition}
+\begin{proof}
+	Tegul $v,w \in \Gamma^\pm(3)$
+	\begin{align}
+		N^+(vw) &= v w w^t v^t = v N^+(w) v^t = v v^t N^+(w) = N^+(v) N^+(w)
+		\\
+		N^-(vw) &= \alpha(v) \alpha(w) w^t v^t = \alpha(v) N^-(w) v^t = \alpha(v) v^t N^-(w)  = N^-(v) N^-(w)
+		\\
+		N^+(\alpha(v)) &= \alpha(v) \alpha(v^t) = \alpha(v v^t) = \alpha(N^+(v)) = N^+(v)
+		\\
+		N^-(\alpha(v)) &= \alpha(\alpha(v)) \alpha(v^t) = \alpha(\alpha(v) v^t) = \alpha(N^-(v)) = N^-(v)
+		\,.
+	\end{align}
+\end{proof}
 
+\begin{definition}
+	Grupių homomorfizmo $N^\pm:\Gamma^\pm(3) \to \set R^{\cross}$ branduolys sudaro $\Gamma^\pm(3)$ pogrupį vadinama $\pinpm$.
+	\begin{equation}
+		\pinpm := \qty{
+			v \in \Clpm 
+			\mid 
+			N^\pm(v) = \mathbb1
+			\text{ ir }
+			\rho(v)\set R^3 = \set R^3
+		}
+	\end{equation}
+\end{definition}
 
-\begin{preposition}
-	Jei ir tik jei $v$ priklauso $\pinm$,
-	$v\alpha(v^t)=\mathbb1$.
-\end{preposition}
+\begin{proposition}
+	Suktasis jungtinis įvazdis $\rho$ grupę $\pinpm$ atvaizduoją į grupę $\Orth3$,
+	atvaizdavimo siaurinys $\rho : \pinpm \to \Orth3$ yra sujektyvus
+	su branduoliu $\qty{\mathbb1,-\mathbb1}$.
+	Tai ekvivalentu teiginiui, kad egzistuoja trumpoji tikslioji seka
+	(ang. \emph{short exact sequence}).
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &\{1,-1\} \arrow[r]	&\pinpm \arrow[r, "\rho"] &\Orth3 \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Patebime kad $N^\pm$ veikimu ant $\set R^3 \subset \Clpm$
+	sutampa su standartiniu vektoriaus kvadratu $(\vb w, \vb w)$
+	\begin{align}
+		N^+ (\vb w) &= \vb w {\vb w}^t = \vb w \vb w = (\vb w,\vb w)\mathbb1
+		\\
+		N^- (\vb w) &= \vb w \alpha({\vb w}^t) = -\vb w \vb w = (\vb w,\vb w)\mathbb1
+		\,.
+	\end{align}
+	Įvaizdis $\rho$ atvaizduoja į $\Orth3$, nes
+	\begin{equation}
+		N^\pm(\rho(v)\vb w)
+		= N^\pm(\alpha(v))  N^\pm(\vb w)  N^\pm(v^{-1}) 
+		= N^\pm(\vb w)
+		\,.
+	\end{equation}
+	Iš sąlygos $N^\pm(v) = \mathbb1$ seka,
+	kad grupėje $\pinp$ atvikškiniai elementai yra $v^{-1} = v^t$
+	ir grupėje $\pinm$ atvikškiniai elementai yra $v^{-1} = \alpha(v^t)$.
+	Vientiniai vektoriai $\vb n \in \set R^3$, $(\vb n,\vb n)$, priklauso grupei $\pinpm$
+	ir $\rho$ juos atvaizduoja į atspindžius per polokštumą
+	\begin{equation}
+		\rho(\vb n)\vb w = \alpha(\vb n) v \vb n^{-1} = \vb w - 2 (\vb w,\vb n)\vb n
+		\,.
+	\end{equation}
+	Atspindžiai generuoja grupę $O(3)$,
+	tad $\rho$ yra surjekcija.
+
+	Iš teiginio \ref{prop:rho_ker} turime kad atvaizdavimo 
+	$rho$ iš $\Gamma^\pm(3)$ į $\mathup{Aut}(\set R^3)$
+	branduolys yra $\set R^{cross} \mathbb1$.
+	Tada $\rho$ siaurinio brandauolys yra $\set R^{cross} \mathbb1$
+	elementai, kurie prikauso $\pinpm$ ($N^\pm(c\mathbb1) = \mathbb1$),
+	tai branduolys yra $\qty{\mathbb1,-\mathbb1}$.
+\end{proof}
 
 \begin{example}
 	Patikrinkime, kad $\pinm$ tikrai tenkina grupės aksiomas.
@@ -221,14 +341,14 @@ gausime tik lyginius elementus,
 todėl jie sudaro $\pinpm$ pogrupį.
 
 
-\begin{preposition}
+\begin{proposition}
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
 	yra izomorphiški, kaip grupės.
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	$\pinpm$ lyginiai porgupiai kaip aibės prikauso 
 	atitinkamiems $\Clpm$ lyginiams poalgiabriams $A_0^\pm$.
-	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prep:even_iso}),
+	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prop:even_iso}),
 	tegul $f: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
 	Jei $\Clp$ lyginis elementams $v$ priklauso $\pinp$,
 	tai $f(v)$ priklauso $\pinm$
@@ -260,7 +380,7 @@ todėl jie sudaro $\pinpm$ pogrupį.
 Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
 nes jie yra izomofiški.
 
-\begin{preposition}
+\begin{proposition}
 	Visi $\spin$ elementai yra formos
 	\begin{equation}
 		a_0 \mathbb1 
@@ -276,7 +396,7 @@ nes jie yra izomofiški.
 		+{a_3}^2
 		= 1
 	\end{equation}
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	Bendra lyginio $\Clp$ vektoriaus forma yra
 	\begin{equation}
@@ -329,7 +449,7 @@ $\mathup{Cl^\pm(V)}$ ir tada veikiant su algebros sandauga
 
 Iškart galima pamatyti kad $\pinpm$ elementai $\vb v$ ir $-\vb v$ veikia vienodai,
 nes daugiklis $-1$ du kart iškeliamas prieš algebros sandaugą.
-Teiginiai \ref{prep:R_action+} ir \ref{prep:R_action-} parodo kad
+Teiginiai \ref{prop:R_action+} ir \ref{prop:R_action-} parodo kad
 vienetinis vektorius $\vb n \in \set R^3$ patalpinti į $\pinpm$,
 veikia ant $\vb w \in \set R^3$,
 kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
@@ -366,13 +486,13 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 \end{theorem}
 
 
-\begin{preposition}
+\begin{proposition}
 	Grupė $\pinp$ yra izomorfiška grupų tiesioginei sandaugai $\spin \times C_2$.
-\end{preposition}
+\end{proposition}
 
-\begin{preposition}
+\begin{proposition}
 	Grpė $\pinm$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
-\end{preposition}
+\end{proposition}
 
 
 
@@ -405,8 +525,8 @@ ir vienetinės $2\times2$ matricos pagalba
 \end{align}
 
 
-\begin{preposition}
-	\label{prep:pauli_rep+}
+\begin{proposition}
+	\label{prop:pauli_rep+}
 	Veikimu ant $\Clp$ \emph{lyginio} poalgebrio $A_0^+$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
@@ -415,7 +535,7 @@ ir vienetinės $2\times2$ matricos pagalba
 		\vb e_{12}	\mapsto	i\sigma_3	
 	\end{align*}
 	yra algebros $\Clp$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	Užtenka pratikrinti kad pasirinkti algebros generatoriai $\vb e_{23}$ ir $\vb e_{31}$
 	tapusavyje tenkina tokius pat sandaugos sąryšius kaip jų įvazdzdis.
@@ -436,8 +556,8 @@ ir vienetinės $2\times2$ matricos pagalba
 \end{proof}
 
 
-\begin{preposition}
-	\label{prep:pauli_rep-}
+\begin{proposition}
+	\label{prop:pauli_rep-}
 	Veikimu ant $\Clm$ \emph{lyginio} poalgebrio $A_0^-$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
@@ -446,15 +566,15 @@ ir vienetinės $2\times2$ matricos pagalba
 		\vb e_{12}	\mapsto	-i\sigma_3	
 	\end{align*}
 	yra algebros $\Clm$ \emph{lyginio} poalgebrio ištikimas matricinis įvazdis.
-\end{preposition}
+\end{proposition}
 \begin{proof}
-	Analogiškai kaip teiginyje \ref{prep:pauli_rep+}
+	Analogiškai kaip teiginyje \ref{prop:pauli_rep+}
 \end{proof}
 
-\begin{preposition} 
-	Atvizdis iš teiginio \ref{prep:pauli_rep+} siunčia $\spin$ į matricinė grupė $\mathup{SU}(2)$.
+\begin{proposition} 
+	Atvizdis iš teiginio \ref{prop:pauli_rep+} siunčia $\spin$ į matricinė grupė $\mathup{SU}(2)$.
 	Tai yra $\spin$ ir $\mathup{SU}(2)$ yra izomorfiškos grupės.
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	Bendros formos $\spin$ elementas
 	$ a_0 \mathbb1 + a_1 \vb e_{23} + a_2 \vb e_{31} + a_3 \vb e_{12}$,
@@ -517,7 +637,7 @@ Jos tenkina sąryšius
 \end{equation}
 
 
-\begin{preposition}
+\begin{proposition}
 	Veikimu ant $\Clm$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{-iI,iI})			\\
@@ -526,7 +646,7 @@ Jos tenkina sąryšius
 		\vb e_{12}	\mapsto	\gamma^1 \gamma^2 =	&\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	\mapsto	\gamma^3 =			&\mqty(\admat{\sigma_3,-\sigma_3})	\\
 	\end{align*}
 	yra algebros $\Clm$ ištikimas matricinis įvazdis.
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	Gama matricos tenkina tokius pat daugybos sąryšius,
 	kaip algebros $\Clm$ generatoriai $\vb e_1$, $\vb e_2$ ir $\vb e_3$.
@@ -543,7 +663,7 @@ Jos tenkina sąryšius
 \end{proof}
 
 Verta pabrėžti, kad lyginiai bazės elementai atvaizduojami į blok-diagonalias matricas,
-kur kiekvienas blokas yra kopija įvaizdžio iš teiginio \ref{prep:pauli_rep-}.
+kur kiekvienas blokas yra kopija įvaizdžio iš teiginio \ref{prop:pauli_rep-}.
 Tai lyginį $\pinm$ elementą, kuris atinitnka sukimą apie $\vb n$ kampu $\theta$,
 gauname kaip
 \begin{equation}
@@ -577,7 +697,7 @@ tai nelyginio elemeto bendra forma yra
 \end{equation}
 
 
-\begin{preposition}
+\begin{proposition}
 	Veikimu ant $\Clp$ bazės apibrėžtas atvaizdavimas
 	\begin{align*}
 		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	-i\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{I,-I})			\\
@@ -586,7 +706,7 @@ tai nelyginio elemeto bendra forma yra
 		\vb e_{12}	\mapsto	-\gamma^1 \gamma^2 =	&\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	\mapsto	i\gamma^3 =			&\mqty(\admat{i\sigma_3,-i\sigma_3})	\\
 	\end{align*}
 	yra algebros $\Clp$ ištikimas matricinis įvazdis.
-\end{preposition}
+\end{proposition}
 \begin{proof}
 	Patikriname ar įvaizdis gerbia generatorių $\vb e_1$, $\vb e_2$ ir $\vb e_3$ 
 	daugybos sąryšius.
@@ -599,7 +719,7 @@ tai nelyginio elemeto bendra forma yra
 \end{proof}
 
 Šį kartą lyginiai bazės elementai yra atviazduojami į blok-diagonamias matricas,
-kurios yra dvi kopijos įvaiždžio iš teiginio \ref{prep:pauli_rep+} ir lyginio elemento bendra forma yra
+kurios yra dvi kopijos įvaiždžio iš teiginio \ref{prop:pauli_rep+} ir lyginio elemento bendra forma yra
 \begin{equation}
 		\mqty(\dmat{
 			e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)},
