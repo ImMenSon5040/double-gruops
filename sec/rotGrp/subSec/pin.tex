@@ -343,13 +343,13 @@ todėl jie sudaro $\pinpm$ pogrupį.
 
 \begin{proposition}
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
-	yra izomorphiški, kaip grupės.
+	yra izomorfiški, kaip grupės.
 \end{proposition}
 \begin{proof}
 	$\pinpm$ lyginiai porgupiai kaip aibės prikauso 
 	atitinkamiems $\Clpm$ lyginiams poalgiabriams $A_0^\pm$.
 	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prop:even_iso}),
-	tegul $f: A_0^+ \to A_0^-$ žymi izomorphizmą tarp jų.
+	tegul $f: A_0^+ \to A_0^-$ žymi izomorfizmą tarp jų.
 	Jei $\Clp$ lyginis elementams $v$ priklauso $\pinp$,
 	tai $f(v)$ priklauso $\pinm$
 	\begin{equation}
@@ -487,13 +487,135 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 
 
 \begin{proposition}
-	Grupė $\pinp$ yra izomorfiška grupų tiesioginei sandaugai $\spin \times C_2$.
+	Grupė $\pinm$ yra izomorfiška grupų tiesioginei sandaugai $\spin \times C_2$.
 \end{proposition}
+\begin{proof}
+	Grupės $\pinm$ elementas $\vb e_{123}$ tenkina tapatybes
+	\begin{align}
+		{\vb e_{123}}^2 &= \mathbb1
+		\\
+		\vb e_{123} \vb e_i &= \vb e_i  \vb e_{123} \quad &i \in \qty{1,2,3}
+		\\
+		\vb e_{123} v &= v  \vb e_{123} \quad &v \in \pinm
+		\,.
+	\end{align}
+	Iš sąlygos $vv^t = \mathbb1$ seka, kad nelyginio $\pinm$ elemento $v^1$ bendra forma yra
+	\begin{equation}
+		v^1 = 
+		b_0 \vb e_{123}
+		+ b_1 \vb e_1
+		+ b_2 \vb e_2
+		+ b_3 \vb e_3
+		\,
+	\end{equation}
+	čia $b_i \in \set R$ ir
+	${b_0}^2 + {b_1}^2 + {b_2}^2 + {b_3}^2 = 1$.
+	Egzistuoja unikalus išskaidymas
+	$
+	v^1 = \vb e_{123}
+	\qrt({
+		b_0 \vb \mathbb1
+		- b_1 \vb e_{23}
+		- b_2 \vb e_{31}
+		- b_3 \vb e_{12}
+	})
+	= \vb e_{123} v^0
+	$, čia $v^0$ yra lyginis $\pinm$ elementas,
+	kuris taip pat prikauso $\spin$.
+
+	Grupės $C_2$ elementus žymėsime $\qty{1,-1}$.
+	Tegul funkcija $f: \sipn \times C_2 \to \pinm$ yra apibrėžiama kaip
+	\begin{equation}
+		\qty(v^0,1) \mapsto v^0
+		\,,\quad
+		\qty(v^0, -1) \mapsto \vb e_{123} v^0
+		\,.
+	\end{equation}
+	Iš unikalus $v^1$ išskaidymo $\vb e_{123} v^0$ gauname,
+	kad $f$ yra bijektyvi.
+	Patikriname kad $f$ gerbia grupės daugybą
+	\begin{equation}
+		\begin{aligned}
+			f((v,1))f((v',1)) &= vv' = f((vv',1)) = f((v,1)(v',1))
+			\\
+			f((v,1))f((v',-1)) &= v\vb e_{123}v' = \vb e_{123}vv' = f((vv', -1)) = f((v,1)(v',-1))
+			\\
+			f((v,-1))f((v',1)) &= \vb e_{123}vv' = f(vv', -1) = f((v,-1)(v',1))
+			\\
+			f((v,-1))f((v',-1)) &= \vb e_{123}v\vb e_{123}v' = {\vb e_{123}}^2 vv' = vv'= f((vv', 1)) = f((v,-1)(v',-1))
+			\,.
+		\end{aligned}
+	\end{equation}
+	Funkcija $f$ yra grupių izomomorfizmas ir $\pinm \cong \spin \times C_2$.
+\end{proof}
 
 \begin{proposition}
-	Grpė $\pinm$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
+	Grpė $\pinp$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
 \end{proposition}
+\begin{proof}
+	Grupės $\pinp$ elementas $\vb e_{123}$ tenkina tapatybes
+	\begin{align}
+		{\vb e_{123}}^2 &= -\mathbb1
+		\\
+		\vb e_{123} \vb e_i &= \vb e_i  \vb e_{123} \quad &i \in \qty{1,2,3}
+		\\
+		\vb e_{123} v &= v  \vb e_{123} \quad &v \in \pinp
+		\,.
+	\end{align}
+	Iš sąlygos $v\alpha(v^t) = \mathbb1$ seka, kad nelyginio $\pinp$ elemento $v^1$ bendra forma yra
+	\begin{equation}
+		v^1 = 
+		b_0 \vb e_{123}
+		+ b_1 \vb e_1
+		+ b_2 \vb e_2
+		+ b_3 \vb e_3
+		\,
+	\end{equation}
+	čia $b_i \in \set R$ ir
+	${b_0}^2 + {b_1}^2 + {b_2}^2 + {b_3}^2 = 1$.
+	Egzistuoja unikalus išskaidymas
+	$
+	v^1 = \vb e_{123}
+	\qrt({
+		b_0 \vb \mathbb1
+		- b_1 \vb e_{23}
+		- b_2 \vb e_{31}
+		- b_3 \vb e_{12}
+	})
+	= \vb e_{123} v^0
+	$, čia $v^0$ yra lyginis $\pinp$ elementas,
+	kuris taip pat prikauso $\spin$.
 
+	Grupės $C_4$ elementus žymėsime $\qty{1,i,-1,-i}$.
+	Grupiu tiesioginės sandauga $\spin \times C_4$
+	turi normalųjį pogrupį $\qty{(\mathbb1,1),(-\mathbb1,-1)} \cong C_2$.
+	Tegul $\spin \times C_4 /C_2$ yra faktorgrupė, gauta $\spin \times C_4$ faltorizuojant pagal $\qty{(\mathbb1,1),(-\mathbb1,-1)}$.
+	Faktorgrupės elementai yra jungtinės klasės $(v^0,1)C_2 = \qty{(v^0,1),(-v^0,-1)}$ ir $(v^0,i)C_2 = \qty{(v^0,i),(-v^0,-i)}$,
+	$v^0 \in \spin$.
+	Tegul funkcija $f: \spin \times C_4 /C_2 \to \pinp$ yra apibėžiama kaip 
+	\begin{equation}
+		(v^0,1)C_2 \mapsto v_0
+		\,\quad
+		(v^0,i)C_2 \mapsto e_{123}v_0
+		\,.
+	\end{equation}
+	Iš unikalus $v^1$ išskaidymo $\vb e_{123} v^0$ gauname,
+	kad $f$ yra bijektyvi.
+	Patikriname kad funkcija $f$ gerbia gupės daugybą.
+	\begin{equation}
+		\begin{aligned}
+			f((v,1)C_2)f((v',1)C_2) &= vv' = f((vv',1)C_2) = f((v,1)C_2(v',1)C_2)
+			\\
+			f((v,1)C_2)f((v',i)C_2) &= v\vb e_{123}v' = \vb e_{123}vv' = f((vv', i)C_2) = f((v,1)C_2(v',i)C_2)
+			\\
+			f((v,i)C_2)f((v',1)C_2) &= \vb e_{123}vv' = f((vv', i)C_2) = f((v,i)C_2(v',1)C_2)
+			\\
+			f((v,i)C_2)f((v',i)C_2) &= \vb e_{123}v\vb e_{123}v' = {\vb e_{123}}^2 vv' = - vv'= f((-vv', 1)C_2) =f ((vv', -1)C_2) = f((v,i)C_2(v',i)C_2)
+			\,.
+		\end{aligned}
+	\end{equation}
+	Funkcija $f$ yra grupių izomomorfizmas ir $\pinp \cong \spin \times C_4/C_2$.
+\end{proof}
 
 
 \subsection{$\spin$ ir $\pinpm$ matriciniai įvaizdžiai}
