@@ -310,14 +310,19 @@ kur jie turi tenkinti
 Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti,
 kaip tiesinę kombinaciją aštuonių elementų:
 \begin{equation}
-		\mathbb 1 ,\,
-		\vb e_1 ,\, \vb e_2 ,\, \vb e_3 ,\, 
-		\vb e_2 \vb e_3 ,\, \vb e_3 \vb e_1 ,\, \vb e_1 \vb e_2 ,\,
-		\vb e_1 \vb e_2 \vb e_3 ,
+	\mathbb 1 ,\,
+	\vb e_1 ,\, \vb e_2 ,\, \vb e_3 ,\, 
+	\vb e_2 \vb e_3 ,\, \vb e_3 \vb e_1 ,\, \vb e_1 \vb e_2 ,\,
+	\vb e_1 \vb e_2 \vb e_3 ,
 \end{equation}
 nes su pirma taisykle betkurį tenzorinės algebros bazės elementą galima išrikiuoti taip kad
 ortų indeksai būtų surašyti didėjimo tvarka ir su antra taisykle pasikartojantys ortai panaikinami.
-Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
+Tai reiškia $\Clpm$ yra aštuonmatės algebros.
+Įvedame pažymėjimą, kurį toliau naudosime algebrų $\Clpm$ bazei
+$\vb e_{23} := \vb e_2 \vb e_3$, 
+$\vb e_{31} :=-\vb e_3 \vb e_1$, 
+$\vb e_{12} := \vb e_1 \vb e_2$
+ir $\vb e_{123} := \vb e_1 \vb e_2 \vb e_3$.
 
 
 \begin{definition}
@@ -331,36 +336,35 @@ Tai reiškia $\mathup{Cl^\pm(V)}$ yra aštuonmatės algebros.
 	\end{equation}
 	ir transponavimo operacija yra tiesiškai praplečiama
 	bet kuriam algebros $\Clpm$ vektoriui, veikimu ant bazės.
-	Transponavimas yra algebros anti-homomorfizmas,
+	Transponavimas yra algebros anti-automorfizmas,
 	tai reiškia, kad betkuriems algebros elementams $a$ ir $b$ galioja
 	\begin{equation}
 		(a b)^t = b^t a^t
 		\,.
 	\end{equation}
 \end{definition}
-
-
 \begin{definition}
-	Apibrėžiame algebros homomorfizmo $\alpha$ veikimą ant bazės
+	Apibrėžiame algebrų $\Clpm$ automorfizmą $\alpha$, jo veikimu ant algebrų bazės
 	\begin{equation}
 		\alpha( \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} )
 		:=
 		(-1)^{k} \vb e_{i_1} \vb e_{i_2} \dots \vb e_{i_k} 
 		\,.
 	\end{equation}
-	Tiesiškai $\alpha$ veikimą išplėčiame ant visos algebros $\Clpm$,
-	homomorfizmo veikimu ant bazės.
 \end{definition}
+Nesunku pamatyti kad nėra svarbu kokia tvarka pritaikome transponavimas ir automorfizmas $\alpha$,
+tai $\alpha(v)^t = \alpha(v^t)$.
+
 
 Pažymime algebros poerdvius
 \begin{equation}
 	\begin{split}
-		A_0 &:= \qty{
+		A_0^\pm &:= \qty{
 			v \in \Clpm \mid \alpha(v)=v
 		}
 		\,,
 		\\
-		A_1 &:= \qty{
+		A_1^\pm &:= \qty{
 			v \in \Clpm \mid \alpha(v)=-v
 		}
 		\,.
@@ -370,32 +374,32 @@ Susiejant su erdvės baze šiuos poerdvius galima užrašyti kaip
 tiesinį apvalką pasirinkų bazės elementų
 \begin{equation}
 	\begin{split}
-		A_0 &= \mathup{span}\qty(
+		A_0^\pm &= \mathup{span}\qty(
 			\mathbb 1,\,
-			\vb e_2 \vb e_3,\,
-			\vb e_3 \vb e_1,\,
-			\vb e_1 \vb e_2
+			\vb e_{23},\,
+			\vb e_{31},\,
+			\vb e_{12}
 		)
 		\,,
 		\\
-		A_0 &= \mathup{span}\qty(
+		A_0^\pm &= \mathup{span}\qty(
 			\vb e_1 ,\,
 			\vb e_2 ,\,
 			\vb e_3 ,\,
-			\vb e_1 \vb e_2 \vb e_3
+			\vb e_{123}
 		)
 		\,.
 	\end{split}
 \end{equation}
 \begin{example}
-	Tegul $v_0, v'_0 \in A_0$ ir $v_1, v'_1 \in A_1$. Turime
+	Tegul $v_0, v'_0 \in A_0^\pm$ ir $v_1, v'_1 \in A_1^\pm$. Turime
 	\begin{equation}
 		\begin{split}
 			\alpha(v_0 v'_0)
 			= \alpha(v_0)\alpha(v'_0)
 			= v_0 v'_0
 			\implies &
-			v_0 v'_0 \in A_0
+			v_0 v'_0 \in A_0^\pm
 			\,,
 			\\
 			\alpha(v_0 v_1)
@@ -403,7 +407,7 @@ tiesinį apvalką pasirinkų bazės elementų
 			= v_0 (-v_1)
 			= - v_0 v_1
 			\implies &
-			v_0 v_1 \in A_1
+			v_0 v_1 \in A_1^\pm
 			\,,
 			\\
 			\alpha(v_1 v_0)
@@ -411,7 +415,7 @@ tiesinį apvalką pasirinkų bazės elementų
 			= (- v_1)v_0
 			= - v_1 v_0
 			\implies &
-			v_1 v_0 \in A_1
+			v_1 v_0 \in A_1^\pm
 			\,,
 			\\
 			\alpha(v_1 v'_1)
@@ -419,7 +423,7 @@ tiesinį apvalką pasirinkų bazės elementų
 			= (- v_1)(- v'_1)
 			= v_1 v'_1
 			\implies &
-			v_1 v'_1 \in A_0
+			v_1 v'_1 \in A_0^\pm
 			\,.
 		\end{split}
 	\end{equation}
@@ -442,12 +446,12 @@ tiesinį apvalką pasirinkų bazės elementų
 \end{example}
 Dėl tokios daugybos struktūros vektoriai edvėje $A_0$ yra vadinami \emph{lyginiais},
 o vektoriai erdvėje $A_1$ yra vadinami \emph{nelyginiais}.
-Pamatome, kad homomorfizmas $\alpha$ 
+Pamatome, kad automorfizmas $\alpha$ 
 leidžia algebrą $\Clpm$ suskaidyti 
 į lyginio ir nelyginio poerdvių tiesioginę sumą $A_0 \oplus A_1$.
-Sakome, kad algebrai $\Clpm$ homomorfizmas $\alpha$ suteikia 
-$\set Z_2$ gradavimą. Ir lyginis poerdvis yra uždaras su algebros daugyba,
-todė tai yra poalgebris.
+Ši struktūra vadinama algebros $\Clpm$ ,,$Z_2$ gradavimu'', kurį suteikia automorfizmas $\alpha$
+Lyginis poerdvis yra uždaras algebros daugybos atžvilgiu,
+todė tai yra $\Clpm$ poalgebris.
 
 \begin{proposition}
 	\label{prop:even_iso}
