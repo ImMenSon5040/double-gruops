@@ -200,7 +200,7 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	\end{equation}
 	Transpozicija yra algebros anti-automorfizmas,
 	tad $v v^t$ irgi prikauso $\mathup{ker}(\rho)$.
-	Iš teiginio \ref{prop:rho_ker} seka,
+	Iš teiginio \ref{prop:rho_kern} seka,
 	kad $x \in \Gamma^+(3) \implies N^+(x) \in \set R^{\cross} \mathbb1 $ 
 
 	Antrą teiginio dalį įrodysime panašiu būdu.
@@ -343,6 +343,7 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 \end{example}
 
 \begin{proposition}
+	\label{prop:eqiuv}
 	Grupės $\pinpm$ gali būti ekvivalenčiai apibėžitos,
 	kaip algebros $\Clpm$ elementai $v$, kurie tenkina $N^\pm(v) = \mathbb1$ ir $\rho(v)\set R^3 = \set R^3$,
 	arba kaip grupės genruojamos vienetinių vektorių $\vb n \in \set R^3$ su algebros $\Clpm$ daugyba.
@@ -387,8 +388,14 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	Abiem atvėjais $v$ yra realizuojamas kaip vienetinių vektorių sandauga algebroje $\Clpm$.
 \end{proof}
 
+\begin{corollary}
+	Iš teiginio \ref{prop:eqiuv} saka, kad grupių $\pinpm$ elementai yra arba lyginiai, arba nelyginiai,
+	ir negali būti suma lyginio ir nelyginio algebros $\Clpm$ vektorių.
+\end{corollary}
+
+
 \begin{proposition}
-	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
+	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai 
 	yra izomorfiški, kaip grupės.
 \end{proposition}
 \begin{proof}
@@ -423,8 +430,43 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	sutampa su algebros sandauga.
 \end{proof}
 
-Tiek $\pinp$, tiek $\pinm$ lyginius pogrupius vadinsime vienodai - $\spin$,
-nes jie yra izomofiški.
+\begin{definition}
+	Grupė $\spin$ yra $\pinp$ lyginis pogrupis.
+	Tai yra ekvivalentu teiginiui kad $\spin$ yra lyginis $\pinm$ pogrupis.
+\end{definition}
+
+\begin{proposition}
+	Suktasis jungtinis įvazdis $\rho$ grupę $\spin$ atvaizduoją į grupę $\SO3$,
+	atvaizdavimo siaurinys $\rho : \spin \to \SO3$ yra sujektyvus
+	su branduoliu $\qty{\mathbb1,-\mathbb1}$.
+	Tai ekvivalentu teiginiui, kad egzistuoja trumpoji tikslioji seka
+	(ang. \emph{short exact sequence}).
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &\{1,-1\} \arrow[r]	&\spin \arrow[r, "\rho"] &\SO(3) \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Grupės $\spin$ elementai yra lyginiai,
+	tai $\rho$ juos atvaisduoja į lyginį skaičių atspindžių,
+	kas yra elementai priklausantys $\SO3$.
+	Pasirinktą $\SO3$ elementą $R$ išskaidome į lyginį skaičių atspindžių
+	per plokštumas statmenas vektoriams $\vb n_1$, $\vb n_2$, $\dots$, $\vb n_{2n}$.
+	Gauname kad
+	\begin{equation}
+		\rho(\vb n_1)\rho(\vb n_2)\dots\rho(\vb n_{2n})
+		=\rho(\vb n_1 \vb n_2 \dots \vb n_{2n})
+		\,.
+	\end{equation}
+	Tai reiškia, kad yra du $\spin$ elementai $\pm \vb n_1 \vb n_2 \dots \vb n_{2n}$,
+	kurie yra atvaizduojami į $R$.
+	Šis argumentas viekia su visais $R$ iš $\SO3$,
+	kas reiškia kad $\rho$ yra du į vieną surejektyvus atvaizdavimas.
+
+	Iš teiginio \ref{prop:rho_ker} turime kad branduolys yra
+	$\spin \cap \set R^{\cross} \mathbb1 = \qty{\mathbb1,-\mathbb1}$.
+\end{proof}
 
 \begin{proposition}
 	Visi $\spin$ elementai yra formos
@@ -435,13 +477,13 @@ nes jie yra izomofiški.
 		+ a_3 \vb e_{12}
 	\end{equation}
 	kur $a_i \in \set R$ ir
-	\begin{equation}
-		{a_0}^2
-		+{a_1}^2
-		+{a_2}^2
-		+{a_3}^2
-		= 1
-	\end{equation}
+	$
+	{a_0}^2
+	+{a_1}^2
+	+{a_2}^2
+	+{a_3}^2
+	= 1
+	$
 \end{proposition}
 \begin{proof}
 	Bendra lyginio $\Clp$ vektoriaus forma yra
@@ -454,7 +496,7 @@ nes jie yra izomofiški.
 	\end{equation}
 	Kad elementas $v$ priklausytų $\spin$, jis turi tenkinti
 	$vv^t = \mathbb1$.
-	Įsisteatę $v$ bendra formą gauname
+	Įstatome $v$ bendra formą ir gauname
 	\begin{equation}
 		\begin{aligned}
 			(a_0 \mathbb1 
@@ -481,55 +523,6 @@ nes jie yra izomofiški.
 
 
 
-\subsection{$\spin$ ir $\pinpm$ veikimas ant $\vecSpace R 3$}
-
-Visos aptartos grupės veikia vektorius iš $\set R^3$, juos pirma patalpinant į
-$\mathup{Cl^\pm(V)}$ ir tada veikiant su algebros sandauga
-\begin{equation}
-	\rho(v).\vb w := \alpha(v) \vb w v^{-1} 
-	= \begin{cases}
-		\alpha(v) \vb w v^t		& v \in \pinp \\
-		v \vb w v^t	& v \in \pinm 
-	\end{cases}
-\end{equation}
-
-Iškart galima pamatyti kad $\pinpm$ elementai $\vb v$ ir $-\vb v$ veikia vienodai,
-nes daugiklis $-1$ du kart iškeliamas prieš algebros sandaugą.
-Teiginiai \ref{prop:R_action+} ir \ref{prop:R_action-} parodo kad
-vienetinis vektorius $\vb n \in \set R^3$ patalpinti į $\pinpm$,
-veikia ant $\vb w \in \set R^3$,
-kaip atspindys per plokštumą statmeną vektoriui $\vb n$.
-Tada lyginiai elementai $\vb v \vb w$ ant $\set R^3$ veikia,
-kaip atspindys per vieną plokštumą tada atspindys per kitą
-plokštumą. Tai yra teisingas pasukimas.
-Kitas elementas kurio veikimą svarbu patikrinti yra
-$\vb e_{123}$, gauname $\rho(\vb e_123).\vb e_i = - e_i$,
-tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
-
-
-
-
-
-\begin{theorem}[{\cite[Theorem~2.9]{lawson1989spin}}, atvėjis kai $V=\set R^3$ ir $q(v)=\pm(v,v)$]
-	Egzistuoja truposios tiksliosios sekos (ang. \emph{short exact sequence})
-	\begin{equation}
-		\begin{tikzcd}
-			1 \arrow[r] &\{1,-1\} \arrow[r]	&\pinp \arrow[r, "\rho"] &\Orth3 \arrow[r] &1
-		\end{tikzcd}
-	\end{equation}
-	\begin{equation}
-		\begin{tikzcd}
-			1 \arrow[r] &\{1,-1\} \arrow[r]	&\pinm \arrow[r, "\rho"] &\Orth3 \arrow[r] &1
-		\end{tikzcd}
-	\end{equation}
-	\begin{equation}
-		\begin{tikzcd}
-			1 \arrow[r] &\{1,-1\} \arrow[r]	&\spin \arrow[r, "\rho"] &\SO3 \arrow[r] &1
-		\end{tikzcd}
-	\end{equation}
-	Čia kiekviena rodyklė yra grupių homorfizmas ir kiekvieno homomorfizmo vaizdas
-	yra branduolys homomorfizmo einančio po jo sekoje.
-\end{theorem}
 
 
 \begin{proposition}
