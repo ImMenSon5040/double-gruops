@@ -15,17 +15,30 @@ grupės daugyba sutmapa su algebros daugyba.
 \end{equation}
 
 \begin{definition}
-	$\rho$ yra grupės $Cl^{\pm\cross}(3)$ suktasis jungtinis įvazdis (ang.\emph{twisted adjoint representation}).
+	Clifford'o–Lipschitz'o grupė $\Gamma^\pm(3)$ yra grupės $\mathup{Cl}^{\pm\cross}(3)$ pogrupis,
+	kurio elementai $v \in \Clpm$ tenkina, kad visiems $\vb w \in \set R^3$,
+	sandauga $\alpha(v) \vb w v^{-1}$ priklauso $\set R^3$.
+	\begin{equation}
+		\Gamma^\pm(3) = \qty{
+			v \in \mathup{Cl}^{\pm\cross}(3)
+			\mid
+			\forall \vb w \in \set R^3 : \alpha(v) \vb w v^t \in \set R^3  
+		}
+	\end{equation}
+\end{definition}
+
+\begin{definition}
+	$\rho$ yra grupės $\Gamma^\pm(3)$ suktasis jungtinis įvazdis (ang.\emph{twisted adjoint representation}).
 	\begin{equation}
 		\begin{aligned}
-			\rho : Cl^{\pm\cross}(3) &\to \mathup{Aut}\qty(Cl^{\pm}(3)) \\
+			\rho : \Gamma^\pm(3) &\to \mathup{Aut}\qty(\set R^3) \\
 			v &\mapsto \qty({
-				w \mapsto \alpha(v)wv^{-1}
+				\vb w \mapsto \alpha(v) \vb w v^{-1}
 			})
 			\,
 		\end{aligned}
 	\end{equation}
-	čia $\mathup{Aut}\qty(Cl^{\pm\cross}(3))$ yra grupės $Cl^{\pm\cross}(3)$ automorfizmų gupė.
+	čia $\mathup{Aut}\qty(\set R^3)$ yra aibė tiesinių funkcijų iš $\set R^3$ į $\set R^3$.
 \end{definition}
 
 \begin{example}
@@ -44,23 +57,6 @@ grupės daugyba sutmapa su algebros daugyba.
 		= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w
 	\end{align}
 \end{example}
-
-\begin{definition}
-	Clifford'o–Lipschitz'o grupė $\Gamma^\pm(3)$ yra grupės $\mathup{Cl}^{\pm\cross}(3)$ pogrupis,
-	kuris $\rho(v)$ veikimiu fiksuoja vektorinį poerdvį $\set R^3 \subset \Clpm$.
-	\begin{equation}
-		\Gamma^\pm(3) = \qty{
-			v \in \mathup{Cl}^{\pm\cross}(3)
-			\mid
-			\forall \vb w \in \set R^3 : \rho(v)\vb w \in \set R^3  
-		}
-	\end{equation}
-\end{definition}
-
-Siaurindami apibrėžimo sritį gauname grupės $\Gamma^\pm(3)$ 
-susuktąjį jungtinį įvazdį $\rho: \Gamma^\pm(3) \to \mathup{Aut}\qty(R^3)$.
-Iš $\Clpm$ algebros sandaugos tiesiškumo seka, kad visiems $v$ priklausnatiems $\Gamma^\pm(3)$
-galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 
 \begin{proposition}
 	\label{prop:rho_kern}
