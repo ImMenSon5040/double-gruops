@@ -144,11 +144,23 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 \end{proof}
 
 \begin{definition}
-	Tegul $N^+: \Clp \to \Clp$ yra funcija, kuri $v \mapsto vv^t$.
+	Tegul $N^+$ būna funkcija, kuri algebros vektorių $v$ atvaizduoja į $vv^t$;
+	\begin{equation}
+		N^+: \Clp \to \Clp
+		\,,\quad
+		v \mapsto vv^t
+		\,.
+	\end{equation}
 \end{definition}
 
 \begin{definition}
-	Tegul $N^-: \Clm \to \Clm$ yra funcija, kuri $v \mapsto v\alpha(v^t)$.
+	Tegul $N^-$ būna funkcija, kuri algebros vektorių $v$ atvaizduoja į $v\alpha(v^t)$;
+	\begin{equation}
+		N^-: \Clm \to \Clm
+		\,,\quad
+		v \mapsto v\alpha(v^t)
+		\,.
+	\end{equation}
 \end{definition}
 
 \begin{proposition}
@@ -257,7 +269,10 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	\end{equation}
 \end{definition}
 
+
+
 \begin{proposition}
+	\label{prop:pin_sequence}
 	Suktasis jungtinis įvazdis $\rho$ grupę $\pinpm$ atvaizduoją į grupę $\Orth3$,
 	atvaizdavimo siaurinys $\rho : \pinpm \to \Orth3$ yra sujektyvus
 	su branduoliu $\qty{\mathbb1,-\mathbb1}$.
@@ -294,7 +309,7 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 		\rho(\vb n)\vb w = \alpha(\vb n) v \vb n^{-1} = \vb w - 2 (\vb w,\vb n)\vb n
 		\,.
 	\end{equation}
-	Atspindžiai generuoja grupę $O(3)$,
+	Atspindžiai generuoja grupę $\Orth3$,
 	tad $\rho$ yra surjekcija.
 
 	Iš teiginio \ref{prop:rho_ker} turime kad atvaizdavimo 
@@ -327,19 +342,50 @@ galioja, kad $\rho(v)$ yra tiesinis atvaizdas iš $\set R^3$ į $\set R^3$.
 	\end{align*}
 \end{example}
 
-Grupėms $\pinpm$ prikkauso visi vienetiniai vektoriai
-perkelti iš $\set R^3$ į $\mathrm{Cl}^\pm(3)$.
-Jie yra $\pinpm$ generatoriai,
-tad visus $\pinpm$ elementus galima realizuoti,
-kaip vienetinių vectorių sandaugą algebroje
-$\mathrm{Cl}^\pm(3)$. $\set Z_2$ gradavimas išlika
-ir ant $\pinpm$.
-Elementai $\vb v$ ir $\vb{vwu}$ yra nelyginiai,
-o elementai $\mathbb 1$ ir $\vb{vw}$ yra lyginiai.
-Dauginant tarpusavyje lyginius elementus,
-gausime tik lyginius elementus,
-todėl jie sudaro $\pinpm$ pogrupį.
+\begin{proposition}
+	Grupės $\pinpm$ gali būti ekvivalenčiai apibėžitos,
+	kaip algebros $\Clpm$ elementai $v$, kurie tenkina $N^\pm(v) = \mathbb1$ ir $\rho(v)\set R^3 = \set R^3$,
+	arba kaip grupės genruojamos vienetinių vektorių $\vb n \in \set R^3$ su algebros $\Clpm$ daugyba.
+\end{proposition}
+\begin{proof}
+	($\Rightarrow$) Tarkime $v = \vb n_1 \vb n_2 \dots \vb n_n$,
+	$n_i \in \set R^3$, $(\vb n_i,\vb n_i)=1$.
+	Tada $N^\pm(v) = \mathbb1$ ir $\rho(v)\set R^3 = \set R^3$.
+	\begin{equation}
+		\begin{aligned}
+			N^\pm(\vb n_1 \vb n_2 \dots \vb n_n) 
+			=  
+			N^\pm(\vb n_1) N^\pm(\vb n_2) \dots N^\pm(\vb n_n) 
+			=
+			(\vb n_1,\vb n_1)(\vb n_2,\vb n_2)\dots(\vb n_n,\vb n_n) \mathbb1
+			=
+			\mathbb1
+			\,,
+		\end{aligned}
+	\end{equation}
+	\begin{equation}
+		\begin{aligned}
+			\rho(\vb n_1 \vb n_2 \dots \vb n_n)\set R^3
+			=\rho(\vb n_1) \rho(\vb n_2) \dots \rho(\vb n_n)\set R^3
+			=\rho(\vb n_1) \rho(\vb n_2) \dots \rho(\vb n_{n-1})\set R^3
+			= \dots 
+			= \set R^3
+			=\rho(\vb n_1) \rho(\vb n_2) \dots \rho(\vb n_n)\set R^3
+			\,.
+		\end{aligned}
+	\end{equation}
 
+	($\Leftarrow$) Tarkime $v\in\Clpm$, $N^\pm(v)=\mathbb1$ ir $\rho(v)\set R^3 = \set R^3$.
+	Tada iš teiginio \ref{prop:pin_sequence} turime, kad $\rho(v) \in \Orth3$.
+	$\Orth3$ yra genruojama atspindžių per polkštumas.
+	Tad egzistuoja vektoriai $\vb n_1$, $\vb n_2$ \dots $\vb n_n$, $\vb n_i \in \set R^3$ ,$(\vb n_i, \vb n_i)=1$,
+	tokie kad seka atspindžių per jiems statmenas plokštumas yra lygi $\Orth3$ elementui $\rho(v)$.
+	\begin{equation}
+		\rho(v) = \rho(\vb n_1) \rho(\vb n_2) \dots \rho(\vb n_n) = \rho(\vb n_1 \vb n_2 \dots \vb n_n)
+	\end{equation}
+	Iš ko seka kad $v = \vb n_1 \vb n_2 \dots \vb n_n$ arba $v=-\vb n_1 \vb n_2 \dots \vb n_n$.
+	Abiem atvėjais $v$ yra realizuojamas kaip vienetinių vektorių sandauga algebroje $\Clpm$.
+\end{proof}
 
 \begin{proposition}
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai
@@ -513,8 +559,8 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 	Egzistuoja unikalus išskaidymas
 	$
 	v^1 = \vb e_{123}
-	\qrt({
-		b_0 \vb \mathbb1
+	\qty({
+		b_0 \mathbb1
 		- b_1 \vb e_{23}
 		- b_2 \vb e_{31}
 		- b_3 \vb e_{12}
@@ -524,7 +570,7 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 	kuris taip pat prikauso $\spin$.
 
 	Grupės $C_2$ elementus žymėsime $\qty{1,-1}$.
-	Tegul funkcija $f: \sipn \times C_2 \to \pinm$ yra apibrėžiama kaip
+	Tegul funkcija $f: \spin \times C_2 \to \pinm$ yra apibrėžiama kaip
 	\begin{equation}
 		\qty(v^0,1) \mapsto v^0
 		\,,\quad
@@ -550,7 +596,7 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 \end{proof}
 
 \begin{proposition}
-	Grpė $\pinp$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
+	Grupė $\pinp$ yra izomorfiška faktorinei grupei $\spin \times C_4 /C_2$.
 \end{proposition}
 \begin{proof}
 	Grupės $\pinp$ elementas $\vb e_{123}$ tenkina tapatybes
@@ -565,7 +611,7 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 	Iš sąlygos $v\alpha(v^t) = \mathbb1$ seka, kad nelyginio $\pinp$ elemento $v^1$ bendra forma yra
 	\begin{equation}
 		v^1 = 
-		b_0 \vb e_{123}
+		b_0 e_{123}
 		+ b_1 \vb e_1
 		+ b_2 \vb e_2
 		+ b_3 \vb e_3
@@ -574,16 +620,12 @@ tai $e_{123}$ ant $\set R^3$ veikia kaip inversija.
 	čia $b_i \in \set R$ ir
 	${b_0}^2 + {b_1}^2 + {b_2}^2 + {b_3}^2 = 1$.
 	Egzistuoja unikalus išskaidymas
-	$
-	v^1 = \vb e_{123}
-	\qrt({
-		b_0 \vb \mathbb1
+	$ v^1 = \vb e_{123} \qty({
+		b_0 \mathbb1
 		- b_1 \vb e_{23}
 		- b_2 \vb e_{31}
 		- b_3 \vb e_{12}
-	})
-	= \vb e_{123} v^0
-	$, čia $v^0$ yra lyginis $\pinp$ elementas,
+	})= \vb e_{123} v^0 $, čia $v^0$ yra lyginis $\pinp$ elementas,
 	kuris taip pat prikauso $\spin$.
 
 	Grupės $C_4$ elementus žymėsime $\qty{1,i,-1,-i}$.
