@@ -16,47 +16,47 @@ tenzorinę algebrą ir tada jai sutekdami norimą struktūrą.
 		=
 		\mathbb{R} 
 		\oplus \set R^3 
-		\oplus (\set R^3 \otimes \set R^3) 
-		\oplus (\set R^3 \otimes \set R^3 \otimes \set R^3) 
+		\oplus (\set R^3 \ot \set R^3) 
+		\oplus (\set R^3 \ot \set R^3 \ot \set R^3) 
 		\oplus \dots
 		\,,
 	\end{equation}
-	$T^k$ čia yra vektorinės erdvės $T^0 = \set R$\: ,\: $T^1=\set R^3$\: ,\: $T^2=\set R^3 \otimes \set R^3$\: ,\:
-	$T^3=\set R^3 \otimes \set R^3 \otimes \set R^3$
+	$T^k$ čia yra vektorinės erdvės $T^0 = \set R$\: ,\: $T^1=\set R^3$\: ,\: $T^2=\set R^3 \ot \set R^3$\: ,\:
+	$T^3=\set R^3 \ot \set R^3 \ot \set R^3$
 	ir taip toliau. Algebros daugyba yra duodama vektorių tenzorinės sandaugos.
 	Vienetinis tenzorinės algebros elementas yra žymimas $\mathbb 1$\:.
 \end{definition}
 Kitaip pasakius tai yra algebra, kurios vektoriai yra įvairių ilgiu tenzorinių
-sandaugos $\vb v_1 \otimes \vb v_2 \otimes \dots \otimes \vb v_n$\:,\: $\vb v_i \in \set R^3$
+sandaugos $\vb v_1 \ot \vb v_2 \ot \dots \ot \vb v_n$\:,\: $\vb v_i \in \set R^3$
 ir tokių sandaugų sumos.
 \begin{example}
 	Vektorius $3\cdot\mathbb 1 + \vb v$ priklauso $T(\set R^3)$ ir yra suma vektorių iš $T^0$ ir $T^1$.
-	Vektorius $2\vb w + \vb v \otimes \vb w$ yra suma vektorių iš $T^1$ ir $T^2$.
+	Vektorius $2\vb w + \vb v \ot \vb w$ yra suma vektorių iš $T^1$ ir $T^2$.
 	Jų sandauga tenzorinėje algebroje yra
 	\begin{equation}
 		\begin{split}
 			\qty(3\cdot\mathbb 1 + \vb v)
-			\otimes
-			\qty(2\vb w + \vb v \otimes \vb w)
+			\ot
+			\qty(2\vb w + \vb v \ot \vb w)
 			=&
-			3\cdot\mathbb 1 \otimes 2\vb w
-			+ 3\cdot\mathbb 1 \otimes \vb v \otimes \vb w
-			+ \vb v \otimes 2\vb w
-			+ \vb v \otimes \vb v \otimes \vb w
+			3\cdot\mathbb 1 \ot 2\vb w
+			+ 3\cdot\mathbb 1 \ot \vb v \ot \vb w
+			+ \vb v \ot 2\vb w
+			+ \vb v \ot \vb v \ot \vb w
 			\\=&
-			3\cdot2\qty(\mathbb 1 \otimes \vb w)
-			+ 3\qty(\mathbb 1 \otimes \vb v \otimes \vb w)
-			+ 2(\vb v \otimes \vb w)
-			+ \qty(\vb v \otimes \vb v \otimes \vb w)
-			\\=&
-			6 \vb w
-			+ 3\qty(\vb v \otimes \vb w)
-			+ 2(\vb v \otimes \vb w)
-			+ \qty(\vb v \otimes \vb v \otimes \vb w)
+			3\cdot2\qty(\mathbb 1 \ot \vb w)
+			+ 3\qty(\mathbb 1 \ot \vb v \ot \vb w)
+			+ 2(\vb v \ot \vb w)
+			+ \qty(\vb v \ot \vb v \ot \vb w)
 			\\=&
 			6 \vb w
-			+ 5\qty(\vb v \otimes \vb w)
-			+ \qty(\vb v \otimes \vb v \otimes \vb w)
+			+ 3\qty(\vb v \ot \vb w)
+			+ 2(\vb v \ot \vb w)
+			+ \qty(\vb v \ot \vb v \ot \vb w)
+			\\=&
+			6 \vb w
+			+ 5\qty(\vb v \ot \vb w)
+			+ \qty(\vb v \ot \vb v \ot \vb w)
 			\,,
 		\end{split}
 	\end{equation}
@@ -72,9 +72,9 @@ ir tokių sandaugų sumos.
 Dabar $T(\set R^3)$ suteiksime papildomą struktūrą, kad algebroje
 $\Clp$ būtų tenkinamas sąryšis
 \begin{equation}
-	\vb v \otimes \vb w
+	\vb v \ot \vb w
 	+
-	\vb w \otimes \vb v
+	\vb w \ot \vb v
 	=
 	2(\vb v , \vb w) \mathbb 1
 	\quad ,
@@ -82,9 +82,9 @@ $\Clp$ būtų tenkinamas sąryšis
 \end{equation}
 o algebroje $\Clm$ tenkinamas sąryšis
 \begin{equation}
-	\vb v \otimes \vb w
+	\vb v \ot \vb w
 	+
-	\vb w \otimes \vb v
+	\vb w \ot \vb v
 	=
 	- 2(\vb v , \vb w) \mathbb 1
 	\quad .
@@ -94,9 +94,9 @@ o algebroje $\Clm$ tenkinamas sąryšis
 \begin{equation}
 	\begin{split}
 		S^+ = \qty{
-			\vb v \otimes \vb w
+			\vb v \ot \vb w
 			+
-			\vb w \otimes \vb v
+			\vb w \ot \vb v
 			-
 			2(\vb v , \vb w) \mathbb 1
 			\mid
@@ -104,9 +104,9 @@ o algebroje $\Clm$ tenkinamas sąryšis
 		}
 		\\
 		S^- = \qty{
-			\vb v \otimes \vb w
+			\vb v \ot \vb w
 			+
-			\vb w \otimes \vb v
+			\vb w \ot \vb v
 			+
 			2(\vb v , \vb w) \mathbb 1
 			\mid
@@ -122,12 +122,12 @@ gaunamus iš visų vektorių, kurie turi bent vieną daugiklį iš $S^\pm$
 			s \in S^\pm \\ 
 			a,b \in \mathup{T(V)} 
 		}}
-		a \otimes s \otimes b
+		a \ot s \ot b
 	}
 	\quad .
 \end{equation}
 Šie poalgebriai papildomai tenkina savybę, kad bet kokiems $a \in T(\set R^3)$
-ir $d \in I^\pm$, $a\otimes d, d \otimes a \in I^\pm$. Poalgebris
+ir $d \in I^\pm$, $a\ot d, d \ot a \in I^\pm$. Poalgebris
 tenkinantis šia savybę yra vadinamas algebros idealu.
 Literatūroje šią konstrukciją yra įprasta pateikti sakiniu:
 ,,$I^\pm$ yra algebros $T(\set R^3)$ idealas generuojamas 
@@ -137,30 +137,30 @@ Duotam vektoriui $a \in T(\set R^3)$ aibė
 $\qty{a+d \mid d \in I^\pm}$ (dar žymima $a+I^\pm$)
 vadinama šonine klase, o vektorius $a$ vadinamas klasės atstovu.
 Dviejų šoninių klasių $a+I^\pm$ ir $b + I^\pm$ sandauga yra šoninė
-klasė, kuriai priklauso atstovų sandauga algebroje $a \otimes b$.
+klasė, kuriai priklauso atstovų sandauga algebroje $a \ot b$.
 Ši sandauga nepriklauso nuo pasirinktų klasės atstovų, nes
 \begin{equation}
-	(a+I^\pm)\otimes(b+I^\pm)
+	(a+I^\pm)\ot(b+I^\pm)
 	=
-	a \otimes b
-	+ a \otimes I^\pm
-	+ I^\pm \otimes b
-	+ I^\pm \otimes I^\pm
+	a \ot b
+	+ a \ot I^\pm
+	+ I^\pm \ot b
+	+ I^\pm \ot I^\pm
 	=
-	a \otimes b + I^\pm
+	a \ot b + I^\pm
 	\,.
 \end{equation}
 Sumos nariai $
-a \otimes I^\pm
-= I^\pm \otimes b
-= I^\pm \otimes I^\pm
+a \ot I^\pm
+= I^\pm \ot b
+= I^\pm \ot I^\pm
 = I^\pm
 $, nes $I^\pm$ yra algebros $T(\set R^3)$ idealas.
 Tai tikrai
 \begin{equation}
-	(a+I^\pm)\otimes(b+I^\pm)
+	(a+I^\pm)\ot(b+I^\pm)
 	=
-	a \otimes b + I^\pm
+	a \ot b + I^\pm
 	\,.
 \end{equation}
 
@@ -169,20 +169,20 @@ Tai tikrai
 \begin{definition}
 	Algebra $\Clpm$ yra faktorinė algebra $T(\set R^3)/I^\pm$,
 	kurios elementai yra šoninės klasės $a+I^\pm$, $a \in T(\set R^3)$
-	ir jų sandauga yra $(a+I^\pm)\otimes(b+I^\pm)=a\otimes b + I^\pm.$
+	ir jų sandauga yra $(a+I^\pm)\ot(b+I^\pm)=a\ot b + I^\pm.$
 \end{definition}
 
 \begin{example}
-	$\vb w \otimes \vb v +\vb v \otimes \vb w + I^+$ 
+	$\vb w \ot \vb v +\vb v \ot \vb w + I^+$ 
 	yra šoninė klasė,
 	kuri yra vektorius algebroje $\Clp$. 
 	Supaprastiname išraišką
 	\begin{equation}
-		\vb w \otimes \vb v +\vb v \otimes \vb w + I^+
+		\vb w \ot \vb v +\vb v \ot \vb w + I^+
 		= 
-		\vb w \otimes \vb v +\vb v \otimes \vb w 
+		\vb w \ot \vb v +\vb v \ot \vb w 
 		- \qty(
-			\vb v \otimes \vb w + \vb w \otimes \vb v 
+			\vb v \ot \vb w + \vb w \ot \vb v 
 			- 2(\vb v,\vb w)\mathbb 1
 		) 
 		+ I^+
@@ -191,59 +191,40 @@ Tai tikrai
 		\,,
 	\end{equation}
 	čia pasinaudojome tuo kad 
-	$\qty( \vb v \otimes \vb w + \vb w \otimes \vb v - 2(\vb v,\vb w)\mathbb 1) \in I^+$.
-	Pavyko parodyti, kad $\vb w \otimes \vb v + \vb v \otimes \vb w$ 
+	$\qty( \vb v \ot \vb w + \vb w \ot \vb v - 2(\vb v,\vb w)\mathbb 1) \in I^+$.
+	Pavyko parodyti, kad $\vb w \ot \vb v + \vb v \ot \vb w$ 
 	ir $2(\vb v,\vb w) \mathbb 1$ atstovauja tą pačią klasę.
 \end{example}
 
 \begin{example}
 	Tegul $a,b \in T(\set R^3)$ ir
 	$
-		a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b + I^-
+		a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^-
 	$
-	yra šoninė klasė, kuri yra vektorius iš $\Clm$.
-	Šią išraišką supaprastiname atlikdami veiksmus
-	\begin{equation}
-		\begin{split}
-			a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b + I^-
-			=&
-			a \otimes (\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1) \otimes b 
-			- a \otimes \qty(\vb v \otimes \vb w + \vb w \otimes \vb v +2(\vb v,\vb w) \mathbb 1)  \otimes b 
-			+ I^-
-			\\=&
-			a \otimes \qty(
-				\vb v \otimes \vb w + 2(\vb v,\vb w)\mathbb 1
-				- \vb v \otimes \vb w - \vb w \otimes \vb v
-				-2(\vb v,\vb w) \mathbb 1) 
-			)\otimes b 
-			+ I^-
-			\\=&
-			a \otimes \qty(
-				- \vb w \otimes \vb v 
-			)\otimes b 
-			+ I^-
-			\\=&
-			- a \otimes 
-				\vb w \otimes \vb v 
-			\otimes b 
-			+ I^-
-			\,.
-		\end{split}
-	\end{equation}
-	Parodėme, kad sudarius faktorinę algebrą $\Clm$,
-	galime jos viduje taikyti sąryšį (\ref{eq:cl-})
-	manipuliuojant šoninės klasės atstovus.
+yra šoninė klasė, kuri yra vektorius iš $\Clm$. Šią išraišką supaprastiname atlikdami veiksmus
+%
+\ali{
+a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^- 
+& = a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b \nn \\
+& \quad - a \ot \qty(\vb v \ot \vb w + \vb w \ot \vb v +2(\vb v,\vb w) \mathbb 1)  \ot b + I^- \nn\\
+& = a \ot \qty( \vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1 - \vb v \ot \vb w - \vb w \ot \vb v -2(\vb v,\vb w) \mathbb 1))\ot b + I^- \nn\\
+& = a \ot \qty( - \vb w \ot \vb v )\ot b + I^- \nn\\
+& = - a \ot	\vb w \ot \vb v	\ot b + I^- .
+}
+%
+Parodėme, kad sudarius faktorinę algebrą $\Clm$, galime jos viduje taikyti sąryšį (\ref{eq:cl-}) manipuliuojant šoninės klasės atstovus.
+
 \end{example}
 Toliau priimame sutrumpintą žymėjimą, nes išreikštai
 su šoninėmis klasėmis nebedirbsime. Užrašysime tik
 klasės atstovą, o kad išraiška skirtųsi nuo 
-vektorių tenzorinės sandaugos vietoje ženklo ,,$\otimes$''
+vektorių tenzorinės sandaugos vietoje ženklo ,,$\ot$''
 tiesiog rašysime vektorius vieną šalia kito.
 Vietoje
 \begin{equation}
-	a \otimes (\vb v \otimes \vb w + \vb v \otimes \vb w) \otimes b + I^-
+	a \ot (\vb v \ot \vb w + \vb v \ot \vb w) \ot b + I^-
 	=
-	-2(\vb v,\vb w) \qty(a \otimes b) + I^-
+	-2(\vb v,\vb w) \qty(a \ot b) + I^-
 \end{equation}
 rašysime
 \begin{equation}
@@ -372,8 +353,8 @@ Pažymime algebros poerdvius
 \end{equation}
 Susiejant su erdvės baze šiuos poerdvius galima užrašyti kaip
 tiesinį apvalką pasirinktų bazės elementų
-\begin{equation}
-	\begin{split}
+%
+\eqa{
 		A_0^\pm &= \mathup{span}\qty(
 			\mathbb 1,\,
 			\vb e_{23},\,
@@ -382,15 +363,15 @@ tiesinį apvalką pasirinktų bazės elementų
 		)
 		\,,
 		\\
-		A_0^\pm &= \mathup{span}\qty(
+		A_1^\pm &= \mathup{span}\qty(
 			\vb e_1 ,\,
 			\vb e_2 ,\,
 			\vb e_3 ,\,
 			\vb e_{123}
 		)
 		\,.
-	\end{split}
-\end{equation}
+}
+
 \begin{example}
 	Tegul $v_0, v'_0 \in A_0^\pm$ ir $v_1, v'_1 \in A_1^\pm$. Turime
 	\begin{equation}
@@ -458,84 +439,80 @@ todėl tai yra $\Clpm$ poalgebris.
 	Algebrų $\Clp$ ir $\Clm$
 	Lyginiai poalgebriai $A^+_0$ ir $A^-_0$ yra izomorfiškos algebros.
 \end{proposition}
+
 \begin{proof}
-	Algebros $A_0^+$ ir $A_0^-$ turi bazę
-	$\qty{
+Algebros $A_0^+$ ir $A_0^-$ turi bazę $\qty{
 		\mathbb 1,\, 
 		\vb e_{23},\,
 		\vb e_{31},\,
 		\vb e_{12}
-	}$. Pastebime kad algebroje $A_0^+$
-	\begin{equation}
-		\vb e_{23} \vb e_{31} 
+	}$. 
+Pastebime kad algebroje $A_0^+$
+%
+\eqg{
+\vb e_{23} \vb e_{31} 
 		= \vb e_2 \vb e_3 \vb e_3 \vb e_1
 		= \vb e_2 \vb e_1
 		= - \vb e_{12}
 		\,,
-	\end{equation}
-	\begin{equation}
-		\vb e_{31} \vb e_{23} 
+\\
+\vb e_{31} \vb e_{23} 
 		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
 		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
 		= \vb e_1 \vb e_2
 		= \vb e_{12}
 		\,,
-	\end{equation}
-	\begin{equation}
-		{\vb e_{31}}^2 
+\\
+{\vb e_{31}}^2 
 		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
 		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
 		= - \mathbb 1
 		\,,
-	\end{equation}
-	\begin{equation}
-		{\vb e_{23}}^2 
+\\
+{\vb e_{23}}^2 
 		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
 		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
 		= - \mathbb 1
 		\,,
-	\end{equation}
-	o algebroje $A_0^-$
-	\begin{equation}
+}
+%
+o algebroje $A_0^-$
+%
+\eqg{
 		\vb e_{23} \vb e_{31} 
 		= \vb e_2 \vb e_3 \vb e_3 \vb e_1 
 		= - \vb e_2 \vb e_1 
 		= \vb e_1 \vb e_2 
 		= \vb e_{12}
 		\,,
-	\end{equation}
-	\begin{equation}
+\\
 		\vb e_{31} \vb e_{23} 
 		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
 		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
 		= - \vb e_1 \vb e_2
 		= - \vb e_{12}
 		\,,
-	\end{equation}
-	\begin{equation}
+\\
 		{\vb e_{31}}^2 
 		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
 		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
 		= - \mathbb 1
 		\,,
-	\end{equation}
-	\begin{equation}
+\\
 		{\vb e_{23}}^2 
 		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
 		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
 		= - \mathbb 1
 		\,.
-	\end{equation}
-	Abiems algebroms $\vb e_{31}$ ir $\vb e_{23}$ yra algebros generatoriai.
-	Jie tenkina sąryšius
-	\begin{equation}
-		\begin{aligned}
-			\vb e_{31} \vb e_{23} &= - \vb e_{23} \vb e_{31} \\
-			{\vb e_{31}}^2 &= - \mathbb 1 \\
-			{\vb e_{23}}^2 &= - \mathbb 1
-			\,.
-		\end{aligned}
-	\end{equation}
+}
+%
+Abiems algebroms $\vb e_{31}$ ir $\vb e_{23}$ yra algebros generatoriai. Jie tenkina sąryšius
+%
+\ali{
+			\vb e_{31} \vb e_{23} &= - \vb e_{23} \vb e_{31} \,,\nn\\
+			{\vb e_{31}}^2 &= - \mathbb 1 \, ,\\
+			{\vb e_{23}}^2 &= - \mathbb 1 \,. \nn
+}
 	Tai yra sąryšiai apibrėžiantys Clifford'o algebrą $\mathup{Cl}^-(2)$,
 	tad $\mathup{Cl}^-(2) \cong A_0^+ \cong A_0^-$.
 \end{proof}

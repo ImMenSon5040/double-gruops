@@ -1,13 +1,15 @@
 
 \subsection{Ortogonalių matricų grupė \texorpdfstring{$\Orth{3}$}{O(3)}}
 
+{\color{red} Tegul $(\cdot,\cdot) : \mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}$ būna standartinė skaliarinė sandauga.}
+
 \begin{definition}
 	Ortogonalių matricų grupė $\Orth3$ yra sudaryta iš $3\times3$ matricų
 	$R$ virš realiųjų skaičių, tokių kad, lygybė 
 	\begin{equation}
 		(R \vb v, R \vb w) = (\vb v, \vb w)
 	\end{equation}
-	yra tenkinama su visais vektoriais $\vb v$ ir $\vb w$.
+	galioja visiems vektoriams $\vb v, \vb w \in \mathbb{R}^3$. 
 \end{definition}
 
 Ortogonaliomis matricomis jos yra vadinamos, nes bet kokie ortogonalūs
@@ -23,11 +25,20 @@ su savo transponuotą $R^t$ rezultatas yra vienetinę matricą $I$, tai
 		\det(R) = \pm 1
 	\end{split}
 \end{equation}
-Determinantas gerbia matricų daugybą todėl tai yra grupės homomorfizmas
-iš $\Orth3$ į $\qty{1,-1}$. To pasekoje $\Orth3$ Yra padalijama į dvi dalis:
-teisingus sukimus (\textit{ang.} proper rotations), kuriems $\det(R) = 1$, ir
-neteisingus sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
+Determinantas yra homomorfizmas iš $\Orth3$ į $C_2 = \qty{1,-1}$. To pasekoje $\Orth3$ Yra padalijama į dvi dalis:
+tikruosius sukimus (\textit{ang.} proper rotations), kuriems $\det(R) = 1$, ir
+netikruosius sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
 \begin{example}
+
+Sukimas kampu $\alpha$ aplink $z$ ašį užrašomas matrica
+\[
+\mqty(
+			\cos(\alpha) & -\sin(\alpha) &   \\
+			\sin(\alpha) &  \cos(\alpha) &   \\
+				     &		     & 1
+			)
+\]
+			
 	\leavevmode
 	\begin{itemize}
 		\item 
@@ -36,8 +47,7 @@ neteisingus sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
 			\sin(\alpha) &  \cos(\alpha) &   \\
 				     &		     & 1
 			)$
-			yra teisingo sukimo matrica, kuri pasuka vektorių
-			kampu $\alpha$ aplink $z$ ašį;
+
 		\item
 			$\smqty(
 			1 &   &   \\

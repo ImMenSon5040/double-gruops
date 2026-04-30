@@ -7,6 +7,8 @@
 \usepackage{indentfirst}
 \frenchspacing
 
+
+
 \usepackage[backend=biber]{biblatex}
 \addbibresource{Bibliography.bib}
 
@@ -25,15 +27,18 @@ inter-unit-product = \ensuremath{\cdot} }
 \theoremstyle{definition}
 \newtheorem{definition}{Apibrėžimas}[section]
 
+
 \theoremstyle{plain}
-\newtheorem{theorem}{Teorema}[section]
-\newtheorem{proposition}{Teiginys}[section]
-\newtheorem{corollary}{Išvada}
+\newtheorem{theorem}[definition]{Teorema}
+\newtheorem{proposition}[definition]{Teiginys}
+\newtheorem{corollary}[definition]{Išvada}
+
 
 \theoremstyle{remark}
-\newtheorem*{example}{Pavyzdys}
+\newtheorem{example}[definition]{Pavyzdys}
+\newtheorem{remark}[definition]{Pastaba}
 
-
+\numberwithin{equation}{section}
 
 \usepackage[
 	pdfusetitle,
@@ -63,9 +68,35 @@ inter-unit-product = \ensuremath{\cdot} }
 
 \renewcommand{\headrulewidth}{0pt}
 
-\title{Taškinių grupių dvigubos grupės ir jų neredukuojami įvaizdžiai}
+\newcommand{\nc}{\newcommand}
 
-\begin{document}
+
+%%% new math environment short-cuts
+
+\nc{\equ}[1]{\begin{equation}#1\end{equation}}
+\nc{\eqa}[1]{\begin{equation}\begin{alignedat}{50}#1\end{alignedat}\end{equation}}
+\nc{\eqn}[1]{\begin{equation*}\begin{alignedat}{50}#1\end{alignedat}\end{equation*}}
+\nc{\eqg}[1]{\begin{equation}\begin{gathered}#1\end{gathered}\end{equation}}
+
+\nc{\ali}[1]{\begin{alignat}{50}#1\end{alignat}}
+\nc{\als}[1]{\begin{subequations}\begin{alignat}{50}#1\end{alignat}\end{subequations}}
+\nc{\aln}[1]{\begin{alignat*}{50}#1\end{alignat*}}
+
+\nc{\gat}[1]{\begin{gather}#1\end{gather}}
+\nc{\gas}[1]{\begin{subequations}\begin{gather}#1\end{gather}\end{subequations}}
+\nc{\gan}[1]{\begin{gather*}#1\end{gather*}}
+
+
+\newcommand{\rnc}{\renewcommand}
+
+\nc{\nn}{\nonumber}
+\nc{\ot}{\otimes}
+\rnc{\op}{\oplus}
+
+\nc{\qu}{\quad}
+\rnc{\qq}{\qquad}
+
+
 \newcommand{\set}[1]{ \mathbb{#1} }
 \newcommand{\spin}{ \mathup{Spin}(3) }
 \newcommand{\pinp}{\mathup{Pin}^{+}(3)}
@@ -81,6 +112,31 @@ inter-unit-product = \ensuremath{\cdot} }
  
 \global\long\def\emath{\mathrm{e}}%
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%================================
+% Main part
+%================================
+
+
+\begin{document}
+
+
+\title{Taškinių grupių dvigubos grupės ir jų neredukuojami įvaizdžiai}
+
+
 \rhead{}
 
 \lhead{}
@@ -88,6 +144,7 @@ inter-unit-product = \ensuremath{\cdot} }
 \cfoot{\thepage}
 
 \normalfont
+
 
 \thispagestyle{empty}
 \begin{center}
@@ -122,7 +179,7 @@ Fizikos studijų programa
 \begin{tabular*}{0.9\textwidth}{@{\extracolsep{\fill}}ll}
 Studentas & Martynas Lašas
 \tabularnewline[0.5cm]
-	Leista ginti & 2023-05-20
+	Leista ginti & 2026-05-20
 	\tabularnewline
 Darbo vadovas & dr. Vidas Regelskis
 \tabularnewline[0.5cm]
@@ -134,7 +191,7 @@ Darbo vadovas & dr. Vidas Regelskis
 \par\end{center}
 
 \begin{center}
-Vilnius 2025
+Vilnius 2026
 \par\end{center}
 
 \newpage{}
