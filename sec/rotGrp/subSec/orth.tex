@@ -1,7 +1,9 @@
 
 \subsection{Ortogonalių matricų grupė \texorpdfstring{$\Orth{3}$}{O(3)}}
 
-{\color{red} Tegul $(\cdot,\cdot) : \mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}$ būna standartinė skaliarinė sandauga.}
+
+Tegul $(\cdot,\cdot) : \mathbb{R}^3 \times \mathbb{R}^3 \to \mathbb{R}$
+būna standartinė skaliarinė sandauga.
 
 \begin{definition}
 	Ortogonalių matricų grupė $\Orth3$ yra sudaryta iš $3\times3$ matricų
@@ -12,10 +14,12 @@
 	galioja visiems vektoriams $\vb v, \vb w \in \mathbb{R}^3$. 
 \end{definition}
 
-Ortogonaliomis matricomis jos yra vadinamos, nes bet kokie ortogonalūs
-vektoriai $\vb v$ ir $\vb w$ yra atvaizduojami į ortogonalius vektorius 
-$R\vb v$ ir $R\vb w$. Šios matricos taip pat pasižymi tuo, kad matricą $R$ sudauginus
-su savo transponuotą $R^t$ rezultatas yra vienetinę matricą $I$, tai
+Matricos $R \in \Orth3$ vadinamos ortogonaliomis,
+nes bet kokie ortogonalūs vektoriai $\vb v$ ir $\vb w$
+yra atvaizduojami į ortogonalius vektorius $R\vb v$ ir $R\vb w$.
+Šios matricos taip pat pasižymi tuo,
+kad matricą $R$ sudauginus su savo transponuotą $R^t$
+rezultatas yra vienetinė matrica $I$ 
 \begin{equation}
 	\begin{split}
 		\det(RR^t) = \det(I)
@@ -25,86 +29,111 @@ su savo transponuotą $R^t$ rezultatas yra vienetinę matricą $I$, tai
 		\det(R) = \pm 1
 	\end{split}
 \end{equation}
-Determinantas yra homomorfizmas iš $\Orth3$ į $C_2 = \qty{1,-1}$. To pasekoje $\Orth3$ Yra padalijama į dvi dalis:
-tikruosius sukimus (\textit{ang.} proper rotations), kuriems $\det(R) = 1$, ir
-netikruosius sukimus (\textit{ang.} improper rotations), kuriems $\det(R) = -1$.
+Determinantas yra homomorfizmas iš $\Orth3$ į grupę $\qty{1,-1} \cong C_2$.
+To pasekoje $\Orth3$ Yra padalijama į dvi dalis:
+tikruosius sukimus (\textit{ang.} proper rotations),
+kuriems $\det(R) = 1$,
+ir netikruosius sukimus (\textit{ang.} improper rotations),
+kuriems $\det(R) = -1$.
 \begin{example}
-
-Sukimas kampu $\alpha$ aplink $z$ ašį užrašomas matrica
-\[
-\mqty(
-			\cos(\alpha) & -\sin(\alpha) &   \\
-			\sin(\alpha) &  \cos(\alpha) &   \\
-				     &		     & 1
-			)
-\]
-			
-	\leavevmode
-	\begin{itemize}
-		\item 
-			$\smqty(
-			\cos(\alpha) & -\sin(\alpha) &   \\
-			\sin(\alpha) &  \cos(\alpha) &   \\
-				     &		     & 1
-			)$
-
-		\item
-			$\smqty(
-			1 &   &   \\
-			  & 1 &   \\
-			  &   & -1
-			)$ yra neteisingo sukimo matrica, kuri vektorių atspindi
-			per $xy$ plokštumą;
-		\item
-			$\smqty(
-			-1 &    &   \\
-			   & -1 &   \\
-			   &    & -1
-			)$ yra neteisingo sukimo matrica, kuri vadinama
-			inversijos transformacija ir ji vektorių siunčia į savo
-			minusą.
-	\end{itemize}
+	Sukimas kampu $\alpha$ aplink $z$ ašį užrašomas matrica
+	\begin{equation*}
+		\mqty(
+		\cos(\alpha) & -\sin(\alpha) &   \\
+		\sin(\alpha) &  \cos(\alpha) &   \\
+			     &		     & 1
+		)
+	\end{equation*}
+	netikrasis sukimas,
+	kuris vektorių atspindi per $xy$ plokštumą,
+	užrašomas matrica
+	\begin{equation*}
+		\mqty(
+		1 &   &   \\
+		  & 1 &   \\
+		  &   & -1
+		) 
+	\end{equation*}
+	atspindys per tašką $0$ yra 
+	netikrasis sukimas vadinamas inversija,
+	jis užrašomas matrica
+	\begin{equation*}
+		P :=\mqty(
+		-1 &    &   \\
+		   & -1 &   \\
+		   &    & -1
+		) 
+	\end{equation*}
 \end{example}
-Teisingus sukimus galime realizuoti kaip tolydų objekto pasukimą. Neteisingi
-pasukimai visata turės savyje atspindžio arba inversijos veiksmą, todėl jų
-neįmanoma pasiekti tolydžiu pasukimu. Pasukimai be atspindžio ar inversijos
-sudaro $\Orth3$ pogrupį vadinamą $\SO3$.
+
+
+Tikrieji sukimai yra fiziškai realizuojami,
+kaip objekto krypties pakeitimas erdvėje.
+Netikrieji sukimai nėra fiziškai realizuojami,
+jiems atlikti reikia objektą pakeisti savo atspindžiu
+ir tada pritaikyti tikrąjį pasukimą.
+Tikrieji sukimai sudaro grupės $\Orth3$ pogrupį vadinama $\SO3$.
+
 \begin{definition}
 	Specialioji ortogonalių matricų grupė žymima $\SO3$ ir yra sudaryta iš
 	$3\times3$ matricų $R$ virš realiųjų skaičių, tokių kad,
 	\begin{itemize}
-		\item lygybė $(R \vb v, R \vb w) = (\vb v, \vb w)$ yra
-			tenkinama su visais vektoriais $\vb v$ ir $\vb w$
+		\item lygybė $(R \vb v, R \vb w) = (\vb v, \vb w)$
+			galioja visiems vektoriams 
+			$\vb v$, $\vb w \in \set R^3$ 
 		\item ir $\det(R) = 1$.
 	\end{itemize}
 \end{definition}
 
+
 \begin{proposition}
-	$\Orth3$ yra izomorfiška grupių sandaugai $\SO3 \times \qty{1,-1}$.
+	Grupė $\Orth3$ yra izomorfiška grupių sandaugai
+	$\SO3 \times \qty{1,-1}$.
 \end{proposition}
 \begin{proof}
-	Tegul $R' \in \Orth3$ ir $\det(R')=-1$, tada $R'=IR'=PPR'$,
-	čia $P$ yra inversijos matrica $\smqty(
-			-1 &    &   \\
-			   & -1 &   \\
-			   &    & -1
-	)$ ir $PR' \in \SO3$, nes 
+	Tegul $f$ yra atvaizdavimas
 	\begin{equation}
-		\det(PR')=\det(P)\det(R')=(-1)(-1)=1 \,.
-	\end{equation}
-	Kiekvieną $\Orth3$ elementą, kuris nepriklauso $\SO3$ galima išskaidyti
-	į $PR$, kur $R \in \SO3$. Tada izomorfizmas yra duodamas funkcijos
-	\begin{equation}
-		\begin{split}
+		\begin{aligned}
 			f: \SO3 \times \qty{1,-1} &\to \Orth3\,,\\
 			(R,1) &\mapsto R \\
 			(R,-1) &\mapsto PR \,.
-		\end{split}
+		\end{aligned}
 	\end{equation}
-	Unikalus išskaidymas garantuoja, kad $f^{-1}$ egzistuoja. Kad įrodyti
-	kad $f$ tikrai yra izomorfizmas užtenka parodyti, kad $f$ išlaiko grupės
-	struktūrą dauginant teisingus sukimus, teisingą sukimą su neteisingu ir
-	dauginant du neteisingus sukimus.
+	Įrodome, kad $f$ atvirkštinis atvaizdavimas yra
+	\begin{equation}
+		\begin{alignedat}{4}
+			f^{-1}: \Orth3 &\to \SO3 \times \qty{1,-1}
+			\,,\\
+			R &\mapsto (R,1)  &R&\in \SO3 \\
+			R &\mapsto (PR,-1)  &R&\notin\SO3
+			\,.
+		\end{alignedat}
+	\end{equation}
+	Turime $f \circ f^{-1} = \mathup{id}$
+	\begin{equation}
+		\begin{aligned}
+			\text{kai } R \in\SO3 
+			\,,\quad
+			&f\circ f^{-1} (R) = f((R,1)) = R
+			\,,\\
+			\text{kai } R \notin\SO3 
+			\,,\quad
+			&f\circ f^{-1} (R) = f((PR,-1)) = PPR = R
+			\,.
+		\end{aligned}
+	\end{equation}
+	Turime $f^{-1} \circ f = \mathup{id}$
+	\begin{equation}
+		\begin{aligned}
+			&f^{-1}\circ f ((R,1)) = f^{-1}(R) = (R,1)
+			\,,\\
+			&f^{-1}\circ f ((R,-1)) = f^{-1}(PR) = (PPR,-1)= (R,-1)
+			\,.
+		\end{aligned}
+	\end{equation}
+	Kad įrodyti kad $f$ yra grupių izomorfizmas lieka įrodyti,
+	kad $f$ išlaiko grupės struktūrą dauginant teisingus sukimus,
+	teisingą sukimą su neteisingu ir dauginant du neteisingus sukimus.
 	\begin{equation}
 		\begin{split}
 			f((R_1,1))f((R_2,1))
@@ -132,8 +161,11 @@ sudaro $\Orth3$ pogrupį vadinamą $\SO3$.
 			&= f((R_1,-1)(R_2,-1)) \,.
 		\end{split}
 	\end{equation}
-	Čia pasinaudojome faktu kad $PR=RP$ su visais $R \in \SO3$ ir $P^2=I$. 
-	Egzistuoja izomorfizmas $f$, tad $\Orth3$ ir $\SO3 \times \qty{1,-1}$
+	Čia pasinaudojome faktu kad $PR=RP$ su visais 
+	$R \in \SO3$ ir $P^2=I$. 
+	
+	Egzistuoja grupių izomorfizmas $f$,
+	tad $\Orth3$ ir $\SO3 \times \qty{1,-1}$
 	yra izomorfiškos grupės.
 \end{proof}
 
