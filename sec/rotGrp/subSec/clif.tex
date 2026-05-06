@@ -1,11 +1,11 @@
-\subsection{Clifordo algebros}
+\subsection{Clifford'o algebros}
 
 
-Toliau nagrinėsime nagrinėsime dvi Clifford'o algebras $\Clp$ ir
-$\Clm$. Tai yra vektorinės erdvės su papildoma bitiesine daugybos
-operacija, kuri leidžia sudauginti du algebros vektorius ir gauti naują
-vektorių algebroje. Šias algebras apibrėšime pirma paimdami daug bendresnę
-tenzorinę algebrą ir tada jai sutekdami norimą struktūrą.
+Toliau nagrinėsime nagrinėsime dvi Clifford'o algebras $\Clp$ ir $\Clm$.
+Tai yra vektorinės erdvės su papildoma bitiesine daugybos operacija,
+kuri leidžia sudauginti du vektorius ir gauti naują vektorių.
+Šias algebras apibrėšime pirma paimdami daug bendresnę tenzorinę algebrą
+ir tada jai suteiksime norimą struktūrą.
 
 \begin{definition}
 	Vienetinė tenzorinė algebra $T(\set R^3)$ yra tiesioginė suma
@@ -23,24 +23,29 @@ tenzorinę algebrą ir tada jai sutekdami norimą struktūrą.
 	\end{equation}
 	$T^k$ čia yra vektorinės erdvės $T^0 = \set R$\: ,\: $T^1=\set R^3$\: ,\: $T^2=\set R^3 \ot \set R^3$\: ,\:
 	$T^3=\set R^3 \ot \set R^3 \ot \set R^3$
-	ir taip toliau. Algebros daugyba yra duodama vektorių tenzorinės sandaugos.
-	Vienetinis tenzorinės algebros elementas yra žymimas $\mathbb 1$\:.
+	ir taip toliau.
+	Algebros daugyba yra duodama vektorių tenzorinės sandaugos.
+	Tegul $\mathbb1 \in T^0$ žymi vienetinį tenzorinės algebros elementą,
+	kuris su visais $v \in T(\set R^3)$ tenkina
+	$\mathbb1 \otimes v = v \otimes \mathbb1 = v$.
 \end{definition}
-Kitaip pasakius tai yra algebra, kurios vektoriai yra įvairių ilgiu tenzorinių
-sandaugos $\vb v_1 \ot \vb v_2 \ot \dots \ot \vb v_n$\:,\: $\vb v_i \in \set R^3$
-ir tokių sandaugų sumos.
+Kitaip pasakius tai yra algebra,
+kurios vektoriai yra įvairių ilgiu tenzorinės sandaugos
+$\vb v_1 \ot \vb v_2 \ot \dots \ot \vb v_n$\:,\: $\vb v_i \in \set R^3$
+ir tokių sandaugų tiesinės kombinacijos.
 \begin{example}
-	Vektorius $3\cdot\mathbb 1 + \vb v$ priklauso $T(\set R^3)$ ir yra suma vektorių iš $T^0$ ir $T^1$.
+	Vektorius $3\;\mathbb 1 + \vb v$ priklauso $T(\set R^3)$
+	ir yra suma vektorių iš $T^0$ ir $T^1$.
 	Vektorius $2\vb w + \vb v \ot \vb w$ yra suma vektorių iš $T^1$ ir $T^2$.
 	Jų sandauga tenzorinėje algebroje yra
 	\begin{equation}
 		\begin{split}
-			\qty(3\cdot\mathbb 1 + \vb v)
+			\qty(3\;\mathbb 1 + \vb v)
 			\ot
 			\qty(2\vb w + \vb v \ot \vb w)
 			=&
-			3\cdot\mathbb 1 \ot 2\vb w
-			+ 3\cdot\mathbb 1 \ot \vb v \ot \vb w
+			3\;\mathbb 1 \ot 2\vb w
+			+ 3\;\mathbb 1 \ot \vb v \ot \vb w
 			+ \vb v \ot 2\vb w
 			+ \vb v \ot \vb v \ot \vb w
 			\\=&
@@ -135,9 +140,10 @@ sąryšio (\ref{eq:cl+}) ar atitinkamai (\ref{eq:cl-})''.
 
 Duotam vektoriui $a \in T(\set R^3)$ aibė
 $\qty{a+d \mid d \in I^\pm}$ (dar žymima $a+I^\pm$)
-vadinama šonine klase, o vektorius $a$ vadinamas klasės atstovu.
-Dviejų šoninių klasių $a+I^\pm$ ir $b + I^\pm$ sandauga yra šoninė
-klasė, kuriai priklauso atstovų sandauga algebroje $a \ot b$.
+vadinama gretutine klase (ang. \emph{coset} arba \emph{equivalence class}),
+o vektorius $a$ vadinamas klasės atstovu.
+Dviejų gretutinių klasių $a+I^\pm$ ir $b + I^\pm$ sandauga yra gretutinė
+klasė, kuriai priklauso atstovų sandauga $a \ot b$.
 Ši sandauga nepriklauso nuo pasirinktų klasės atstovų, nes
 \begin{equation}
 	(a+I^\pm)\ot(b+I^\pm)
@@ -150,12 +156,11 @@ klasė, kuriai priklauso atstovų sandauga algebroje $a \ot b$.
 	a \ot b + I^\pm
 	\,.
 \end{equation}
-Sumos nariai $
-a \ot I^\pm
-= I^\pm \ot b
-= I^\pm \ot I^\pm
-= I^\pm
-$, nes $I^\pm$ yra algebros $T(\set R^3)$ idealas.
+Sumos nariai 
+$a \ot I^\pm = I^\pm $,
+$I^\pm \ot b = I^\pm $,
+$I^\pm \ot I^\pm = I^\pm $,
+nes $I^\pm$ yra algebros $T(\set R^3)$ idealas.
 Tai tikrai
 \begin{equation}
 	(a+I^\pm)\ot(b+I^\pm)
@@ -168,13 +173,12 @@ Tai tikrai
 
 \begin{definition}
 	Algebra $\Clpm$ yra faktorinė algebra $T(\set R^3)/I^\pm$,
-	kurios elementai yra šoninės klasės $a+I^\pm$, $a \in T(\set R^3)$
+	kurios elementai yra gretutinės klasės $a+I^\pm$, $a \in T(\set R^3)$
 	ir jų sandauga yra $(a+I^\pm)\ot(b+I^\pm)=a\ot b + I^\pm.$
 \end{definition}
 
 \begin{example}
-	$\vb w \ot \vb v +\vb v \ot \vb w + I^+$ 
-	yra šoninė klasė,
+	$\vb w \ot \vb v +\vb v \ot \vb w + I^+$ yra gretutinė klasė,
 	kuri yra vektorius algebroje $\Clp$. 
 	Supaprastiname išraišką
 	\begin{equation}
@@ -198,25 +202,25 @@ Tai tikrai
 
 \begin{example}
 	Tegul $a,b \in T(\set R^3)$ ir
-	$
-		a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^-
-	$
-yra šoninė klasė, kuri yra vektorius iš $\Clm$. Šią išraišką supaprastiname atlikdami veiksmus
-%
-\ali{
-a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^- 
-& = a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b \nn \\
-& \quad - a \ot \qty(\vb v \ot \vb w + \vb w \ot \vb v +2(\vb v,\vb w) \mathbb 1)  \ot b + I^- \nn\\
-& = a \ot \qty( \vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1 - \vb v \ot \vb w - \vb w \ot \vb v -2(\vb v,\vb w) \mathbb 1))\ot b + I^- \nn\\
-& = a \ot \qty( - \vb w \ot \vb v )\ot b + I^- \nn\\
-& = - a \ot	\vb w \ot \vb v	\ot b + I^- .
-}
-%
-Parodėme, kad sudarius faktorinę algebrą $\Clm$, galime jos viduje taikyti sąryšį (\ref{eq:cl-}) manipuliuojant šoninės klasės atstovus.
-
+	$ a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^- $
+	yra gretutinė klasė, kuri yra vektorius iš $\Clm$. Šią išraišką supaprastiname atlikdami veiksmus
+	\begin{equation}
+		\begin{aligned}
+			a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b + I^- 
+			& = a \ot (\vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1) \ot b
+			\\& \quad - a \ot \qty(\vb v \ot \vb w + \vb w \ot \vb v +2(\vb v,\vb w) \mathbb 1)  \ot b + I^-
+			\\& = a \ot \qty( \vb v \ot \vb w + 2(\vb v,\vb w)\mathbb 1 - \vb v \ot \vb w - \vb w \ot \vb v -2(\vb v,\vb w) \mathbb 1))\ot b + I^-
+			\\& = a \ot \qty( - \vb w \ot \vb v )\ot b + I^-
+			\\& = - a \ot	\vb w \ot \vb v	\ot b + I^- 
+			\,.
+		\end{aligned}
+	\end{equation}
+	Parodėme, kad sudarius faktorinę algebrą $\Clm$,
+	galime jos viduje taikyti sąryšį (\ref{eq:cl-})
+	manipuliuojant gretutinės klasės atstovus.
 \end{example}
 Toliau priimame sutrumpintą žymėjimą, nes išreikštai
-su šoninėmis klasėmis nebedirbsime. Užrašysime tik
+su gretutinėmis klasėmis nebedirbsime. Užrašysime tik
 klasės atstovą, o kad išraiška skirtųsi nuo 
 vektorių tenzorinės sandaugos vietoje ženklo ,,$\ot$''
 tiesiog rašysime vektorius vieną šalia kito.
@@ -268,14 +272,16 @@ rašysime
 			= -2(\vb v,\vb w) \vb v + (\vb v,\vb v)\vb w 
 			\,.
 			$
+			\qedhere
 	\end{enumerate}
 \end{proof}
 
-
-Atkreipiame dėmesį, kad kai $(\vb v,\vb v)=1$,
-$(\vb v,\vb w)\vb v$ yra vektoriaus $\vb w$ projekcija į $\vb v$
-ir $-2(\vb v,\vb w)\vb v + \vb w$ yra vektoriaus atspindys
-per plokštumą statmeną vektoriui $\vb v$. 
+\begin{remark}
+	Atkreipiame dėmesį, kad kai $(\vb v,\vb v)=1$,
+	$(\vb v,\vb w)\vb v$ yra vektoriaus $\vb w$ projekcija į $\vb v$
+	ir $-2(\vb v,\vb w)\vb v + \vb w$ yra vektoriaus atspindys
+	per plokštumą statmeną vektoriui $\vb v$. 
+\end{remark}
 
 Tegul $\qty{\vb e_1,\vb e_2,\vb e_3}$ yra ortonormali $\set R^3$ bazė.
 Bazinius vektorius galime perkelti į algebra $\mathup{Cl^\pm(V)}$,
@@ -291,20 +297,30 @@ kur jie turi tenkinti
 Su šių sąryšių pagalba galime bet kokį $\mathup{Cl^\pm(V)}$ elementą užrašyti,
 kaip tiesinę kombinaciją aštuonių elementų:
 \begin{equation}
-	\mathbb 1 ,\,
-	\vb e_1 ,\, \vb e_2 ,\, \vb e_3 ,\, 
-	\vb e_2 \vb e_3 ,\, \vb e_3 \vb e_1 ,\, \vb e_1 \vb e_2 ,\,
-	\vb e_1 \vb e_2 \vb e_3 ,
+	\mathbb 1 \,,\quad
+	\vb e_1 \,,\quad 
+	\vb e_2 \,,\quad  
+	\vb e_3 \,,\quad  
+	\vb e_2 \vb e_3 \,,\quad
+	\vb e_1 \vb e_3 \,,\quad
+	\vb e_1 \vb e_2 \,,\quad 
+	\vb e_1 \vb e_2 \vb e_3 \,,
 \end{equation}
-nes su pirma taisykle bet kurį tenzorinės algebros bazės elementą galima išrikiuoti taip kad
-ortų indeksai būtų surašyti didėjimo tvarka ir su antra taisykle pasikartojantys ortai panaikinami.
+nes su pirma taisykle bet kurį tenzorinės algebros bazės elementą galima išrikiuoti,
+taip kad ortų indeksai būtų surašyti didėjimo tvarka
+ir su antra taisykle pasikartojantys ortai panaikinami.
 Tai reiškia $\Clpm$ yra aštuonmetės algebros.
 Įvedame pažymėjimą, kurį toliau naudosime algebrų $\Clpm$ bazei
-$\vb e_{23} := \vb e_2 \vb e_3$, 
-$\vb e_{31} :=-\vb e_3 \vb e_1$, 
-$\vb e_{12} := \vb e_1 \vb e_2$
-ir $\vb e_{123} := \vb e_1 \vb e_2 \vb e_3$.
-
+\begin{equation}
+	\vb e_{23} := \vb e_2 \vb e_3
+	\,,\quad
+	\vb e_{31} := \vb e_3 \vb e_1 = -\vb e_1 \vb e_3 
+	\,,\quad
+	\vb e_{12} := \vb e_1 \vb e_2
+	\,,\quad
+	\vb e_{123} := \vb e_1 \vb e_2 \vb e_3
+	\,.
+\end{equation}
 
 \begin{definition}
 	Transponuota $\Clpm$ bazė yra 
@@ -333,7 +349,8 @@ ir $\vb e_{123} := \vb e_1 \vb e_2 \vb e_3$.
 		\,.
 	\end{equation}
 \end{definition}
-Nesunku pamatyti kad nėra svarbu kokia tvarka pritaikome transponavimas ir automorfizmas $\alpha$,
+Nesunku pamatyti,
+kad nėra svarbu kokia tvarka pritaikomas transponavimas ir automorfizmas $\alpha$,
 tai $\alpha(v)^t = \alpha(v^t)$.
 
 
@@ -353,8 +370,8 @@ Pažymime algebros poerdvius
 \end{equation}
 Susiejant su erdvės baze šiuos poerdvius galima užrašyti kaip
 tiesinį apvalką pasirinktų bazės elementų
-%
-\eqa{
+\begin{equation}
+	\begin{aligned}
 		A_0^\pm &= \mathup{span}\qty(
 			\mathbb 1,\,
 			\vb e_{23},\,
@@ -370,7 +387,8 @@ tiesinį apvalką pasirinktų bazės elementų
 			\vb e_{123}
 		)
 		\,.
-}
+	\end{aligned}
+\end{equation}
 
 \begin{example}
 	Tegul $v_0, v'_0 \in A_0^\pm$ ir $v_1, v'_1 \in A_1^\pm$. Turime
@@ -408,7 +426,8 @@ tiesinį apvalką pasirinktų bazės elementų
 			\,.
 		\end{split}
 	\end{equation}
-	Taip yra tokia pati struktūra kaip $\set Z_2$ su sudėtimi
+	Taip yra tokia pati struktūra kaip grupė 
+	$\set Z_2 \cong C_2$ su sudėtimi
 	\begin{equation}
 		\begin{split}
 			\mathbf{lyginis} + \mathbf{lyginis} &= \mathbf{lyginis}
@@ -430,7 +449,8 @@ o vektoriai erdvėje $A_1$ yra vadinami \emph{nelyginiais}.
 Pamatome, kad automorfizmas $\alpha$ 
 leidžia algebrą $\Clpm$ suskaidyti 
 į lyginio ir nelyginio poerdvių tiesioginę sumą $A_0 \oplus A_1$.
-Ši struktūra vadinama algebros $\Clpm$ ,,$Z_2$ gradavimu'', kurį suteikia automorfizmas $\alpha$
+Šis algebros išskaidymas į vektorinius poerdvius vadinamas
+,,$\set Z_2$ gradavimu'', kurį suteikia automorfizmas $\alpha$.
 Lyginis poerdvis yra uždaras algebros daugybos atžvilgiu,
 todėl tai yra $\Clpm$ poalgebris.
 
@@ -448,71 +468,104 @@ Algebros $A_0^+$ ir $A_0^-$ turi bazę $\qty{
 		\vb e_{12}
 	}$. 
 Pastebime kad algebroje $A_0^+$
-%
-\eqg{
-\vb e_{23} \vb e_{31} 
-		= \vb e_2 \vb e_3 \vb e_3 \vb e_1
-		= \vb e_2 \vb e_1
-		= - \vb e_{12}
-		\,,
+\begin{gather}
+	\vb e_{23} \vb e_{31} 
+	= \vb e_2 \vb e_3 \vb e_3 \vb e_1
+	= \vb e_2 \vb e_1
+	= - \vb e_{12}
+	\,,
 \\
-\vb e_{31} \vb e_{23} 
-		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
-		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
-		= \vb e_1 \vb e_2
-		= \vb e_{12}
-		\,,
+	\vb e_{31} \vb e_{23} 
+	= \vb e_3 \vb e_1 \vb e_2 \vb e_3
+	= \vb e_1 \vb e_3 \vb e_3 \vb e_2
+	= \vb e_1 \vb e_2
+	= \vb e_{12}
+	\,,
 \\
-{\vb e_{31}}^2 
-		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
-		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
-		= - \mathbb 1
-		\,,
+	{\vb e_{31}}^2 
+	= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
+	= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
+	= - \mathbb 1
+	\,,
 \\
-{\vb e_{23}}^2 
-		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
-		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
-		= - \mathbb 1
-		\,,
-}
-%
+	{\vb e_{23}}^2 
+	= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
+	= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
+	= - \mathbb 1
+	\,,
+\end{gather}
 o algebroje $A_0^-$
-%
-\eqg{
-		\vb e_{23} \vb e_{31} 
-		= \vb e_2 \vb e_3 \vb e_3 \vb e_1 
-		= - \vb e_2 \vb e_1 
-		= \vb e_1 \vb e_2 
-		= \vb e_{12}
-		\,,
+\begin{gather}
+	\vb e_{23} \vb e_{31} 
+	= \vb e_2 \vb e_3 \vb e_3 \vb e_1 
+	= - \vb e_2 \vb e_1 
+	= \vb e_1 \vb e_2 
+	= \vb e_{12}
+	\,,
 \\
-		\vb e_{31} \vb e_{23} 
-		= \vb e_3 \vb e_1 \vb e_2 \vb e_3
-		= \vb e_1 \vb e_3 \vb e_3 \vb e_2
-		= - \vb e_1 \vb e_2
-		= - \vb e_{12}
-		\,,
+	\vb e_{31} \vb e_{23} 
+	= \vb e_3 \vb e_1 \vb e_2 \vb e_3
+	= \vb e_1 \vb e_3 \vb e_3 \vb e_2
+	= - \vb e_1 \vb e_2
+	= - \vb e_{12}
+	\,,
 \\
-		{\vb e_{31}}^2 
-		= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
-		= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
-		= - \mathbb 1
-		\,,
+	{\vb e_{31}}^2 
+	= \vb e_3 \vb e_1 \vb e_3 \vb e_1 
+	= - \vb e_3 \vb e_3 \vb e_1 \vb e_1 
+	= - \mathbb 1
+	\,,
 \\
-		{\vb e_{23}}^2 
-		= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
-		= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
-		= - \mathbb 1
-		\,.
-}
-%
-Abiems algebroms $\vb e_{31}$ ir $\vb e_{23}$ yra algebros generatoriai. Jie tenkina sąryšius
-%
-\ali{
-			\vb e_{31} \vb e_{23} &= - \vb e_{23} \vb e_{31} \,,\nn\\
-			{\vb e_{31}}^2 &= - \mathbb 1 \, ,\\
-			{\vb e_{23}}^2 &= - \mathbb 1 \,. \nn
-}
-	Tai yra sąryšiai apibrėžiantys Clifford'o algebrą $\mathup{Cl}^-(2)$,
-	tad $\mathup{Cl}^-(2) \cong A_0^+ \cong A_0^-$.
+	{\vb e_{23}}^2 
+	= \vb e_2 \vb e_3 \vb e_2 \vb e_3 
+	= - \vb e_2 \vb e_2 \vb e_3 \vb e_3 
+	= - \mathbb 1
+	\,.
+\end{gather}
+Abiems algebroms $\vb e_{31}$ ir $\vb e_{23}$ yra algebros generatoriai.
+Jie tenkina sąryšius
+\begin{equation}
+	\begin{aligned}
+		\vb e_{31} \vb e_{23} &= - \vb e_{23} \vb e_{31} \,,\\
+		{\vb e_{31}}^2 &= - \mathbb1 \,,\\
+		{\vb e_{23}}^2 &= - \mathbb1 \,.
+	\end{aligned}
+\end{equation}
+
+Tegul $f:A^+_0 \to A^-_0$ yra tiesinis atvaizdavimas,
+apibrėžiamas veikimu ant $A^+_0$ bazės
+\begin{equation}
+	\mathbb1 \mapsto \mathbb1
+	\,,\quad
+	\vb e_{23} \mapsto -\vb e_{23}
+	\,,\quad
+	\vb e_{31} \mapsto -\vb e_{31}
+	\,,\quad
+	\vb e_{12} \mapsto -\vb e_{12}
+	\,.
+\end{equation}
+Akivaizdu kad $f$ yra bijekcija.
+Įrodymui kad $f$ yra algebrų homomorfizmas užtenka parodyti,
+kad $f$ nepakeičia generatorių daugybos sąryšių
+\begin{equation}
+	\begin{aligned}
+		f(\vb e_{31}) f(\vb e_{23}) 
+		=(-\vb e_{31})(-\vb e_{23}) 
+		&= - \vb e_{23} \vb e_{31} 
+		= - f(\vb e_{23}) f(\vb e_{31}) 
+\,,\\
+		f(\vb e_{31})^2 
+		(-\vb e_{31})^2 
+		&= - \mathbb1
+		= - f(\mathbb1)
+\,,\\
+		f(\vb e_{23})^2 
+		(-\vb e_{23})^2 
+		&= - \mathbb1
+		= - f(\mathbb1)
+\,.
+	\end{aligned}
+\end{equation}
+Atvaizdavimas $f$ yra algebrų izomorfizmas,
+tad $A^+_0 \cong A^-_0$.
 \end{proof}
