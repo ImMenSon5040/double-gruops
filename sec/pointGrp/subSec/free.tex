@@ -1,0 +1,46 @@
+
+\subsection{Grupių prezentacijos}
+
+Grupės prazentacija yra būdas apibrėžti grupę,
+pateikiant jos generatorius ir sąryšius kuriuos jie tenkina.
+Formaliai tokia grupė yra faktor-grupė laisvosios grupės,
+generuojamos duotų generatorių.
+Toliau pristatysime kobinatorinės grupių teorijos pagrindus,
+reikalingus apibrėžti grupės prezentacija.
+
+Tegul $S = \qty{a,b,c,\cdots}$ yra aibė generatorių.
+Literatūroje įprasta aibę $S$ vadinti \emph{abėcėle}, 
+o jos elementus - \emph{raidėmis}.
+Tegul $S^{-1} = \qty{a^{-1},b^{-1},c^{-1},\cdots}$
+yra aibė sudaryta iš \emph{atvikštinių raidžių}
+(kol kas šios raidės yra tik aibės $S^{-1}$ elementai be papildomos struktūros).
+Aibę $S \cup S^{-1}$ vadinsime \emph{išplėstine abėcėle}.
+Baigtines sekas $ f_1 f_2 \cdots f_n$ vadinsime \emph{žodžiais},
+čia visi $f_i \in S \cup S^{-1}$.
+Tegul $e$ žymi tuščia žodį,
+tai yra žodį sudarytą iš nulio raidžių.
+Tegul tarp dviejų žodžių yra ekvivalntiškumo sąryšis
+$f_1 f_2 \cdots f_n \sim f'_1 f'_2 \cdots f'_m$,
+jei iš vieno žodžio galime gauti kitą
+pakartotinai įterpdami raidės ir jos anvikštinės raidė poras $xx^{-1}$ ir $x^{-1}x$, $x \in S$.
+Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentiškumo klasę.
+\begin{definition}
+	Laisvoji grupė $F_S$ generuojama aibės $S$ yra sudaryta iš
+	\emph{žodžių} ekvivalentiškumo klasių,
+	kartu su daugyba duodama žodžių (klasės atstovų) sujungimo.
+\end{definition}
+
+\begin{example}
+	Parodykime kad $F_S$ tenkina grupės aksiomas.
+	\begin{itemize}
+		\item Uždarumas:
+			sujungus du žodžius gausime nauja baigtinę raidžių seką, kuri taip pat yra žodis.
+		\item Asociatyvumas:
+			sekų jungimas yra asociatyvus.
+		\item Egzistuoja vienetinis elementas:
+			betkurį žodžį sujungus su tuščiu žodžiu $e$, gausime nepakeistą žodį.
+		\item Egzistuoja atvikštiniai elementai:
+			žodžiui $f_1 f_2 \cdots f_n$ atvikštinis yra $f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}$,
+			kur $f_i^{-1} = x^{-1}$, jei $f_i = x$ ir $f_i^{-1} = x$ jei $f_i=x^{-1}$, $x \in S$.
+	\end{itemize}
+\end{example}
