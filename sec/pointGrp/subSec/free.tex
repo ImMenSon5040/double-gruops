@@ -27,7 +27,7 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 \begin{definition}
 	Laisvoji grupė $F_S$ generuojama aibės $S$ yra sudaryta iš
 	\emph{žodžių} ekvivalentiškumo klasių,
-	kartu su daugyba duodama žodžių (klasės atstovų) sujungimo.
+	kartu su daugyba duodama \emph{žodžių} (klasės atstovų) sujungimo.
 \end{definition}
 
 \begin{example}
@@ -41,6 +41,98 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 			betkurį žodžį sujungus su tuščiu žodžiu $e$, gausime nepakeistą žodį.
 		\item Egzistuoja atvikštiniai elementai:
 			žodžiui $f_1 f_2 \cdots f_n$ atvikštinis yra $f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}$,
-			kur $f_i^{-1} = x^{-1}$, jei $f_i = x$ ir $f_i^{-1} = x$ jei $f_i=x^{-1}$, $x \in S$.
+			kur 
+			\begin{equation}
+				f_i^{-1}= 
+				\begin{cases}
+					x^{-1}\,,\;	&\text{kai } f_i=x
+					\\
+					x\,,		&\text{kai } f_i=x^{-1}
+				\end{cases}
+				\,,\qquad
+				x \in S
+				\,.
+			\end{equation}
+			Šių žodžių sandauga yra lygi vienetiniam elementui
+			\begin{equation}
+				f_1 f_2 \cdots f_n f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}
+				\sim
+				f_1 f_2 \cdots f_{n-1} f_{n-1}^{-1} f_{n-2}^{-1} \cdots f_1^{-1}
+				\sim \cdots \sim 
+				f_1 f_1^{-1} \sim e
+			\end{equation}
 	\end{itemize}
 \end{example}
+
+Laisvoji grupė $F_S$ yra bendriausia įmanoma grupė turinti elementus $\qty{a, b, c, \cdots}$.
+Ją sudarėme visų \emph{žodžių} aibei suteikdami sąryšio $xx^{-1}=e$ stuktūra ir asociatyvia uždara daugybą,
+tai yra minimali struktūra reikalinga kad $F_S$ būtų grupė.
+Toliau parodysime, kaip galima sudaryti šios grupės faktor-grupes,
+kurios turi papildomas struktūras.
+
+Yra aibė $R \subset F_S$, jos elementai vadinami \emph{saryšio žodžiais} 
+(ang. \emph{relators}).
+Tai bus žodžiai, kurie faktor-grupėje bus sutapatinti su vienetiniu elementu.
+Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
+\begin{equation}
+	N(R) := \qty{
+		\prod_{i=1}^n g_i r_i g_i^{-1}
+		\mid
+		0 < n < \infty ,\,
+		r_i \in R \cup R^{-1} ,\,
+		g_i \in F_S
+	}
+	\,.
+\end{equation}
+
+\begin{proposition}
+	$N(R)$ yra grupės $F_S$ normalusis pogrupis.
+\end{proposition}
+\begin{proof}
+	Parodome pogrupio uždarumą.
+	$N(R)$ yra visų \emph{sąryšio žodžių} jungtinių elementų baigtinės sandaugos.
+	Sudauginus dvi tokias sandaugas gaunama nauja baigtinė sandauga,
+	tad $N(R)$ yra uždara daugybos atžvilgiu.
+
+	Parodome, kad $gN(R)g^{-1} \subseteq N(R)$ su visais $g \in F_S$.
+	\begin{equation}
+		g\qty(\prod_{i=1}^n g_i r_i g_i^{-1})g^{-1} 
+		= \prod_{i=1}^n g g_i r_i g_i^{-1}g^{-1}
+		= \prod_{i=1}^n g g_i r_i (g g_i)^{-1}
+		\,,
+	\end{equation}
+	elementai $g g_i$ priklauso grupei $F_S$,
+	tad pagal $N(R)$ apibrėžimą $g\qty(\prod_{i=1}^n g_i r_i g_i^{-1})g^{-1} \in N(R)$.
+\end{proof}
+
+
+\begin{definition}
+	Turint \emph{abėcėlę} $S$ ir \emph{sąryšio žodžius} $R$,
+	grupės prezentacija $\present{S}{R}$ yra faktor-grupė $F_S/N(R)$.
+\end{definition}
+
+\begin{remark}
+	Literatūroje yra dažniau naudojamas žymėjimas $\langle\;S\;|\;R\;\rangle$,
+	bet mes pasirinkome kitokį žymėjimą,
+	kad nekiltų rizikos sumaišyti grupės prezentacija su Dirac'o ,,bra-ket'' žymėjimu.
+	Taip pat \emph{abėcėlė} $S$ būna patekta elementais,
+	o \emph{sąryšio žodžiai} $R$ - patekti grupę apibrėžiančiais sąryšiais
+	$r = r'$, kur $r{r'}^{-1}\in R$.
+	Pavydžiui grupės prezentaciją
+	\begin{equation}
+		\present{S}{R}
+		\,,\quad
+		S = \qty{a, b}
+		\,,\quad
+		R = \qty{a^2, b^3, aba^{-1}b^{-1}}
+		\,,
+	\end{equation}
+	rašysime, taip 
+	\begin{equation}
+		\present{a,b}{a^2 = b^2 = e , ab = ba}
+		\,.
+	\end{equation}
+\end{remark}
+
+
+
