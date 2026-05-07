@@ -1,10 +1,11 @@
 
 \subsection{Grupės \texorpdfstring{$\pinp$}{Pin+(3)}, \texorpdfstring{$\pinm$}{Pin-(3)} ir \texorpdfstring{$\spin$}{Spin(3)}}
 
-Pažymime $Cl^{\pm\cross}(3)$ grupę invertuojamų $\Clpm$ elementų,
-grupės daugyba sutampa su algebros daugyba. 
+Pažymime $\mathup{Cl}^{\pm\cross}(3)$ grupę,
+kuria sudaro $\Clpm$ elementai turintys, atvikštinį elementą.
+Grupės daugyba sutampa su algebros daugyba. 
 \begin{equation}
-	Cl^{\pm\cross}(3)
+	\mathup{Cl}^{\pm\cross}(3)
 	= \qty{
 		v \in \Clpm
 		\mid
@@ -15,28 +16,58 @@ grupės daugyba sutampa su algebros daugyba.
 \end{equation}
 
 \begin{definition}
-	Clifford'o–Lipschitz'o grupė $\Gamma^\pm(3)$ yra grupės $\mathup{Cl}^{\pm\cross}(3)$ pogrupis,
-	kurio elementai $v \in \Clpm$ tenkina, kad visiems $\vb w \in \set R^3$,
-	sandauga $\alpha(v) \vb w v^{-1}$ priklauso $\set R^3$.
+	Tegul $\rho$ yra atvaizdavimas
 	\begin{equation}
-		\Gamma^\pm(3) = \qty{
-			v \in \mathup{Cl}^{\pm\cross}(3)
-			\mid
-			\forall \vb w \in \set R^3 : \alpha(v) \vb w v^t \in \set R^3  
-		}
+		\begin{aligned}
+			\rho: \mathup{Cl}^{\pm\cross}(3) &\to \qty( \Clpm \to \Clpm )
+			v &\mapsto (w \mapsto \alpha(v) w v^{-1})
+			\,.
+		\end{aligned}
+	\end{equation}
+	Atvaizdavimas $\rho$ yra grupės $\mathup{Cl}^{\pm\cross}(3)$
+	suktasis jungtinis įvaizdis (ang. \emph{twisted adjoint representation}),
+	nes
+	\begin{equation}
+		\rho(u)\rho(v)w 
+		= \alpha(u)\alpha(v)wv^{-1}u^{-1}
+		= \alpha(uv)w(uv)^{-1}
+		= \rho(uv)w
+		\,.
 	\end{equation}
 \end{definition}
 
 \begin{definition}
-	$\rho$ yra grupės $\Gamma^\pm(3)$ suktasis jungtinis įvaizdis (ang.\emph{twisted adjoint representation}).
+	Clifford'o–Lipschitz'o grupė $\Gamma^\pm(3)$ yra grupės
+	$\mathup{Cl}^{\pm\cross}(3)$ pogrupis,
+	sudarytas iš elementų $v \in \mathup{Cl}^{\pm\cross}(3)$,
+	kokių kad $\rho(v)$ fiksuoja algebros $\Clpm$ poerdvį $\set R^3$,
+	čia $\set R^3$ tapatinama su
+	$\mathup{span}(\vb e_1,\,\vb e_2,\,\vb e_3) \subset \Clpm$.
 	\begin{equation}
-			\rho : \Gamma^\pm(3) \to \mathup{Aut}\qty(\set R^3)
-			\,,\quad
-			v \mapsto \qty(\vb w \mapsto \alpha(v) \vb w v^{-1})
-			\,
+		\Gamma^\pm(3) = \qty{
+			v \in \mathup{Cl}^{\pm\cross}(3)
+			\mid
+			\forall \vb w \in \set R^3 : \rho(v) \vb w \in \set R^3  
+			\rho(v) \set R^3 = \set R^3  
+		}
+		\,,
 	\end{equation}
-	čia $\mathup{Aut}\qty(\set R^3)$ yra aibė tiesinių funkcijų iš $\set R^3$ į $\set R^3$.
+	čia $\rho(v) \set R^3$ yra aibės $\set R^3$ vaizdas per atvaizdavimą $\rho(v)$.
 \end{definition}
+
+\begin{remark}
+	Atvaizdavimo $\rho$ siaurinys į $\Gamma^\pm(3)$ yra
+	\begin{equation}
+		\rho |_{\Gamma^\pm(3)} : \Gamma^\pm(3) \to \mathup{Aut}\qty(\set R^3)
+		\,,\quad
+		v \mapsto \qty(\vb w \mapsto \alpha(v) \vb w v^{-1})
+		\,
+	\end{equation}
+	čia $\mathup{Aut}\qty(\set R^3)$
+	yra aibė apgręžiamų tiesinių atvaizdavimų iš $\set R^3$ į $\set R^3$.
+	Atvaizdavimas $\rho |_{\Gamma^\pm(3)}$
+	yra grupės $\Gamma^\pm(3)$ matricinis įvaizdis.
+\end{remark}
 
 \begin{example}
 	Teiginio \ref{prop:R_action} tapatybės $(ii)$ ir $(iii)$ 
@@ -64,7 +95,7 @@ grupės daugyba sutampa su algebros daugyba.
 	Tarkime kad $v \in \mathup{ker}(\rho)$.
 	Vadinasi, su visais $\vb w \in \set R^3$ galioja
 	$\alpha(v)\vb w = \vb w v$.
-	Išskaidome $v = v^0 + v^1$ į lyginę dali $v^0 \in A^\pm_0$
+	Išskaidome $v = v^0 + v^1$ į lyginę dalį $v^0 \in A^\pm_0$
 	ir nelyginę dalį $v^1 \in A^\pm_1$.
 	Tada turime
 	\begin{align}
@@ -75,7 +106,7 @@ grupės daugyba sutampa su algebros daugyba.
 		- v^1\vb w &= \vb w v^1
 		\,.
 	\end{align}
-	Nemažindami bendrumo pasirenkame kad $v^0 = a^0 + \vb e_1 b^1$,
+	Neprarasdami bendrumo pasirenkame kad $v^0 = a^0 + \vb e_1 b^1$,
 	čia $a^0$ ir $b^1$ yra daugianario išraiškos pagal $\vb e_2$ ir $\vb e_3$
 	ir $a^0$ yra lyginis, o $b^1$ yra nelyginis.
 	Tai kad $a^0$ ir $b^1$ neturi narių su daugikliu $\vb e_1$ mums duoda kad
@@ -106,7 +137,7 @@ grupės daugyba sutampa su algebros daugyba.
 	Šį argumentą pakartojame su $\vb e_2$ ir $\vb e_3$
 	ir gauname kad $v^0 = c \mathbb1 $, $c \in \set R$.
 
-	Nemažindami bendrumo pasirenkame kad $v^1 = a^1 + \vb e_1 b^0$,
+	Neprarasdami bendrumo pasirenkame kad $v^1 = a^1 + \vb e_1 b^0$,
 	čia $a^1$ ir $b^0$ neturi narių su daugikliu $\vb e_1$,
 	$a^1$ - nelyginis, $b^0$ - lyginis.
 	Į lygti (\ref{eq:action_condition1}) įsistatome $\vb w = \vb e_1$
@@ -135,82 +166,77 @@ grupės daugyba sutampa su algebros daugyba.
 	tad $c \neq 0$.
 \end{proof}
 
-\begin{definition}
-	Tegul $N^+$ būna funkcija, kuri algebros vektorių $v$ atvaizduoja į $vv^t$;
+\begin{proposition}
+	Atvaizdavimas $N^+$, apibrėžtas taisykle 
 	\begin{equation}
 		N^+: \Clp \to \Clp
 		\,,\quad
 		v \mapsto vv^t
-		\,.
+		\,,
 	\end{equation}
-\end{definition}
-
-\begin{definition}
-	Tegul $N^-$ būna funkcija, kuri algebros vektorių $v$ atvaizduoja į $v\alpha(v^t)$;
+	atvaizduoja grupę $\Gamma^+(3)$ į aibę $\set R^{\cross}\mathbb1$. 
+	Atitinkamai atvaizdavimas $N^-$, apibrėžtas taisykle 
 	\begin{equation}
 		N^-: \Clm \to \Clm
 		\,,\quad
 		v \mapsto v\alpha(v^t)
-		\,.
+		\,,
 	\end{equation}
-\end{definition}
-
-\begin{proposition}
-	Jeigu $v \in \Gamma^+(3)$, tai $N^+(v) \in {\set R}^{\cross} \mathbb1 $.
-	Atitinkamai 
-	jeigu $v \in \Gamma^-(3)$, tai $N^-(v) \in \set R^{\cross} \mathbb1 $.
+	atvaizduoja grupę $\Gamma^-(3)$ į aibę $\set R^{\cross}\mathbb1$. 
 \end{proposition}
 \begin{proof}
 	Parodysime kad $N^+(v)$ priklauso įvaizdžio $\rho$ branduoliui.
 	Turime $v \in \Gamma^+(3)$, $\vb w, \vb w' \in \set R^3$,
 	$v$ ir $\vb w$ laisvai pasirenkami $\vb w'$ gaunamas $\rho(v)$ veikimu.
-	\begin{align}
-		\alpha(v)\vb w v^{-1} &= \vb w'
-		&&\text{iš $\Gamma^+(3)$ apibrėžimo}
-		\\
-		\alpha(v^t)^{-1}  (-\vb w)  v^t &= -\vb w'
-		&&\text{abiem lygybės pusėms pritaikome $x \mapsto \alpha(x^t)$}
-		\\
-		\alpha(v^t)^{-1}  \vb w  v^t &= \alpha(v)\vb w v^{-1}
-		&&\text{sulyginame dvi $\vb w'$ išraiškas}
-		\\
-		\vb w  v^t v&= \alpha(v^t)\alpha(v)\vb w 
-		&&\text{perkeliame atvirkštinius elementus}
-		\\
-		\vb w  v^t v&= \alpha(v^t v)\vb w 
-		&&\text{pritaikome homomorfizmo savybę}
-	\end{align}
-	Iš to seka kad $v^t v \in \mathup{ker}(\rho)$, nes
 	\begin{equation}
 		\begin{aligned}
-			\rho(v^t v)\vb w 
-			&= \alpha(v^t v)\vb w (v^t v)^{-1}
-			\\&= \vb w  v^t v (v^t v)^{-1}
-			\\&= \vb w 
-			\,.
+			\alpha(v)\vb w v^{-1} &= \vb w'
+			&&\text{iš $\Gamma^+(3)$ apibrėžimo}
+			\\
+			\alpha(v^t)^{-1}  (-\vb w)  v^t &= -\vb w'
+			&&\text{abiem lygybės pusėms pritaikome $x \mapsto \alpha(x^t)$}
+			\\
+			\alpha(v^t)^{-1}  \vb w  v^t &= \alpha(v)\vb w v^{-1}
+			&&\text{sulyginame dvi $\vb w'$ išraiškas}
+			\\
+			\vb w  v^t v&= \alpha(v^t)\alpha(v)\vb w 
+			&&\text{perkeliame atvirkštinius elementus}
+			\\
+			\vb w  v^t v&= \alpha(v^t v)\vb w 
+			&&\text{pritaikome homomorfizmo savybę}
 		\end{aligned}
+	\end{equation}
+	Iš to seka kad $v^t v \in \mathup{ker}(\rho)$, nes
+	\begin{equation}
+		\rho(v^t v)\vb w 
+		= \alpha(v^t v)\vb w (v^t v)^{-1}
+		= \vb w  v^t v (v^t v)^{-1}
+		= \vb w 
+		\,.
 	\end{equation}
 	Transpozicija yra algebros anti-automorfizmas,
 	tad $v v^t$ irgi priklauso $\mathup{ker}(\rho)$.
 	Iš teiginio \ref{prop:rho_kern} seka,
-	kad $x \in \Gamma^+(3) \implies N^+(x) \in \set R^{\cross} \mathbb1 $ 
+	kad $v \in \Gamma^+(3) \implies N^+(v) \in \set R^{\cross} \mathbb1 $ 
 
 	Antrą teiginio dalį įrodysime panašiu būdu.
 	Turime $v \in \Gamma^-(3)$, $\vb w, \vb w' \in \set R^3$,
 	$v$ ir $\vb w$ laisvai pasirenkami $\vb w'$ gaunamas $\rho(v)$ veikimu.
-	\begin{align}
-		\alpha(v)\vb w v^{-1} &= \vb w'
-		&&\text{iš $\Gamma^-(3)$ apibrėžimo}
-		\\
-		(v^t)^{-1}  \vb w  \alpha(v^t) &= \vb w'
-		&&\text{transponuojame abi lygybės puses}
-		\\
-		(v^t)^{-1}  \vb w  \alpha(v^t) &= \alpha(v)\vb w v^{-1}
-		&&\text{sulyginame dvi $\vb w'$ išraiškas}
-		\\
-		\vb w  \alpha(v^t) v &= v^t \alpha(v)\vb w 
-		&&\text{perkeliame atvirkštinius elementus}
-	\end{align}
+	\begin{equation}
+		\begin{aligned}
+			\alpha(v)\vb w v^{-1} &= \vb w'
+			&&\text{iš $\Gamma^-(3)$ apibrėžimo}
+			\\
+			(v^t)^{-1}  \vb w  \alpha(v^t) &= \vb w'
+			&&\text{transponuojame abi lygybės puses}
+			\\
+			(v^t)^{-1}  \vb w  \alpha(v^t) &= \alpha(v)\vb w v^{-1}
+			&&\text{sulyginame dvi $\vb w'$ išraiškas}
+			\\
+			\vb w  \alpha(v^t) v &= v^t \alpha(v)\vb w 
+			&&\text{perkeliame atvirkštinius elementus}
+		\end{aligned}
+	\end{equation}
 	Iškarto turime, kad $\alpha(v^t) v \in \mathup{ker}(\rho)$, nes
 	\begin{equation}
 		\begin{aligned}
@@ -226,26 +252,28 @@ grupės daugyba sutampa su algebros daugyba.
 	ir $\alpha$ yra algebros automorfizmas,
 	tad $v \alpha(v^t)$ irgi priklauso $\mathup{ker}(\rho)$.
 	Iš teiginio \ref{prop:rho_kern} seka,
-	kad $x \in \Gamma^-(3) \implies N^-(x) \in \set R^{\cross} \mathbb1$.
+	kad $v \in \Gamma^-(3) \implies N^-(v) \in \set R^{\cross} \mathbb1$.
 \end{proof}
 
 \begin{proposition}
-	Funkcijos $N^\pm: \Gamma^\pm(3) \to \set R^{\cross}$
+	Atvaizdavimai $N^\pm: \Gamma^\pm(3) \to \set R^{\cross}$
 	yra grupių homomorfizmai.
-	Papildomai $N^\pm(\alpha(v)) = N^\pm(v)$
+	Papildomai, $N^\pm(\alpha(v)) = N^\pm(v)$
 \end{proposition}
 \begin{proof}
 	Tegul $v,w \in \Gamma^\pm(3)$
-	\begin{align}
-		N^+(vw) &= v w w^t v^t = v N^+(w) v^t = v v^t N^+(w) = N^+(v) N^+(w)
-		\\
-		N^-(vw) &= \alpha(v) \alpha(w) w^t v^t = \alpha(v) N^-(w) v^t = \alpha(v) v^t N^-(w)  = N^-(v) N^-(w)
-		\\
-		N^+(\alpha(v)) &= \alpha(v) \alpha(v^t) = \alpha(v v^t) = \alpha(N^+(v)) = N^+(v)
-		\\
-		N^-(\alpha(v)) &= \alpha(\alpha(v)) \alpha(v^t) = \alpha(\alpha(v) v^t) = \alpha(N^-(v)) = N^-(v)
-		\,.
-	\end{align}
+	\begin{equation}
+		\begin{aligned}
+			N^+(vw) &= v w w^t v^t = v N^+(w) v^t = v v^t N^+(w) = N^+(v) N^+(w)
+			\\
+			N^-(vw) &= \alpha(v) \alpha(w) w^t v^t = \alpha(v) N^-(w) v^t = \alpha(v) v^t N^-(w)  = N^-(v) N^-(w)
+			\\
+			N^+(\alpha(v)) &= \alpha(v) \alpha(v^t) = \alpha(v v^t) = \alpha(N^+(v)) = N^+(v)
+			\\
+			N^-(\alpha(v)) &= \alpha(\alpha(v)) \alpha(v^t) = \alpha(\alpha(v) v^t) = \alpha(N^-(v)) = N^-(v)
+			\,. \qedhere
+		\end{aligned}
+	\end{equation}
 \end{proof}
 
 \begin{definition}
@@ -266,7 +294,7 @@ grupės daugyba sutampa su algebros daugyba.
 
 \begin{proposition}
 	\label{prop:pin_sequence}
-	Suktasis jungtinis įvaizdis $\rho$ grupę $\pinpm$ atvaizduoją į grupę $\Orth3$,
+	Suktasis jungtinis įvaizdis $\rho$ atvaizduoja grupę $\pinpm$ į grupę $\Orth3$,
 	atvaizdavimo siaurinys $\rho:\pinpm\to\Orth3$ yra siurjektyvus
 	su branduoliu $\qty{\mathbb1,-\mathbb1}$.
 	Tai ekvivalentu teiginiui, kad egzistuoja trumpoji tikslioji seka
@@ -278,12 +306,14 @@ grupės daugyba sutampa su algebros daugyba.
 	\end{equation}
 \end{proposition}
 \begin{proof}
-	Pastebime kad $N^\pm$ veikimu ant $\set R^3 \subset \Clpm$
+	Pastebime, kad $N^\pm$ veikimas poerdvyje $\set R^3 \subset \Clpm$
 	sutampa su standartiniu vektoriaus kvadratu $(\vb w, \vb w)$
 	\begin{align}
-		N^+ (\vb w) &= \vb w {\vb w}^t = \vb w \vb w = (\vb w,\vb w)\mathbb1
+		N^+ (\vb w) &= \vb w {\vb w}^t 
+		= \vb w \vb w = (\vb w,\vb w)\mathbb1
 		\\
-		N^- (\vb w) &= \vb w \alpha({\vb w}^t) = -\vb w \vb w = (\vb w,\vb w)\mathbb1
+		N^- (\vb w) &= \vb w \alpha({\vb w}^t) 
+		= -\vb w \vb w = (\vb w,\vb w)\mathbb1
 		\,.
 	\end{align}
 	Įvaizdis $\rho$ atvaizduoja į $\Orth3$, nes
@@ -305,10 +335,10 @@ grupės daugyba sutampa su algebros daugyba.
 	Atspindžiai generuoja grupę $\Orth3$,
 	tad $\rho$ yra siurjekcija.
 
-	Iš teiginio \ref{prop:rho_kern} turime kad atvaizdavimo 
-	$rho$ iš $\Gamma^\pm(3)$ į $\mathup{Aut}(\set R^3)$
-	branduolys yra $\set R^{cross} \mathbb1$.
-	Tada $\rho$ siaurinio branduolys yra $\set R^{cross} \mathbb1$
+	Iš teiginio \ref{prop:rho_kern} turime, kad atvaizdavimo 
+	$\rho$ iš $\Gamma^\pm(3)$ į $\mathup{Aut}(\set R^3)$
+	branduolys yra $\set R^{\cross} \mathbb1$.
+	Tada $\rho$ siaurinio branduolys yra $\set R^{\cross} \mathbb1$
 	elementai, kurie priklauso $\pinpm$ ($N^\pm(c\mathbb1) = \mathbb1$),
 	tai branduolys yra $\qty{\mathbb1,-\mathbb1}$.
 \end{proof}
@@ -320,19 +350,21 @@ grupės daugyba sutampa su algebros daugyba.
 			$\Clm$,
 			kuri yra asociatyvi;
 		\item tapatybės elementas yra $\mathbb 1$;
-		\item atvirkštinis elementas yra $v^{-1}= \alpha(v^t)$;
-		\item sandaugos uždarumą patikriname skaičiavimu
+		\item elemento $v$ atvirkštinis elementas yra $v^{-1}= \alpha(v^t)$;
+		\item sandaugos uždarumą patikriname skaičiavimu:
 	\end{itemize}
-	\begin{align*}
-		\alpha((vw)^t) vw &= \alpha(w^t v^t) vw && \text{anti-automorfizmo savybė}
-		\\
-		&= \alpha(w^t) \alpha(v^t) vw && \text{homomorfizmo savybė}
-		\\
-		&= \alpha(w^t) \mathbb 1 w && \text{iš $\pinm$ apibrėžimo}
-		\\
-		&= \mathbb 1
-		\,.
-	\end{align*}
+	\begin{equation}
+		\begin{aligned}
+			\alpha((vw)^t) vw &= \alpha(w^t v^t) vw && \text{anti-automorfizmo savybė}
+			\\
+			&= \alpha(w^t) \alpha(v^t) vw && \text{homomorfizmo savybė}
+			\\
+			&= \alpha(w^t) \mathbb 1 w && \text{iš $\pinm$ apibrėžimo}
+			\\
+			&= \mathbb 1
+			\,.
+		\end{aligned}
+	\end{equation}
 \end{example}
 
 \begin{proposition}
@@ -389,10 +421,10 @@ grupės daugyba sutampa su algebros daugyba.
 
 \begin{proposition}
 	Grupių $\pinp$ ir $\pinm$ lyginiai pogrupiai 
-	yra izomorfiški, kaip grupės.
+	yra izomorfiškos grupės.
 \end{proposition}
 \begin{proof}
-	$\pinpm$ lyginiai pogrupiai kaip aibės priklauso 
+	Grupių $\pinpm$ lyginiai pogrupiai kaip aibės priklauso 
 	atitinkamiems $\Clpm$ lyginiams poalgebriams $A_0^\pm$.
 	Poalgebriai $A_0^+ \cong A_0^-$ yra izomorfiški kaip algebros (teiginys \ref{prop:even_iso}),
 	tegul $f: A_0^+ \to A_0^-$ žymi izomorfizmą tarp jų.
@@ -478,17 +510,18 @@ grupės daugyba sutampa su algebros daugyba.
 	$
 \end{proposition}
 \begin{proof}
-	Bendra lyginio $\Clp$ vektoriaus forma yra
+	Bendroji lyginio $\Clp$ vektoriaus forma yra
 	\begin{equation}
 		v = 
 		  a_0 \mathbb1 
 		+ a_1 \vb e_{23}
 		+ a_2 \vb e_{31}
 		+ a_3 \vb e_{12}
+		\,.
 	\end{equation}
 	Kad elementas $v$ priklausytų $\spin$, jis turi tenkinti
 	$vv^t = \mathbb1$.
-	Įstatome $v$ bendra formą ir gauname
+	Įstatome $v$ bendrąją formą ir gauname
 	\begin{equation}
 		\begin{aligned}
 			(a_0 \mathbb1 
@@ -554,14 +587,14 @@ grupės daugyba sutampa su algebros daugyba.
 	$, čia $v^0$ yra lyginis $\pinm$ elementas,
 	kuris taip pat priklauso $\spin$.
 
-	Grupės $C_2$ elementus žymėsime $\qty{1,-1}$.
 	Tegul funkcija $f: \spin \times C_2 \to \pinm$ yra apibrėžiama kaip
 	\begin{equation}
 		\qty(v^0,1) \mapsto v^0
 		\,,\quad
 		\qty(v^0, -1) \mapsto \vb e_{123} v^0
-		\,.
+		\,,
 	\end{equation}
+	čia $\qty{1,-1}$ yra grupės $C_2$ elemetai.
 	Iš unikalus $v^1$ išskaidymo $\vb e_{123} v^0$ gauname,
 	kad $f$ yra bijektyvi.
 	Patikriname kad $f$ gerbia grupės daugybą
@@ -585,18 +618,20 @@ grupės daugyba sutampa su algebros daugyba.
 \end{proposition}
 \begin{proof}
 	Grupės $\pinp$ elementas $\vb e_{123}$ tenkina tapatybes
-	\begin{align}
-		{\vb e_{123}}^2 &= -\mathbb1
-		\\
-		\vb e_{123} \vb e_i &= \vb e_i  \vb e_{123} \quad &i \in \qty{1,2,3}
-		\\
-		\vb e_{123} v &= v  \vb e_{123} \quad &v \in \pinp
-		\,.
-	\end{align}
+	\begin{equation}
+		\begin{aligned}
+			{\vb e_{123}}^2 &= -\mathbb1
+			\\
+			\vb e_{123} \vb e_i &= \vb e_i  \vb e_{123} \quad &i \in \qty{1,2,3}
+			\\
+			\vb e_{123} v &= v  \vb e_{123} \quad &v \in \pinp
+			\,.
+		\end{aligned}
+	\end{equation}
 	Iš sąlygos $v\alpha(v^t) = \mathbb1$ seka, kad nelyginio $\pinp$ elemento $v^1$ bendra forma yra
 	\begin{equation}
 		v^1 = 
-		b_0 e_{123}
+		b_0 \vb e_{123}
 		+ b_1 \vb e_1
 		+ b_2 \vb e_2
 		+ b_3 \vb e_3
@@ -623,30 +658,30 @@ grupės daugyba sutampa su algebros daugyba.
 	\begin{equation}
 		(v^0,1)C_2 \mapsto v_0
 		\,\quad
-		(v^0,i)C_2 \mapsto e_{123}v_0
+		(v^0,i)C_2 \mapsto \vb e_{123}v_0
 		\,.
 	\end{equation}
 	Iš unikalus $v^1$ išskaidymo $\vb e_{123} v^0$ gauname,
 	kad $f$ yra bijektyvi.
 	Patikriname kad funkcija $f$ gerbia grupės daugybą.
-	\begin{equation}
-		\begin{aligned}
-			f((v,1)C_2)f((v',1)C_2) &= vv' = f((vv',1)C_2) = f((v,1)C_2(v',1)C_2)
-			\\
-			f((v,1)C_2)f((v',i)C_2) &= v\vb e_{123}v' = \vb e_{123}vv' = f((vv', i)C_2) = f((v,1)C_2(v',i)C_2)
-			\\
-			f((v,i)C_2)f((v',1)C_2) &= \vb e_{123}vv' = f((vv', i)C_2) = f((v,i)C_2(v',1)C_2)
-			\\
-			f((v,i)C_2)f((v',i)C_2) &= \vb e_{123}v\vb e_{123}v' = {\vb e_{123}}^2 vv' = - vv'= f((-vv', 1)C_2) =f ((vv', -1)C_2) = f((v,i)C_2(v',i)C_2)
-			\,.
-		\end{aligned}
-	\end{equation}
+	\begin{align}
+		f((v,1)C_2)f((v',1)C_2) &= vv' = f((vv',1)C_2) = f((v,1)C_2(v',1)C_2)
+		\\
+		f((v,1)C_2)f((v',i)C_2) &= v\vb e_{123}v' = \vb e_{123}vv' = f((vv', i)C_2) = f((v,1)C_2(v',i)C_2)
+		\\
+		f((v,i)C_2)f((v',1)C_2) &= \vb e_{123}vv' = f((vv', i)C_2) = f((v,i)C_2(v',1)C_2)
+		\\
+		f((v,i)C_2)f((v',i)C_2) &= \vb e_{123}v\vb e_{123}v' = {\vb e_{123}}^2 vv' = - vv'= f((-vv', 1)C_2) \nonumber
+		\\ &=f ((vv', -1)C_2) = f((v,i)C_2(v',i)C_2)
+		\,.
+	\end{align}
 	Funkcija $f$ yra grupių izomorfizmas ir $\pinp \cong \spin \times C_4/C_2$.
 \end{proof}
 
 
 \subsection{\texorpdfstring{$\pinpm$}{Pin+-(3)} ir \texorpdfstring{$\spin$}{Spin(3)} matriciniai įvaizdžiai}
 
+{\color{red} MOTYVACIJA!!!}
 Dėl patogumo dirbant su grupėmis ir algebromis apibrėšime
 nagrinėjamų grupių ir algebrų ištikimus matricinius įvaizdžius.
 Šiuos matricinius įvaizdžius užrašysime su Pauli matricų 
@@ -662,31 +697,33 @@ ir vienetinės $2\times2$ matricos pagalba
 	\,.
 \end{equation}
 Šios matricos tenkina
-\begin{align}
-	\sigma_i \sigma_i &= I \,,
-	&&i\in{1,2,3}\,;
-	\\
-	\sigma_i \sigma_j &= - \sigma_j \sigma_i\,, 
-	&&i\neq j \,;
-	\\
-	\sigma_i \sigma_j &= i \sigma_k \,,
-	&&\text{$i,j,k$ yra indeksų $1,2,3$ cikliniai perstatymai}.
-\end{align}
+\begin{equation}
+	\begin{aligned}
+		\sigma_i \sigma_i &= I \,,
+		&&i\in{1,2,3}\,;
+		\\
+		\sigma_i \sigma_j &= - \sigma_j \sigma_i\,, 
+		&&i\neq j \,;
+		\\
+		\sigma_i \sigma_j &= i \sigma_k \,,
+		&&\text{$i,j,k$ yra indeksų $1,2,3$ cikliniai perstatymai}.
+	\end{aligned}
+\end{equation}
 
 
 \begin{proposition}
 	\label{prop:pauli_rep+}
-	Veikimu ant $\Clp$ \emph{lyginio} poalgebrio $A_0^+$ bazės apibrėžtas atvaizdavimas
-	\begin{align*}
+	Atvaizdavimas $A_0^+ \to \mathup Aut (\set C^2)$
+	\begin{equation}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	i\sigma_1	\qquad
 		\vb e_{31}	\mapsto	i\sigma_2	\qquad
 		\vb e_{12}	\mapsto	i\sigma_3	
-	\end{align*}
-	yra algebros $\Clp$ \emph{lyginio} poalgebrio ištikimas matricinis įvaizdis.
+	\end{equation}
+	apibrėžia algebros $\Clp$ lyginio poalgebrio $A_0^+$ ištikimą įvaizdį.
 \end{proposition}
 \begin{proof}
-	Užtenka pratikrinti kad pasirinkti algebros generatoriai $\vb e_{23}$ ir $\vb e_{31}$
+	Užtenka pratikrinti, kad pasirinkti algebros generatoriai $\vb e_{23}$ ir $\vb e_{31}$
 	tarpusavyje tenkina tokius pat sandaugos sąryšius kaip jų įvaizdis.
 	\begin{align}
 		{\vb e_{23}}^2 = {\vb e_{31}}^2 &= - \mathbb1
@@ -707,21 +744,22 @@ ir vienetinės $2\times2$ matricos pagalba
 
 \begin{proposition}
 	\label{prop:pauli_rep-}
-	Veikimu ant $\Clm$ \emph{lyginio} poalgebrio $A_0^-$ bazės apibrėžtas atvaizdavimas
+	Atvaizdavimas $A_0^- \to \mathup Aut (\set C^2)$
 	\begin{align*}
 		\mathbb 1	\mapsto	I		\qquad
 		\vb e_{23} 	\mapsto	-i\sigma_1	\qquad
 		\vb e_{31}	\mapsto	-i\sigma_2	\qquad
 		\vb e_{12}	\mapsto	-i\sigma_3	
 	\end{align*}
-	yra algebros $\Clm$ \emph{lyginio} poalgebrio ištikimas matricinis įvaizdis.
+	apibrėžia algebros $\Clm$ lyginio poalgebrio $A_0^-$ ištikimą įvaizdį.
 \end{proposition}
 \begin{proof}
-	Analogiškai kaip teiginyje \ref{prop:pauli_rep+}
+	Analogiškai kaip teiginyje \ref{prop:pauli_rep+}.
 \end{proof}
 
 \begin{proposition} 
-	Atvaizdis iš teiginio \ref{prop:pauli_rep+} siunčia $\spin$ į matricinė grupė $\mathup{SU}(2)$.
+	Atvaizdis iš teiginio \ref{prop:pauli_rep+} atvaizduoja grupę $\spin$
+	į matricinė grupė $\mathup{SU}(2)$.
 	Tai yra $\spin$ ir $\mathup{SU}(2)$ yra izomorfiškos grupės.
 \end{proposition}
 \begin{proof}
@@ -768,10 +806,10 @@ ir kvadratinės matricos eksponentė yra apibrėžta kaip
 	\,.
 \end{equation}
 
-Algebrų $\Clpm$ įvaizdžiams užrašyti pasinaudosime gama matricomis,
-kurios chiralinėje bazėje yra apibrėžiamos kaip
+Algebrų $\Clpm$ įvaizdžiams užrašyti pasinaudosime
+gama matricomis chiralinėje bazėje. Jos yra apibrėžiamos kaip
 \begin{equation}
-	\gamma^0 := \mqty(\dmat{I,I}) 			\,,\quad
+	\gamma^0 := \mqty(\admat{I,I}) 			\,,\quad
 	\gamma^1 := \mqty(\admat{\sigma_1,-\sigma_1})	\,,\quad
 	\gamma^2 := \mqty(\admat{\sigma_2,-\sigma_2})	\,,\quad
 	\gamma^3 := \mqty(\admat{\sigma_3,-\sigma_3})	\,.
@@ -787,22 +825,26 @@ Jos tenkina sąryšius
 
 
 \begin{proposition}
-	Veikimu ant $\Clm$ bazės apibrėžtas atvaizdavimas
-	\begin{align*}
-		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{-iI,iI})			\\
-		\vb e_{23}	\mapsto	\gamma^2 \gamma^3 =	&\mqty(\dmat{-i\sigma_1,-i\sigma_1})	&\quad	\vb e_1 	\mapsto	\gamma^1 =			&\mqty(\admat{\sigma_1,-\sigma_1})	\\
-		\vb e_{31}	\mapsto	\gamma^3 \gamma^1 =	&\mqty(\dmat{-i\sigma_2,-i\sigma_2})	&\quad	\vb e_2 	\mapsto	\gamma^2 =			&\mqty(\admat{\sigma_2,-\sigma_2})	\\
-		\vb e_{12}	\mapsto	\gamma^1 \gamma^2 =	&\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	\mapsto	\gamma^3 =			&\mqty(\admat{\sigma_3,-\sigma_3})	
-	\end{align*}
-	yra algebros $\Clm$ ištikimas matricinis įvaizdis.
+	Atvaizdavimas $\Clm \to \mathup Aut(\set C^4)$ apibrėžtas taisykle
+	\begin{equation}
+		\begin{aligned}
+			\mathbb 1	\mapsto						&\mqty(\dmat{I,I})						&\quad	\vb e_{123}	\mapsto	\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{-iI,iI})				\\
+			\vb e_{23}	\mapsto	\gamma^2 \gamma^3 =	&\mqty(\dmat{-i\sigma_1,-i\sigma_1})	&\quad	\vb e_1 	\mapsto	\gamma^1 =					&\mqty(\admat{\sigma_1,-\sigma_1})	\\
+			\vb e_{31}	\mapsto	\gamma^3 \gamma^1 =	&\mqty(\dmat{-i\sigma_2,-i\sigma_2})	&\quad	\vb e_2 	\mapsto	\gamma^2 =					&\mqty(\admat{\sigma_2,-\sigma_2})	\\
+			\vb e_{12}	\mapsto	\gamma^1 \gamma^2 =	&\mqty(\dmat{-i\sigma_3,-i\sigma_3})	&\quad	\vb e_3 	\mapsto	\gamma^3 =					&\mqty(\admat{\sigma_3,-\sigma_3})	
+		\end{aligned}
+	\end{equation}
+	yra ištikimas įvaizdis.
 \end{proposition}
 \begin{proof}
 	Gama matricos tenkina tokius pat daugybos sąryšius,
 	kaip algebros $\Clm$ generatoriai $\vb e_1$, $\vb e_2$ ir $\vb e_3$.
-	\begin{align}
-		{\vb e_i}^2 &= -\mathbb1		&\quad	{\gamma^i}^2 &= - \mqty(\dmat{I,I})\\
-		\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	\gamma^i\gamma^j &= - \gamma^j\gamma^i
-	\end{align}
+	\begin{equation}
+		\begin{aligned}
+			{\vb e_i}^2 &= -\mathbb1			&\quad	{\gamma^i}^2 &= - \mqty(\dmat{I,I})\\
+			\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	\gamma^i\gamma^j &= - \gamma^j\gamma^i
+		\end{aligned}
+	\end{equation}
 	Nesunku pamatyti, kad bazinių algebros vektorių atvaizdžiai
 	yra tiesiškai neprirausomos matricos.
 	Iš to seką kad $\gamma^1$, $\gamma^2$, $\gamma^3$
@@ -811,7 +853,7 @@ Jos tenkina sąryšius
 	tai yra turime ištikimą matricinį įvaizdį.
 \end{proof}
 
-Verta pabrėžti, kad lyginiai bazės elementai atvaizduojami į blok-diagonalais matricas,
+Verta pabrėžti, kad lyginiai $\Clm$ bazės elementai atvaizduojami į blok-diagonalias matricas,
 kur kiekvienas blokas yra kopija įvaizdžio iš teiginio \ref{prop:pauli_rep-}.
 Tai lyginį $\pinm$ elementą, kuris atitinka sukimą apie $\vb n$ kampu $\theta$,
 gauname kaip
@@ -847,28 +889,33 @@ tai nelyginio elemento bendra forma yra
 
 
 \begin{proposition}
-	Veikimu ant $\Clp$ bazės apibrėžtas atvaizdavimas
-	\begin{align*}
-		\mathbb 1	\mapsto				&\mqty(\dmat{I,I})			&\quad	\vb e_{123}	\mapsto	-i\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{I,-I})			\\
-		\vb e_{23}	\mapsto	-\gamma^2 \gamma^3 =	&\mqty(\dmat{i\sigma_1,i\sigma_1})	&\quad	\vb e_1 	\mapsto	i\gamma^1 =			&\mqty(\admat{i\sigma_1,-i\sigma_1})	\\
-		\vb e_{31}	\mapsto	-\gamma^3 \gamma^1 =	&\mqty(\dmat{i\sigma_2,i\sigma_2})	&\quad	\vb e_2 	\mapsto	i\gamma^2 =			&\mqty(\admat{i\sigma_2,-i\sigma_2})	\\
-		\vb e_{12}	\mapsto	-\gamma^1 \gamma^2 =	&\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	\mapsto	i\gamma^3 =			&\mqty(\admat{i\sigma_3,-i\sigma_3})	
-	\end{align*}
-	yra algebros $\Clp$ ištikimas matricinis įvaizdis.
+	Atvaizdavimas $\Clp \to \mathup Aut(\set C^4)$ apibrėžtas taisykle
+	\begin{equation}
+		\begin{aligned}
+			\mathbb 1	\mapsto							&\mqty(\dmat{I,I})					&\quad	\vb e_{123}	\mapsto	-i\gamma^1\gamma^2\gamma^3 =	&\mqty(\admat{I,-I})					\\
+			\vb e_{23}	\mapsto	-\gamma^2 \gamma^3 =	&\mqty(\dmat{i\sigma_1,i\sigma_1})	&\quad	\vb e_1 	\mapsto	i\gamma^1 =						&\mqty(\admat{i\sigma_1,-i\sigma_1})	\\
+			\vb e_{31}	\mapsto	-\gamma^3 \gamma^1 =	&\mqty(\dmat{i\sigma_2,i\sigma_2})	&\quad	\vb e_2 	\mapsto	i\gamma^2 =						&\mqty(\admat{i\sigma_2,-i\sigma_2})	\\
+			\vb e_{12}	\mapsto	-\gamma^1 \gamma^2 =	&\mqty(\dmat{i\sigma_3,i\sigma_3})	&\quad	\vb e_3 	\mapsto	i\gamma^3 =						&\mqty(\admat{i\sigma_3,-i\sigma_3})	
+		\end{aligned}
+	\end{equation}
+	yra ištikimas įvaizdis.
 \end{proposition}
 \begin{proof}
-	Patikriname ar įvaizdis gerbia generatorių $\vb e_1$, $\vb e_2$ ir $\vb e_3$ 
-	daugybos sąryšius.
-	\begin{align}
-		{\vb e_i}^2 &= \mathbb1			&\quad	{\gamma^i}^2 &= \mqty(\dmat{I,I})\\
-		\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	(i\gamma^i)(i\gamma^j) &= - (i\gamma^j)(i\gamma^i)
-	\end{align}
+	Patikriname ar įvaizdis nepakeičia generatorių $\vb e_1$, $\vb e_2$ ir $\vb e_3$ 
+	daugybos sąryšių.
+	\begin{equation}
+		\begin{aligned}
+			{\vb e_i}^2 &= \mathbb1				&\quad	{\gamma^i}^2 &= \mqty(\dmat{I,I})\\
+			\vb e_i \vb e_j &= -\vb e_j \vb e_i	&\quad	(i\gamma^i)(i\gamma^j) &= - (i\gamma^j)(i\gamma^i)
+		\end{aligned}
+	\end{equation}
 	Matome, kad bazė atvaizduojama į tiesiškai nepriklausomas matricas,
 	tai turime ištikimą matricinį algebros $\Clp$ įvaizdį.
 \end{proof}
 
-Šį kartą lyginiai bazės elementai yra atvaizduojami į blok-diagonalais matricas,
-kurios yra dvi kopijos įvaizdžio iš teiginio \ref{prop:pauli_rep+} ir lyginio elemento bendra forma yra
+Šį kartą lyginiai bazės elementai yra atvaizduojami į blok-diagonalias matricas,
+kurios yra dvi kopijos įvaizdžio iš teiginio \ref{prop:pauli_rep+} 
+ir lyginio elemento bendra forma yra
 \begin{equation}
 		\mqty(\dmat{
 			e^{\frac{i\theta}{2}(\vb n , \symbf\sigma)},
