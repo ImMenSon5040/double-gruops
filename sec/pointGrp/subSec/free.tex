@@ -25,7 +25,7 @@ jei iš vieno žodžio galime gauti kitą
 pakartotinai įterpdami raidės ir jos anvikštinės raidė poras $xx^{-1}$ ir $x^{-1}x$, $x \in S$.
 Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentiškumo klasę.
 \begin{definition}
-	Laisvoji grupė $F_S$ generuojama aibės $S$ yra sudaryta iš
+	Laisvoji grupė $F_S$ generuojama \emph{abėcėlės} $S$ yra sudaryta iš
 	\emph{žodžių} ekvivalentiškumo klasių,
 	kartu su daugyba duodama \emph{žodžių} (klasės atstovų) sujungimo.
 \end{definition}
@@ -53,7 +53,8 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 				x \in S
 				\,.
 			\end{equation}
-			Šių žodžių sandauga yra lygi vienetiniam elementui
+			Šių žodžių sandauga priklauso tai pačiai ekvivalentiškumo klasei,
+			kaip tuščias žodis $e$.
 			\begin{equation}
 				f_1 f_2 \cdots f_n f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}
 				\sim
@@ -65,19 +66,20 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 \end{example}
 
 Laisvoji grupė $F_S$ yra bendriausia įmanoma grupė turinti elementus $\qty{a, b, c, \cdots}$.
-Ją sudarėme visų \emph{žodžių} aibei suteikdami sąryšio $xx^{-1}=e$ stuktūra ir asociatyvia uždara daugybą,
+Ją sudarėme visų žodžių aibei suteikdami sąryšio $xx^{-1}=e$ stuktūra ir asociatyvia uždara daugybą,
 tai yra minimali struktūra reikalinga kad $F_S$ būtų grupė.
 Toliau parodysime, kaip galima sudaryti šios grupės faktor-grupes,
-kurios turi papildomas struktūras.
+kurios turi papildomą struktūrą.
 
-Yra aibė $R \subset F_S$, jos elementai vadinami \emph{saryšio žodžiais} 
-(ang. \emph{relators}).
+Yra aibė $R \subset F_S$,
+jos elementai vadinami \emph{saryšio žodžiais} (ang. \emph{relators}).
 Tai bus žodžiai, kurie faktor-grupėje bus sutapatinti su vienetiniu elementu.
 Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 \begin{equation}
 	N(R) := \qty{
+		\left.
 		\prod_{i=1}^n g_i r_i g_i^{-1}
-		\mid
+		\;\right|\;
 		0 < n < \infty ,\,
 		r_i \in R \cup R^{-1} ,\,
 		g_i \in F_S
@@ -90,7 +92,7 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 \end{proposition}
 \begin{proof}
 	Parodome pogrupio uždarumą.
-	$N(R)$ yra visų \emph{sąryšio žodžių} jungtinių elementų baigtinės sandaugos.
+	$N(R)$ yra visų sąryšio žodžių jungtinių elementų baigtinės sandaugos.
 	Sudauginus dvi tokias sandaugas gaunama nauja baigtinė sandauga,
 	tad $N(R)$ yra uždara daugybos atžvilgiu.
 
@@ -112,27 +114,84 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 \end{definition}
 
 \begin{remark}
-	Literatūroje yra dažniau naudojamas žymėjimas $\langle\;S\;|\;R\;\rangle$,
+	Literatūroje yra dažniau naudojamas žymėjimas $\langle\,S\,|\,R\,\rangle$,
 	bet mes pasirinkome kitokį žymėjimą,
 	kad nekiltų rizikos sumaišyti grupės prezentacija su Dirac'o ,,bra-ket'' žymėjimu.
-	Taip pat \emph{abėcėlė} $S$ būna patekta elementais,
-	o \emph{sąryšio žodžiai} $R$ - patekti grupę apibrėžiančiais sąryšiais
-	$r = r'$, kur $r{r'}^{-1}\in R$.
-	Pavydžiui grupės prezentaciją
+	Taip pat abėcėlė $S$ bus pateikta nekaip aibė, o elementais.
+	Sąryšio žodžiai $R$ bus pateikti kaip grupę apibrėžiantys sąryšiai
+	$r' = r$, kur $r'r^{-1}\in R$.
+	Sąryšiai yra patogūs, nes $F_s$ elemetai $r$ ir $r'$ priklauso
+	tai pačiai gretutinei klasei
 	\begin{equation}
-		\present{S}{R}
-		\,,\quad
-		S = \qty{a, b}
-		\,,\quad
-		R = \qty{a^2, b^3, aba^{-1}b^{-1}}
+		r\, N(R)
+		= r\, r^{-1}	(r'r^{-1})	r \,N(R)
+		= r'\,N(R)
 		\,,
 	\end{equation}
-	rašysime, taip 
-	\begin{equation}
-		\present{a,b}{a^2 = b^2 = e , ab = ba}
-		\,.
-	\end{equation}
+	tad grupėje $\present{S}{\qty{r'r^{-1},\cdots}}$
+	turime tapatybę $r' = r$ (rašome tik gretutinės klasės atstovus).
 \end{remark}
 
+\begin{example}
+	Grupės prezentaciją
+	$ \present{S}{R} $, $ S = \qty{a, b} $,
+	$ R = \qty{a^3, b^2, aba^{-1}b^{-1}} $,
+	rašysime, taip 
+	\begin{equation}
+		\present{a,b}{a^3 = b^2 = e ,\, ab = ba}
+	\end{equation}
+	ir su grupės elelementais galime atlikti skaičiavimus kaip kad
+	\begin{equation}
+		abab = abba = aea = a^2
+		\,.
+	\end{equation}
+\end{example}
+
+
+\begin{remark}
+	Svarbu paminėti, kad grupės presentacija nėra unikali.
+	\begin{itemize}
+		\item Galime pridėti sąryšio žodį $w \in N(R)$, $w \notin R$
+			ir gausime lygias grupių prezentacijas
+			\begin{equation}
+				\present S R = \present{S}{R \cup \qty{w}}
+				\,.
+			\end{equation}
+		\item Jei buvo pasirinkta daugiau sąryšio žodžių negu būtina,
+			galima dalį sąryšio žodžių išmesti iš $R$.
+		\item Galime pridėti generatorių $d$ prie abėcėlės $S$
+			ir naują sąryšio žodį $dw^{-1}$ prie $R$,
+			kur $w$ yra bet koks žodis iš piminės abėcėlės $S$ raidžių,
+			ir gausime izomorfiškas grupes
+			\begin{equation}
+				\present S R \cong \present{ S \cup \qty{d} }{ R \cup \qty{dw^{-1}} }
+				\,.
+			\end{equation}
+		\item Jei buvo pasirinkta daugiau generatorių negu būtina,
+			galima dalį generatorių pakeisti žodžiais,
+			sudarytais iš likusių generatorių.
+	\end{itemize}
+	Šie grupių prezentacijų pakeitimai vadinami Tieze transformacijomis.
+	Klausimai, ar dvi duotos grupių prezentacijos yra izomorfiškos,
+	ir ar duota grupės prezentacija yra minimali
+	(neturi generatorių ar sąryšio žodžių,
+	kuriuos išmetus gautume izomorfišką grupę), -
+	yra netrivialūs kombinatorinės grupių teorijos uždaviniai.
+\end{remark}
+
+\begin{example}
+	Parodysime, kad grupės prezentacija $\present{a,b}{a^2=b^2=ab=e}$
+	yra izomorfiška trivialiai grupei $E$.
+	\begin{equation}
+		\begin{aligned}
+			ab=e	&\;\;\text{ir}\;\; a^2=e	&\implies&& a &= b		\,,\\
+			a=b		&\;\;\text{ir}\;\; b^3=e	&\implies&& a^3 &= e	\,,\\
+			a^3=e	&\;\;\text{ir}\;\; a^2=e	&\implies&& a &= e		\,,\\
+			a=e		&\;\;\text{ir}\;\; a=b		&\implies&& b &= e		\,.
+		\end{aligned}
+	\end{equation}
+	Abu generatoriai yra lygūs vienetiniam elementui,
+	tad $ \present{a,b}{a^2=b^2=ab=e} \cong E $.
+\end{example}
 
 
