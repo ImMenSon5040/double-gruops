@@ -1,2 +1,94 @@
 
 \subsection{Poliedrinės grupės}
+
+Poliedrinės grupės (ang. \emph{polyhedral groups}) yra $\Orth3$ pogrupiai,
+kurie veikimu į $R^3$ fiksuoja poliedro (briaunainio) taškus.
+Egzistuoja septynios poliedrinės grupės.
+
+\begin{definition}
+	\textquote{Chiralinė tetraedro simetrija} yra grupė 
+	\begin{equation}
+		T = \present{s,t}{s^2=t^3=(st)^3=e}
+		\,,
+	\end{equation}
+	čia generatorius $s$ yra tapatinamas su sukimu kampu $\pi$ aplink ašį einačia per tetraedro briaunos vidurio tašką,
+	generatorius $t$ yra tapatinams su sukimu kampu $2\pi/3$ aplink ašį einačia per tetraedro sienos centrą,
+	elementas $st$ yra tapatinamas su sukimu kampu $2\pi/3$ aplink ašį einačia per tetraedro viršūnę.
+\end{definition}
+
+\begin{definition}
+	\textquote{Chiralinė oktaedro simetrija} yra grupė 
+	\begin{equation}
+		O = \present{s,t}{s^2=t^3=(st)^4=e}
+		\,,
+	\end{equation}
+	čia generatorius $s$ yra tapatinamas su sukimu kampu $\pi$ aplink ašį einačia per oktaedro briaunos vidurio tašką,
+	generatorius $t$ yra tapatinams su sukimu kampu $2\pi/3$ aplink ašį einačia per oktaedro sienos centrą,
+	elementas $st$ yra tapatinamas su sukimu kampu $2\pi/4$ aplink ašį einačia per oktaedro viršūnę.
+\end{definition}
+
+\begin{definition}
+	\textquote{Chiralinė ikosaedro simetrija} yra grupė 
+	\begin{equation}
+		I = \present{s,t}{s^2=t^3=(st)^5=e}
+		\,,
+	\end{equation}
+	čia generatorius $s$ yra tapatinamas su sukimu kampu $\pi$ aplink ašį einačia per ikosaedro briaunos vidurio tašką,
+	generatorius $t$ yra tapatinams su sukimu kampu $2\pi/3$ aplink ašį einačia per ikosaedro sienos centrą,
+	elementas $st$ yra tapatinamas su sukimu kampu $2\pi/5$ aplink ašį einačia per ikosaedro viršūnę.
+\end{definition}
+
+\begin{definition}
+	\textquote{Pilnoji tetraedro simetrija} yra grupė 
+	\begin{equation}
+		T_d = \present{s,t,v}{s^2=t^3=(st)^3=e,\, vsv^{-1}=s^1, vtv^{-1}=t^{-1}}
+		\,
+	\end{equation}
+	čia elementai $s$, $t$ ir $st$ tapatinami taip pat kaip grupėje $T$,
+	generatorius $v$ yra tapatinamas su atspindžiu per plokštūmą,
+	kuriai priklauso tetraedro briauna ir centras.
+\end{definition}
+
+\begin{definition}
+	\textquote{Pilnoji oktaedro simetrija} yra grupė 
+	\begin{equation}
+		O_h = \present{s,t}{
+			s^2=t^3=(st)^4=i^2=e,\,
+			is=si ,\,
+			it=ti }
+		\,,
+	\end{equation}
+	čia elementai $s$, $t$ ir $st$ tapatinami taip pat kaip grupėje $O$,
+	generatorius $i$ yra tapatinamas su inversija.
+\end{definition}
+
+\begin{definition}
+	\textquote{Pilnoji ikosaedro simetrija} yra grupė 
+	\begin{equation}
+		I_h = \present{s,t}{
+			s^2=t^3=(st)^5=i^2=e,\,
+			is=si ,\,
+			it=ti }
+		\,,
+	\end{equation}
+	čia elementai $s$, $t$ ir $st$ tapatinami taip pat kaip grupėje $I$,
+	generatorius $i$ yra tapatinamas su inversija.
+\end{definition}
+
+\begin{definition}
+	\textquote{Piritoedro simetrija} yra grupė
+	\begin{equation}
+		T_h = \present{s,t}{
+			s^2=t^3=(st)^3=i^2=e,\,
+			is=si ,\,
+			it=ti }
+	\end{equation}
+	čia elementai $s$, $t$ ir $st$ tapatinami taip pat kaip grupėje $T$,
+	generatorius $i$ yra tapatinamas su inversija.
+\end{definition} 
+
+Grupės $T$, $O$ ir $I$ yra \emph{chiralinės grupės},
+nes jos yra grupės $\SO3$ pogrūpiai.
+Grupės $T_d$, $O_h$, $I_h$ ir $T_h$ yra \emph{achiralinės grupės},
+nes joms priklauso netikrieji pasukimai.
+
