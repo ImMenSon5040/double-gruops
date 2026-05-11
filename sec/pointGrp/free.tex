@@ -1,29 +1,29 @@
 
 \subsection{Grupių prezentacijos}
 
-Grupės prazentacija yra būdas apibrėžti grupę,
+Grupės prezentacija yra būdas apibrėžti grupę,
 pateikiant jos generatorius ir sąryšius kuriuos jie tenkina.
 Formaliai tokia grupė yra faktor-grupė laisvosios grupės,
 generuojamos duotų generatorių.
-Toliau pristatysime kobinatorinės grupių teorijos pagrindus,
+Toliau pristatysime kombinatorinės grupių teorijos pagrindus,
 reikalingus apibrėžti grupės prezentacija.
 
 Tegul $S = \qty{a,b,c,\cdots}$ yra aibė generatorių.
 Literatūroje įprasta aibę $S$ vadinti \emph{abėcėle}, 
 o jos elementus - \emph{raidėmis}.
 Tegul $S^{-1} = \qty{a^{-1},b^{-1},c^{-1},\cdots}$
-yra aibė sudaryta iš \emph{atvikštinių raidžių}
+yra aibė sudaryta iš \emph{atvirkštinių raidžių}
 (kol kas šios raidės yra tik aibės $S^{-1}$ elementai be papildomos struktūros).
 Aibę $S \cup S^{-1}$ vadinsime \emph{išplėstine abėcėle}.
 Baigtines sekas $ f_1 f_2 \cdots f_n$ vadinsime \emph{žodžiais},
 čia visi $f_i \in S \cup S^{-1}$.
 Tegul $e$ žymi tuščia žodį,
 tai yra žodį sudarytą iš nulio raidžių.
-Tegul tarp dviejų žodžių yra ekvivalntiškumo sąryšis
+Tegul tarp dviejų žodžių yra ekvivalentiškumo sąryšis
 $f_1 f_2 \cdots f_n \sim f'_1 f'_2 \cdots f'_m$,
 jei iš vieno žodžio galime gauti kitą
-pakartotinai įterpdami raidės ir jos anvikštinės raidė poras $xx^{-1}$ ir $x^{-1}x$, $x \in S$.
-Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentiškumo klasę.
+pakartotinai įterpdami raidės ir jos atvirkštinės raidės poras $xx^{-1}$ ir $x^{-1}x$, $x \in S$.
+Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekvivalentiškumo klasę.
 \begin{definition}
 	Laisvoji grupė $F_S$ generuojama \emph{abėcėlės} $S$ yra sudaryta iš
 	\emph{žodžių} ekvivalentiškumo klasių,
@@ -38,9 +38,9 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 		\item Asociatyvumas:
 			sekų jungimas yra asociatyvus.
 		\item Egzistuoja vienetinis elementas:
-			betkurį žodžį sujungus su tuščiu žodžiu $e$, gausime nepakeistą žodį.
-		\item Egzistuoja atvikštiniai elementai:
-			žodžiui $f_1 f_2 \cdots f_n$ atvikštinis yra $f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}$,
+			bet kurį žodį sujungus su tuščiu žodžiu $e$, gausime nepakeistą žodį.
+		\item Egzistuoja atvirkštiniai elementai:
+			žodžiui $f_1 f_2 \cdots f_n$ atvirkštinis yra $f_{n}^{-1} f_{n-1}^{-1} \cdots f_1^{-1}$,
 			kur 
 			\begin{equation}
 				f_i^{-1}= 
@@ -66,13 +66,13 @@ Visi žodžiai tarp kurių yra ekvivalentiškumo sąryšis sudaro ekivalentišku
 \end{example}
 
 Laisvoji grupė $F_S$ yra bendriausia įmanoma grupė turinti elementus $\qty{a, b, c, \cdots}$.
-Ją sudarėme visų žodžių aibei suteikdami sąryšio $xx^{-1}=e$ stuktūra ir asociatyvia uždara daugybą,
+Ją sudarėme visų žodžių aibei suteikdami sąryšio $xx^{-1}=e$ struktūra ir asociatyvia uždara daugybą,
 tai yra minimali struktūra reikalinga kad $F_S$ būtų grupė.
 Toliau parodysime, kaip galima sudaryti šios grupės faktor-grupes,
 kurios turi papildomą struktūrą.
 
 Yra aibė $R \subset F_S$,
-jos elementai vadinami \emph{saryšio žodžiais} (ang. \emph{relators}).
+jos elementai vadinami \emph{sąryšio žodžiais} (ang. \emph{relators}).
 Tai bus žodžiai, kurie faktor-grupėje bus sutapatinti su vienetiniu elementu.
 Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 \begin{equation}
@@ -116,11 +116,11 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 \begin{remark}
 	Literatūroje yra dažniau naudojamas žymėjimas $\langle\,S\,|\,R\,\rangle$,
 	bet mes pasirinkome kitokį žymėjimą,
-	kad nekiltų rizikos sumaišyti grupės prezentacija su Dirac'o ,,bra-ket'' žymėjimu.
+	kad nekiltų rizikos sumaišyti grupės prezentacija su Dirac'o \texquote{bra-ket} žymėjimu.
 	Taip pat abėcėlė $S$ bus pateikta nekaip aibė, o elementais.
 	Sąryšio žodžiai $R$ bus pateikti kaip grupę apibrėžiantys sąryšiai
 	$r' = r$, kur $r'r^{-1}\in R$.
-	Sąryšiai yra patogūs, nes $F_s$ elemetai $r$ ir $r'$ priklauso
+	Sąryšiai yra patogūs, nes $F_s$ elementai $r$ ir $r'$ priklauso
 	tai pačiai gretutinei klasei
 	\begin{equation}
 		r\, N(R)
@@ -140,7 +140,7 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 	\begin{equation}
 		\present{a,b}{a^3 = b^2 = e ,\, ab = ba}
 	\end{equation}
-	ir su grupės elelementais galime atlikti skaičiavimus kaip kad
+	ir su grupės elementais galime atlikti skaičiavimus kaip kad
 	\begin{equation}
 		abab = abba = aea = a^2
 		\,.
@@ -149,7 +149,7 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 
 
 \begin{remark}
-	Svarbu paminėti, kad grupės presentacija nėra unikali.
+	Svarbu paminėti, kad grupės prezentacija nėra unikali.
 	\begin{itemize}
 		\item Galime pridėti sąryšio žodį $w \in N(R)$, $w \notin R$
 			ir gausime lygias grupių prezentacijas
@@ -161,7 +161,7 @@ Tegul $N(R)$ yra aibės $R$ normalusis uždarinys (ang. \emph{normal closure})
 			galima dalį sąryšio žodžių išmesti iš $R$.
 		\item Galime pridėti generatorių $d$ prie abėcėlės $S$
 			ir naują sąryšio žodį $dw^{-1}$ prie $R$,
-			kur $w$ yra bet koks žodis iš piminės abėcėlės $S$ raidžių,
+			kur $w$ yra bet koks žodis iš pirminės abėcėlės $S$ raidžių,
 			ir gausime izomorfiškas grupes
 			\begin{equation}
 				\present S R \cong \present{ S \cup \qty{d} }{ R \cup \qty{dw^{-1}} }
