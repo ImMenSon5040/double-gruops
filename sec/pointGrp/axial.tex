@@ -1,2 +1,222 @@
 
 \subsection{Ašinės grupės}
+
+Ašinėmis grupėmis yra vadinami $\Orth3$ pogrupiai,
+kurie veikdami į $\set R^3$ fiksuoja taškus priklausančius $z$ ašiai.
+Ašinės grupės yra skirstomos į septynias begalines šeimas.
+
+\begin{definition}
+	Ciklinės grupės yra
+	\begin{equation}
+		C_n := \present{r}{r^n=e}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $r$ yra tapatinamas 
+	su sukimu kampu $2\pi/n$ aplink $z$ ašį.
+\end{definition}
+
+\begin{definition}
+	Diiedrinės grupės (ang. \emph{dihedral groups}) yra
+	\begin{equation}
+		D_n := \present{r,s}{r^n=s^2=e,\, srs^{-1}=r^{-1}}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $r$ - vėl tapatinamas su $2\pi/n$ pasukimu aplink ašį $z$,
+	generatorius $s$ yra tapatinamas sukimu kampu $\pi$ aplink ašį statmeną ašiai $z$.
+\end{definition}
+
+\begin{proposition}
+	Grupė $D_n$ yra izomorphiška pusiau tiesioginei grupių sandaugai $C_n \ltimes C_2$.
+	Tei ekvivalentu teiginiui, kad egzistuoja trumpoti tikslioji seka
+	\begin{equation}
+		\begin{tikzcd}
+			1 \arrow[r] &C_n \arrow[r,"\zeta"]	&D_n \arrow[r, "\xi"] &C_2 \arrow[r] &1
+		\end{tikzcd}
+	\end{equation}
+	ir ši seka \emph{skyla},
+	tai reiškia - egzistuoja homomorfizmas $\eta: C_n \to D_n$,
+	toks kad $\xi \circ \eta = \mathup id_{C_n}$.
+\end{proposition}
+\begin{proof}
+	Pasižymime
+	\begin{equation}
+		C_n = \present{a}{a^n=e}
+		\,,\quad
+		C_2 = \present{b}{b^2=e}
+		\,.
+	\end{equation}
+	Turime atvaizdavimus
+	\begin{equation}
+		\begin{aligned}
+			\zeta:	&& C_n &\to D_n \,,& a &\mapsto r \,,\\
+			\xi:	&& D_n &\to C_2 \,,& r &\mapsto e \,, &s &\mapsto b\,,\\
+			\eta:	&& C_2 &\to D_n \,,& b &\mapsto s \,.              
+		\end{aligned}
+	\end{equation}
+	Atvizdavimams apibėžti užtenka pateikti,
+	į ką siunčiami generatoriai.
+	Kiti elementai grupėse yra žodžiai išreikšti generatorias
+	ir yra atvaizduojami \textquote{paraidžiui}.
+	Šie atvaizdavimai yra homomorfizmai,
+	jei ir tik jei apibrėžiantis sąryšiai yra atvaizduojami į tapatybes
+	atvaizdavimo kodomene.
+	Parodome kad atvaizdavimai $\zeta$, $\xi$ ir $\eta$ yra grupės homomorfizmai
+	\begin{equation}
+		\begin{gathered}
+			\zeta(a^n) = \zeta(a)^n = r^n = e = \zeta(e)
+			\,,\\
+			\xi(r^n) = \xi(r)^n = e^n = e = \xi(e)
+			\,,\\
+			\xi(s^2) = \xi(s)^2 = b^2 = e = \xi(e)
+			\,,\\
+			\xi(srs^{-1}) = \xi(s)\xi(r)\xi(s)^{-1} = b e b^{-1} = e = \xi(r^{-1})
+			\,,\\
+			\eta(b^2) = \eta(b)^2 = s^2 = e = \eta(e)
+			\,.
+		\end{gathered}
+	\end{equation}
+	test test
+
+	Matome kad atvaizdavimo $\zeta$ vaizdas sutampa su $\xi$ branduoliu,
+	tai reiškia $C_n$ yra normalus $D_n$ pogrupis.
+	Taip pat matome, kad $\xi \circ \eta = \mathup id_{C_n}$.
+	
+	Nuskaitome homomorfizmą $\varphi: C_2 \to \mathup Aut(C_n)$,
+	su kuriuo $C_2$ veikia į $C_n$
+	\begin{equation}
+		\begin{aligned}
+			e &\mapsto && (& r &\mapsto ere^{-1} = r      &&)&\,,\\
+			s &\mapsto && (& r &\mapsto srs^{-1} = r^{-1} &&)&\,.
+		\end{aligned}
+	\end{equation}
+
+\end{proof}
+
+\begin{definition}
+	\textquote{Ciklinės grupės su vertikalia atspindžio polkštuma} yra 
+	\begin{equation}
+		C_{nv} := \present{r,h}{r^n=v^2=e,\, vrv^{-1}=r^{-1}}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $r$ yra tapatinamas su $2\pi/n$ pasukimu aplink ašį $z$,
+	generatorius $v$ yra tapatinamas atspindžiu per vertikalią plokštumą,
+	kuriai priklauso ašis $z$.
+\end{definition}
+
+\begin{corollary}
+	Iš $C_{nv}$ apibėžimo iškart seka, kad $C_{nv} \cong D_n \cong C_n \ltimes C_2$. 
+\end{corollary}
+
+\begin{definition}
+	\textquote{Ciklinės grupės su horizontalia atspindžio polkštuma} yra 
+	\begin{equation}
+		C_{nh} := \present{r,h}{r^n=h^2=e,\, hr=rh}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $r$ yra tapatinamas su $2\pi/n$ pasukimu aplink ašį $z$,
+	generatorius $h$ yra tapatinamas atspindžiu per ašiai $z$ horizontalią plokštumą.
+\end{definition}
+
+\begin{proposition}
+	\label{prop:cnh_product}
+	Grupė $C_{nh}$ yra izomorfiška tiesioginiai grupių sandaugai $C_n \times C_2$
+\end{proposition}
+\begin{proof}
+	Pasižymime $C_n = \present{a}{a^n=e}$, $C_2 = \present{b}{b^2=e}$
+	Sąryšis $hr=rh$ leidžia kiek vieną $C_{nh}$ elementą užrašyti,
+	forma $r^i h^j$, $i\in \qty{1,2,\dots, n}$, $j\in \qty{1,2}$.
+	Tegul atvaizdavimas $f: C_{nh} \to C_n \times C_2$ yra 
+	$r^i h^j \mapsto (a^i,h^j)$.
+	Egzistuoja $f^{-1}: (a^i,h^j) \mapsto r^i h^j$.
+	Apibėžiantis sąryšis $hr=rh$ atvaizduojamas į tapatybę grupėje $C_n \times C_2$
+	\begin{equation}
+		(a,e)(e,b) = (a,b) = (e,b)(a,e)
+		\,.
+	\end{equation}
+	Tad atvaizdavimas $f$ yra izomorfizmas ir $C_{nh} \cong C_n \times C_2$
+\end{proof}
+
+
+\begin{definition}
+	\textquote{Diiedrinės grupės su horizontalia atspindžio polkštuma} yra 
+	\begin{equation}
+		D_{nh} := \present{r,h}{
+			r^n=s^2=h^2=e,\,
+			hr=rh,\,
+			hs=sh,\,
+			srs^{-1}=r^{-1}
+		}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $r$ yra tapatinamas su $2\pi/n$ pasukimu aplink ašį $z$,
+	generatorius $h$ yra tapatinamas atspindžiu per ašiai $z$ horizontalią plokštumą,
+	generatorius $s$ yra tapatinamas sukimu kampu $\pi$ aplink ašį statmeną ašiai $z$.
+\end{definition}
+
+\begin{proposition}
+	Grupė $D_{nh}$ yra izomorfiška grupių tiesioginei sandaugai $D_n \times C_2$.
+\end{proposition}
+\begin{proof}
+	Sąryšiai $hr=rh$ ir $hs=sh$ leidžia kiek vieną $D_{nh}$ elementą užrašyti,
+	kaip $wh^j$, čia $j \in \qty{1,2}$ ir $w$ yra žodis užrašytas raidėmis $r$, $s$.
+	Žodžiai $w$ turi tenkinti sąryšius $r^n=s^2=e$, $srs^{-1}=r^{-1}$,
+	tad jie sudaro $D_{nh}$ pogrupį izomorfišką grupei $D_n$.
+	Turint išskaidymą $wh^j$ įrodymas tesiamas taip pat,
+	kaip ir teigynyje \ref{prop:cnh_product}.
+\end{proof}
+
+
+\begin{definition}
+	\textquote{Atspindžių-posūkių grupės} (ang. \emph{the group of roto-reflections}) yra
+	\begin{equation}
+		S_{2n} := \present{f}{f^{2n}=e}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $f$ yra tapatinamas su netrikruoju pasukimu vadinamu atspindžio-posūkiu.
+	Atspindys-posūkis yra sudarytas iš dviejų dalių:
+	pirma pasukimo kampu $\pi/n$ aplink $z$ ašį,
+	anta atspindžio per horizontalią plokštumą statmena $z$ ašiai.
+	Ekinvalenčiai $S_{2n}$ galima apibėžti,
+	kaip $C_{2nh}$ pogrupį generuojamą elemento $rh$.
+\end{definition}
+
+\begin{corollary}
+	Grupė $S_{2n} \cong C_{2n}$.
+\end{corollary}
+
+\begin{definition}
+	\textquote{Diiedrinės atspindžių-posūkių grupės} yra
+	\begin{equation}
+		D_{nd} := \present{f,v}{f^{2n}=e,\, vfv^{-1}=f^{-1}}
+		\,,\quad
+		n \in \set N
+		\,,
+	\end{equation}
+	čia generatorius $f$ vėl yra tapatinamas su atspindžiu-posūkiu,
+	generatorius $v$ yra tapatinamas su atspindžiu per vertikalią polkštūmą.
+	Ekinvalenčiai $D_{nd}$ galima apibėžti,
+	kaip $D_{nh}$ pogrupį generuojamą elemento $rsh$.
+\end{definition}
+
+\begin{corollary}
+	Grupė $D_{nd} \cong C_{2n} \ltimes C_2$.
+\end{corollary}
+
+Grupės $C_n$ ir $D_n$ yra pogrupiai $\SO3$,
+todėl jos vadinamos \emph{chiralinėmis} grupėmis.
+Likusios ašinės grupės $C_{nv}$, $C_{nh}$, $D_{nh}$, $S_{2n}$ ir $D_nd$ nėra $\SO3$
+pogrupiai, todėls yra vadinamos \emph{achiralinėmis} grupėmis.
+
+
