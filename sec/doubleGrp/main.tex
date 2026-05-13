@@ -1,6 +1,76 @@
 
 \section{Dvigubos grupės}
 
+Šiame skyriuje sujungsime pirmų dviejų skyrių idėjas.
+Pasinaudosime dvigubu atvaizdavimu $\rho$,
+kad perkelti taškinę grupę $G$ iš $\Orth3$ į $\pinp$ arba $\pinm$.
+Naujai gauta grupė yra vadinama grupės $G$ dviguba grupe.
+\begin{definition}
+	Grupės $\Orth3$ pogrupio $G$ \emph{dviguba grupė viduje grupės $\pinp$} yra
+	$G$ pirmavaizdis (ang. \emph{preimage}) $\rho^{-1}(G)$ ir yra žymima $2G^+$.
+	\emph{Dviguba grupė viduje grupės $\pinm$} yra
+	$G$ pirmavaizdis $\rho^{-1}(G)$ ir yra žymima $2G^-$.
+	Kai $G \in \SO3$, grupės $2G^+$ ir $2G^-$ yra izomorfiškos,
+	nes $\pinp$ ir $\pinm$ lyginiai pogrųpiai yra izomorfiški,
+	ir dvigubą grupę žymime $2G$.
+\end{definition}
+\begin{remark}
+	Dvigubas grupes taip pat galima apibėžti
+	kaip grupes $2G^+$ ir $2G^-$ tokias kad diagramos
+	\begin{equation}
+		\begin{tikzcd}
+			\pinp \arrow[r, "\rho"] & \Orth3 \\
+			2G^+ \arrow[u, "\iota", hook] \arrow[r, "\rho"] & G \arrow[u, "\iota", hook]
+		\end{tikzcd}
+		\quad
+		\begin{tikzcd}
+			\pinm \arrow[r, "\rho"] & \Orth3 \\
+			2G^- \arrow[u, "\iota", hook] \arrow[r, "\rho"] & G \arrow[u, "\iota", hook]
+		\end{tikzcd}
+	\end{equation}
+	yra komutatyvios.
+	Kategorijų teorijoje ši konstrukcija yra vadinama
+	grupių $G$ ir $\pinpm$ atgaline sankaba (ang. \emph{pullback})
+	per homomorfizmus $\rho$ ir $\iota$.
+\end{remark}
+
+Aptarkime kaip galima dvigubos grupės prezentaciją.
+Tegul $G = \present{ a,b,c,\cdots }{ r'=r,\cdots }$.
+Atvaizdavimo $\rho$ branduolys yra $\qty{\mathbb1,-\mathbb1}$,
+tad $-\mathbb1$ priklauso $2G$,
+prezentacijų kontekste šį elementą žymėsime $z:=-\mathbb1$.
+Elementą $z$ įprasta laikyti \emph{pasukimu kampu $2\pi$},
+nes į $\mathup{SU}(2)$ pasukimo aplink vektorių $n$ kampu $\theta$ formulę
+$e^{\frac{i\theta}{2}(\vb n,\symbf\sigma)}$
+įstačius $\theta = 2\pi$ gauname $-I$.
+Generatoriui $a$ jo pirmavaizdžio 
+$\rho^{-1}(a) = \qty{ v \in \pinpm \mid \rho(v)=a }$ 
+pasirinkta elementą pažymime $\tilde a$,
+kitas  elementas turi būti $z\tilde a$.
+Tokiu pat būdu pažymime $\tilde b,\tilde c,\cdots$.
+\begin{proposition}
+	Elementai $z, \tilde a, \tilde b, \tilde c, \cdots \in \pinpm$ generuoja grupę $2G$.
+\end{proposition}
+\begin{proof}
+	Elementas $g \in G$ yra žodis išrekštas raidėmis $a,b,c,\cdots$.
+	Tegul $\tilde g$ yra žodis gaunamas žodyje $g$ raides $a, b, c \cdots$
+	pakeičiant į $\tilde a, \tilde b, \tilde c, \cdots$.
+	Turime kad $\rho(\tilde g) = g$ ir $\rho(z\tilde g)=g$,
+	nes \rho yra homomorfizmas, $\rho(z)=e$ ir visiem gerneratoriams $\rho(\tilde a)=a$.
+	Elementai $\tilde g$ ir $z\tilde g$ sudaro elemento $g$ primavaizdį
+	ir $g$ gali būti bet koks grupės $G$ elementas,
+	tad raidės $z, \tilde a, \tilde b, \tilde c, \cdots \in \pinpm$ generuoja visą $2G$.
+\end{proof}
+Su sąryšiasi yra sudetingesnė situacija.
+Vienas sąryšis $r'=r$ grupėje $G$,
+gali virsti į sąryšį $\tilde r'=\tilde r$
+arba į sąryšį $\tlde r'=z\tilde r$.
+Elemetų $\tilde r'$ ir $\tilde r$ išraiškos yra fiksuotos pasirinkimo
+kuriuos elementus žymėsime $\tilde a, \tilde b, \tilde c, \cdots$,
+tad kuris išdviejų sąryšiu yra teisingas reikės patikrinti sudauginus
+generatorius grupėje $\pinpm$.
+
+
 \input{sec/doubleGrp/chiral}
 \input{sec/doubleGrp/achiralPlus}
 \input{sec/doubleGrp/achiralMinus}
