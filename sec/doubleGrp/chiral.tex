@@ -1,2 +1,92 @@
 
-\subsection{Chiralinių grupų dvigubos grupės}
+\subsection{Chiralinių grupių dvigubos grupės}
+
+Pirma raskime chiralinių grupių $C_n$, $D_n$, $T$, $O$ ir $I$ dvigubas grupes.
+
+\begin{proposition}
+	Dviguba grupė $2C_n$ turi prezentaciją $\present{z,\tilde r}{\tilde r^n = z,\, z^2 = e,\, z\tilde r=\tilde rz}$.
+\end{proposition}
+\begin{proof}
+	Reikia patikrinti, kad $\tilde r^n = z$.
+	Pasinaudojame tuo kad tarp $\spin$ ir $\mathup{SU}(2)$ yra izomorfizmas $f$ ir formule $e^{\frac{i\theta}{2}(\vb n, \symbf\sigma)}$.
+	Tada elementą $\tilde r$ izomorfizmas $f$ atvaizduoja
+	į $\mathup{SU}(2)$ elementą
+	\begin{equation}
+		e^{\frac{i\pi}{n}\sigma_3} = \mqty(\dmat{e^{i\pi/n},e^{-i\pi/n}})
+		\,.
+	\end{equation}
+	Šią matricą pakėlę laipsniu $n$ gauname
+	\begin{equation}
+		\mqty(\dmat{e^{i\pi/n},e^{-i\pi/n}})^n = \mqty(\dmat{e^{i\pi},e^{-i\pi}}) = \mqty(\dmat{-1,-1})
+		\,,
+	\end{equation}
+	šią matricą izomorfizmas $f^{-1}$ atvaizduoja į $z=-\mathbb1$.
+	Tai $\tilde r^n = z$ ir $2C_n = \present{z,\tilde r}{\tilde r^n = z,\, z^2 = e,\, z\tilde r=\tilde rz}$.
+\end{proof}
+
+\begin{proposition}
+	Dviguba grupė $2C_n$ turi prezentaciją
+	$\present{z,\tilde r,\tilde s}{
+		\tilde r^n = \tilde s^2 = z,\,
+		srs^{-1}=r^{-1},\,
+		z^2 = e,\,
+		z\tilde r=\tilde rz,\,
+		z\tilde s=\tilde sz
+	}$.
+\end{proposition}
+\begin{proof}
+	Saryšiai $\tilde r^n$ ir $\tilde s^2$ yra pasukimai kampu $2\pi$,
+	tad $\tilde r^n = \tilde s^2 = z$.
+	Lieka patikrinti, kad $srs^{-1}=r^{-1}$.
+	
+	Sukimas $\tilde r$ yra aplink $z$ ašį.
+	Jį išskaidome į atspindžius duodamus vienetinių vektorių $\vb v_1$ ir $\vb v_2$ iš $\pinp$.
+	Vektoriai $\vb v_1$ ir $\vb v_2$ yra stameni ašiai $z$,
+	tad jie priklauso erdvei $\mathup{span}(\vb e_1,\vb e_2)$.
+	Sandauga $\vb v_1 \vb v_2$ prklauso $\spin$ ir iš teiginio \ref{prop;spin_form} turime, kad
+	\begin{equation}
+		\tilde r = \vb v_1 \vb v_2 = a_0 \mathbb1 + a_3 \vb e_{12}
+		\,,
+	\end{equation}
+	kur $a_0^2 + a_3^2 = 1$.
+
+	Tegul $\tilde s = \vb e_3 \vb e_1$ ir $s^{-1}= \vb e_1 \vb e_3$.
+	Tai sutmapa su sukumu $s$, nes $\vb e_1$ yra atspindys per plokštumą $yz$, o $\vb e_3$ yra atspindys per plokštumą $xy$.
+	Įsistatome
+	\begin{equation}
+		srs^{-1} = \vb e_3 \vb e_1 (a_0\mathbb1 + a_3 \vb e_1 \vb e_2)\vb e_1 \vb e_3
+		= a_0\mathbb1 + a_3 \vb e_3 \vb e_1 \vb e_1 \vb e_2\vb e_1 \vb e_3
+		= a_0\mathbb1 - a_3 \vb e_1\vb e_2	
+		= r^{-1}
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	Chiralinės poliedrines grupės $T$, $O$ ir $I$ turi dvigubas grupes
+	\begin{equation}
+		\begin{aligned}
+			2T &= \present{z,\tilde s,\tilde t}{\tilde s^2=\tilde t^3=(\tilde s\tilde t)^3=z,\,z^2=e,\,z\tilde s=\tilde sz,\,z\tilde t=\tilde tz} \\
+			2O &= \present{z,\tilde s,\tilde t}{\tilde s^2=\tilde t^3=(\tilde s\tilde t)^4=z,\,z^2=e,\,z\tilde s=\tilde sz,\,z\tilde t=\tilde tz} \\
+			2I &= \present{z,\tilde s,\tilde t}{\tilde s^2=\tilde t^3=(\tilde s\tilde t)^5=z,\,z^2=e,\,z\tilde s=\tilde sz,\,z\tilde t=\tilde tz}
+		\end{aligned}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Poliedrinių grupių
+	\begin{equation}
+		\begin{aligned}
+			T &= \present{s,t}{s^2=t^3=(st)^3=e} \\
+			O &= \present{s,t}{s^2=t^3=(st)^4=e} \\
+			I &= \present{s,t}{s^2=t^3=(st)^5=e}
+		\end{aligned}
+	\end{equation}
+	visi sąryšiai yra pasukimai kampu $2\pi$ ir todė jie dviguboje grupėje visi yra lygus $z$.
+\end{proof}
+
+
+
+
+
+
+
+

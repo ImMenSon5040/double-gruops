@@ -1,2 +1,276 @@
 
-\subsection{Achiralinių grupių paritetinės dvigubos grupės}
+\subsection{Achiralinių grupių dvigubos grupės viduje grupės \texorpdfstring{$\pinp$}{Pin+(3)}}
+
+Toliau gausime prezentacijas digubų grupių viduje grupės $\pinp$ achiralinių grupių
+$C_{nh}$, $C_{nv}$, $D_{nh}$, $S_{2n}$, $D_{nd}$ ir $T_d$, $O_h$, $I_h$, $T_h$.
+
+\begin{proposition}
+	Dviguba grupė $2C_{nh}^+$ turi prezentaciją
+	$\present{z,\tilde r,\tilde h}{
+		\tilde r^n=z,\,
+		\tilde h^2=z^2=e,\,
+		\tilde h\tilde r=\tilde r\tilde h,\,
+		z\tilde r=\tilde rz,\,
+		z\tilde h=\tilde hz
+	}$.
+\end{proposition}
+\begin{proof}
+	Grupę $C_{nh}$ apibrežia prezentacija $\present{r,h}{r^n=h^2=e,\, hr=rh}$.
+	Trurime patikrinti sąryšius $\tilde r^n=z$, $\tilde h^2=e$ ir $\tilde h\tilde r=\tilde r\tilde h$
+	Sąryšis $\tilde r^n=z$ galioja, nes $\tilde r^n$ yra sukimas kampu $2\pi$.
+	Tegul $\tilde h = \vb e_3$ ir $\tilde r = a_o\mathbb1 + a_3 \vb e_{12}$, $a_0^2+a_3^2=1$.
+	Tada turime kad
+	\begin{equation}
+		\tilde h^2 = {\vb e_3}^2 = \mathbb1 = e
+		\,,
+	\end{equation}
+	\begin{equation}
+		\begin{aligned}
+			\tilde h\tilde r 
+			&=\vb e_3 (a_0 \mathbb 1 + a_3 \vb e_{12} )
+			\\&=a_0 \vb e_3  + a_3\vb e_3 \vb e_1 \vb e_2
+			\\&=a_0 \vb e_3  - a_3\vb e_1 \vb e_3 \vb e_2
+			\\&=a_0 \vb e_3  + a_3\vb e_1 \vb e_2 \vb e_3
+			\\&=(a_0 \mathbb 1 + a_3 \vb e_{12} )\vb e_3
+			\\&=\tilde r\tilde h
+			\,.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	Dviguba grupė $2C_{nv}^+$ turi prezentaciją
+	$\present{z,\tilde r,\tilde h}{
+		\tilde r^n=z,\,
+		\tilde v^2=z^2=e,\,
+		\tilde v\tilde r\tilde v^{-1}=\tilde r^{-1},\,
+		z\tilde r=\tilde rz,\,
+		z\tilde v=\tilde vz
+	}$.
+\end{proposition}
+\begin{proof}
+	Grupę $C_{nv}$ apibrežia prezentacija $\present{r,h}{r^n=v^2=e,\, vrv^{-1}=r^{-1}}$.
+	Trurime patikrinti sąryšius $\tilde r^n=z$, $\tilde v^2=e$ ir $\tilde v\tilde r\tilde v^{-1}=\tilde r^{-1}$.
+	Sąryšis $\tilde r^n=z$ galioja, nes $\tilde r^n$ yra sukimas kampu $2\pi$.
+	Tegul $\tilde v = \vb e_1$ ir $\tilde r = a_0 \mathbb1 + a_3 \vb e_{12}$, $a_0^2+a_3^2=1$.
+	Tada turime kad
+	\begin{equation}
+		\tilde v^2 = {\vb e_1}^2 = \mathbb1 = e 
+		\,,
+	\end{equation}
+	\begin{equation}
+		\begin{aligned}
+			\tilde v\tilde r\tilde v^{-1}
+			&=\vb e_1 (a_0 + a_3 \vb e_{12}) {\vb e_1}^{-1}
+			\\&=\vb e_1 (a_0 \mathbb1 + a_3 \vb e_{12}) {\vb e_1}
+			\\&=a_0 \vb e_1 \vb e_1 + a_3 \vb e_1 \vb e_1 \vb e_2 \vb e_1 
+			\\&=a_0 \mathbb1 + a_3 \vb e_2 \vb e_1 
+			\\&=a_0 \mathbb1 - a_3 \vb e_1 \vb e_2 
+			\\&=\tilde r^{-1}
+			\,.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	Dviguba grupė $2D_{nh}^+$ turi prezentaciją
+	\begin{equation}
+	\present{z,\tilde r,\tilde h,\tilde s}{
+		\tilde r^n=\tilde s^2=z,\,
+		\tilde h^2=z^2=e,\,
+		\tilde s\tilde r\tilde s^{-1}=\tilde r^{-1},\,
+		\tilde h\tilde r=\tilde r\tilde h,\,
+		\tilde h\tilde s=z\tilde s\tilde h,\,
+		z\tilde r=\tilde rz,\,
+		z\tilde h=\tilde hz,\,
+		z\tilde s=\tilde sz
+	}\,.
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Grupę $D_{nh}$ apibrežia prezentacija $\present{r,h,s}{
+		r^n=s^2=h^2=e,\,
+		srs^{-1}=r^{-1},\,
+		hr=rh,\,
+		hs=sh
+	}$.
+	Trurime patikrinti sąryšius:
+	\begin{enumerate}
+		\item $\tilde r^n=z$,
+		\item $\tilde s^2=z$,
+		\item $\tilde h^2=e$,
+		\item $\tilde s\tilde r\tilde s^{-1}=\tilde r^{-1}$,
+		\item $\tilde h\tilde r=\tilde r\tilde h$,
+		\item $\tilde h\tilde s=z\tilde s\tilde h$.
+	\end{enumerate}
+	Sąryšiai $\tilde r^n=z$ ir $\tilde s^2=z$ galioja, nes $\tilde r^n$ ir $\tilde s^2$ yra sukimai kampu $2\pi$.
+	Tegul $\tilde s = \vb e_3 \vb e_1$, $\tilde h=\vb e_3$ ir $\tilde r = a_0 \mathbb1 + a_3 \vb e_{12}$, $a_0^2+a_3^2=1$.
+	Tada turime kad:
+	\begin{enumerate}
+			\setcounter{enumi}{2}
+		\item
+			\begin{equation}
+				\tilde h^2 = {\vb e_3}^2 = \mathbb1 = e
+				\,,
+			\end{equation}
+		\item
+			\begin{equation} 
+				\begin{aligned}
+					\tilde s\tilde r\tilde s^{-1}
+					&=\vb e_1 \vb e_3 (a_0 \mathbb1 + a_3 \vb e_{12}) (\vb e_1 \vb e_3)^{-1}
+					\\&=\vb e_1 \vb e_3 (a_0 \mathbb1 + a_3 \vb e_{12}) \vb e_3 \vb e_1
+					\\&=a_0 \mathbb1 + a_3 \vb e_1 \vb e_3 \vb e_1 \vb e_2 \vb e_3 \vb e_1
+					\\&=a_0 \mathbb1 - a_3 \vb e_3 \vb e_1 \vb e_1 \vb e_2 \vb e_3 \vb e_1
+					\\&=a_0 \mathbb1 - a_3 \vb e_3 \vb e_2 \vb e_3 \vb e_1
+					\\&=a_0 \mathbb1 + a_3 \vb e_2 \vb e_3 \vb e_3 \vb e_1
+					\\&=a_0 \mathbb1 + a_3 \vb e_2 \vb e_1
+					\\&=a_0 \mathbb1 - a_3 \vb e_1 \vb e_2 
+					\\&=\tilde r^{-1}
+					\,,
+				\end{aligned}
+			\end{equation} 
+		\item
+			\begin{equation}
+				\begin{aligned}
+					\tilde h\tilde r 
+					&= \vb e_3(a_0 \mathbb1 + a_3 \vb e_{12})
+					\\&= a_0 \vb e_3 + a_3 \vb e_3 \vb e_1 \vb e_2
+					\\&= a_0 \vb e_3 - a_3 \vb e_1 \vb e_3 \vb e_2
+					\\&= a_0 \vb e_3 + a_3 \vb e_1 \vb e_2 \vb e_3
+					\\&= (a_0 \mathbb1 + a_3 \vb e_{12})\vb e_3 
+					\\&=\tilde r\tilde h 
+					\,,
+				\end{aligned}
+			\end{equation}
+		\item
+			\begin{equation}
+				\tilde h\tilde s
+				= \vb e_3 \vb e_3 \vb e_1
+				= - \vb e_3 \vb e_1 \vb e_3 
+				= -\mathbb1 (\vb e_3 \vb e_1) \vb e_3 
+				=z\tilde s\tilde h
+			\end{equation}
+	\end{enumerate}
+\end{proof}
+
+
+\begin{proposition}
+	Dviguba grupė $2S_{2n}^+$ turi prezentaciją
+	$\present{z,\tilde f}{\tilde f^{2n}=z,\, z^2=e,\, zf=fz}$.
+\end{proposition}
+\begin{proof}
+	Grupę $S_{2n}$ apibrežia prezentacija $\present{f}{f^{2n}=e}$.
+	Trurime patikrinti sąryšį $f^{2n}=z$.
+	Tegul $\tilde f = \vb e_3 \tilde r = \vb e_3 (a_0\mathbb1 + a_3 \vb e_{12})$, $a_0^2 + a_3^2 = 1$,
+	elementas $\tilde r$ yra pasukimas kampu $\frac{2\pi}{2n}=\frac{\pi}{n}$,
+	o $\vb e_3$ yra atspindys per polkštūma $xy$.
+	Tada turime kad
+	\begin{equation}
+		\tilde f^2n = (\vb e_3 \tilde r)^{2n} 
+		= (\vb e_3 \tilde r \vb e_3 \tilde r)^n 
+		= (\tilde r \vb e_3 \vb e_3 \tilde r)^n 
+		= \tilde r^{2n} = z
+		\,.
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	Dviguba grupė $D_{nd}^+$ turi prezentaciją
+	$\present{z,\tilde f,\tilde v}{
+		\tilde f^{2n}=z,\,
+		z^2=\tilde v^2=e,\,
+		\tilde v\tilde f\tilde v^{-1}=z\tilde f^{-1},\,
+		z\tilde f=\tilde fz,\,
+		z\tilde v=\tilde vz
+	}$.
+\end{proposition}
+\begin{proof}
+	Grupę $D_{nd}$ apibrežia prezentacija $\present{f,v}{f^{2n}=e,\, vfv^{-1}=f^{-1}}$.
+	Trurime patikrinti sąryšius $\tilde f^{2n}=z$, $\tilde v^2=e$ ir $\tilde v\tilde f\tilde v^{-1}=z\tilde f^{-1}$.
+	Tegul $\tilde v = \vb e_1$ ir
+	$\tilde f = \vb e_3 \tilde r = \vb e_3 (a_0\mathbb1 + a_3 \vb e_{12})$, $a_0^2 + a_3^2 = 1$,
+	$\tilde r$ yra sukimas kampu $\frac{\pi}{n}$.
+	Tada turime kad
+	\begin{equation}
+		\tilde f^2n = (\vb e_3 \tilde r)^{2n} 
+		= \tilde r^{2n} = z
+		\,,
+	\end{equation}
+	\begin{equation}
+		\tilde v^2 = {\vb e_1}^2 = \mathbb1 = e
+		\,,
+	\end{equation}
+	\begin{equation}
+		\begin{aligned}
+			\tilde v\tilde f\tilde v^{-1}
+			&=\vb e_1 \vb e_3 (a_0\mathbb1 + a_3 \vb e_{12}) {\vb e_1}^{-1}
+			\\&=\vb e_1 (a_0\mathbb1 + a_3 \vb e_{12}) \vb e_1
+			\\&=a_0 \vb e_1 \vb e_3 \vb e_1 + a_3 \vb e_1 \vb e_3 \vb e_1 \vb e_2 \vb e_1
+			\\&= - a_0 \vb e_1 \vb e_1 \vb e_3 - a_3 \vb e_1 \vb e_1 \vb e_3 \vb e_2 \vb e_1
+			\\&= - a_0 \vb e_3 - a_3 \vb e_3 \vb e_2 \vb e_1
+			\\&= - a_0 \vb e_3 + a_3 \vb e_2 \vb e_3 \vb e_1
+			\\&= - a_0 \vb e_3 - a_3 \vb e_2 \vb e_1 \vb e_3 
+			\\&= - a_0 \vb e_3 + a_3 \vb e_1 \vb e_2 \vb e_3 
+			\\&= -\mathbb1( a_0 \mathbb1 - a_3 \vb e_{12}) \vb e_3 
+			\\&= -\mathbb1 \tilde r^{-1} {\vb e_3}^{-1} 
+			\\&= -\mathbb1 (\vb e_3 \tilde r)^{-1}
+			\\&=z\tilde f^{-1}
+			\,.
+		\end{aligned}
+	\end{equation}
+\end{proof}
+
+\begin{proposition}
+	Dviguba grupė $2T_d$ turi prezentaciją
+	\begin{equation}
+		\present{z,\tilde s,\tilde t,\tilde v}{
+			\tilde s^2=\tilde t^3=(\tilde s\tilde t)^3=z,\,
+			\tilde v\tilde s\tilde v^{-1}=\tilde s^{-1},\,
+			\tilde v\tilde t\tilde v^{-1}=\tilde t^{-1},\,
+			z^2=\tilde v^2=e,\,
+			z\tilde f=\tilde fz,\,
+			z\tilde f=\tilde fz,\,
+			z\tilde v=\tilde vz
+		}\,.
+		\end{equation}
+\end{proposition}
+\begin{proof}
+	Grupę $T_d$ apibrežia prezentacija $\present{s,t,v}{s^2=t^3=(st)^3=v^2=e,\, vsv^{-1}=s^{-1},\, vtv^{-1}=t^{-1}}$.
+	Trurime patikrinti sąryšius:
+	\begin{enumerate}
+		\item $\tilde s^2=z$,
+		\item $\tilde t^3=z$,
+		\item $(\tilde s\tilde t)^3=z$,
+		\item $\tilde v^2 = e$,
+		\item $\tilde v\tilde s\tilde v^{-1}=\tilde s^{-1}$,
+		\item $\tilde v\tilde t\tilde v^{-1}=\tilde t^{-1}$.
+	\end{enumerate}
+	Sąryšiai $\tilde s^2=z$, $\tilde t^3=z$ ir $(\tilde s\tilde t)^3=z$ galioja,
+	nes $\tilde s^2$, $\tilde t^3$ ir $(\tilde s\tilde t)^3$ yra sukimai kampu $2\pi$.
+	Tegul 
+	\begin{equation}
+		\tilde s = \vb e_{12} \,,\quad
+		\tilde v = \vb e_1 \,.
+	\end{equation}
+	Tada turime:
+	\begin{enumerate}
+			\setcounter{enumi}{3}
+		\item 
+			\begin{equation}
+				\tilde v^2 = {\vb e_1}^2 =\mathbb1 = e
+				\,,
+			\end{equation}
+		\item 
+			\begin{equation}
+				\begin{aligned}
+					\tilde v\tilde s\tilde v^{-1}
+					&=\vb e_1 \vb 
+					\\&=\tilde s^{-1}
+				\end{aligned}
+			\end{equation}
+	\end{enumerate}
+	Kad įrodyti tapatybę $\tilde v\tilde t\tilde v=\tilde t^{-1}$ pasirenkame kitą $\pinp$ orto-normalią bazę,
+	kurioje $\vb e_1' = \vb e_1$ ir  
+\end{proof}
+
+
